@@ -2,6 +2,7 @@
 layout: post
 title: How to make money from streaming "music"
 categories: Technology
+author: pgmac
 ---
 One enterprising computer security professional has made a reasonable amount of money in royalties from several online streaming services; like Spotify, Pandora, etc.
 

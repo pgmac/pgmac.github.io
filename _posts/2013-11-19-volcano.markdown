@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Mt Etna volcano eruptions
-categories: 
+categories: Photography
 youtubeId: WIHk_A0z0Rc
+author: pgmac
 ---
 Mt Etna volcano eruptions.
 

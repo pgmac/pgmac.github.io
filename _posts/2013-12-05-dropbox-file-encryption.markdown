@@ -2,6 +2,7 @@
 layout: post
 title: Finally a workable solution to encrypt and secure Dropbox contents
 categories: Technology
+author: pgmac
 ---
 Finally a workable solution to encrypt and secure Dropbox contents
 
