@@ -1,0 +1,13 @@
+---
+layout: post
+title: Mt Etna volcano eruptions
+categories: 
+youtubeId: WIHk_A0z0Rc
+---
+Mt Etna volcano eruptions.
+
+{% include youtube.html id=page.youtubeId %}
+
+Or paroxysms, as they're more affectionately called (in scientific circles).
+Recently Mt Etna has been very active again.  Here's 8 minutes of molten rock being hurled in the air with gay abandon.
+I find volcano's completely fascinating and definitely have seeing a paroxysm on my bucket list.
