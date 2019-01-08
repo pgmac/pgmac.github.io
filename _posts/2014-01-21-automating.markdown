@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automating
-categories: Technology Funny
+category: Technology
 author: pgmac
 ---
 If it wasn't so true, it'd be completely hilarious.

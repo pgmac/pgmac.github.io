@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Epis 80's movie night
-categories: Entertainment
+category: Entertainment
 author: pgmac
 ---
 Don't get him wet, keep him out of bright light, and never feed him after midnight.

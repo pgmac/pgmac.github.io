@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android processes RAW photo with Photo Mate R2
-categories: Photography Technology
+category: Photography
 author: pgmac
 ---
 Have you ever wanted to just quickly process your RAW photos when you're out and about and only have your trusty Android tablet available? 

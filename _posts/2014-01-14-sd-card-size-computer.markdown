@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A computer the size of an SD card
-categories: Technology
+category: Technology
 author: pgmac
 ---
 Now this has the potential to be the start of something truly incredible. Imagine being able to incorporate a Pentium-class computer in almost anything.  Intel has created a computer so small it can be incorporated into almost anything.  The [Quark](http://www.theverge.com/2014/1/6/5282472/intel-announces-edison-a-computer-the-size-of-an-sd-card){:target="_blank"}.  They were able to link it with a [Mimo onesie](http://mimobaby.com/mimo/){:target="_blank"} and display your baby's vitals (temperature, etc) as a representation on another connected device (e.g. a coffee mug). Now that they can do this, it should only be a relatively small step to get it to do other things for you, too.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello again
-categories: Photography Science Sport Technology Volleyball
+category:
 author: pgmac
 ---
 Well, I've finally decided to get around to doing my own blog.

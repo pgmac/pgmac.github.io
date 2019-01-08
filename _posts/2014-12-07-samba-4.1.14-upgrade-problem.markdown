@@ -1,0 +1,53 @@
+---
+layout: post
+title: Samba 4.1.14 upgrade problem
+category: Technology
+author: pgmac
+---
+I just decided (in my infinite wisdom) to perform an upgrade of my samba-4.0.3 installation up to samba-4.1.14.
+Reading through some online documentation on the <http://www.samba.org/>{:target="_blank"} site.
+Starting with the installation guide: <http://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/install.html>{:target="_blank"} and moving onto the Compiling Samba (as that's what I was doing): <http://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/compiling.html>{:target="_blank"}.
+
+It all looked really straight forward. And it was, right up until I started it up again and tried to authenticate my domain user account.
+
+```smbclient -L localhost -U //mydomain/myuser%mypass```
+
+I got some very interesting error messages:
+
+```
+Password for [MYDOMAIN\myuser]:
+Failed to connect to ncacn_np:localhost - NT_STATUS_CONNECTION_REFUSED
+REWRITE: list servers not implemented
+```
+
+Didn't help me a great deal.
+Googling didn't point me in the correction either. Just people completely blowing away their samba config and starting again. This was NOT an option for me.
+So, once more unto the logfiles.
+And I see a reasonably inocuous entry:
+
+```
+[2014/12/07 21:01:14,  0] ../source4/lib/tls/tls_tstream.c:1125(tstream_tls_params_server)
+  Invalid permissions on TLS private key file '/usr/local/samba/private/tls/key.pem':
+  Removing all tls .pem files will cause an auto-regeneration with the correct permissions.
+  ldapsrv failed tstream_tls_params_server - NT_STATUS_CANT_ACCESS_DOMAIN_INFO
+  invalid permissions on file '/usr/local/samba/private/tls/key.pem': has 0644 should be 0600
+```
+
+So, I did the obvious and changed the permissions on these files.
+
+`chmod 0600 /usr/local/samba/private/tls/*.pem`
+
+Because it's a good thing to do, even if it doesn't really mean much. Or does it.
+
+Being the good checker that I am, I restarted samba after making just this one change. 
+
+1. Change one thing.
+2. Test it.
+3. Does it work?
+4. Repeat if necessary.
+
+And blow me down if I'm a feather, it all lives again.
+
+Such a simple problem, but actually quite an important permission change, actually broke the TLS for the LDAP server. Setting the permissions correctly got it all back to working nicely and happily again.
+
+Hopefully this will save some other poor soul from taking their samba installation back to the beginning again.

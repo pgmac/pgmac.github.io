@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Star Wars Down Under
-categories: Entertainment StarWars
+category: Entertainment
 author: pgmac
 youtubeId: mhTn8cjm9ZM
 ---

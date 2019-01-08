@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Teach you everything
-categories: Family
+category: Family
 author: pgmac
 ---
 This is quite possibly one of my absolute online comic strips of all time.  Particularly this one:

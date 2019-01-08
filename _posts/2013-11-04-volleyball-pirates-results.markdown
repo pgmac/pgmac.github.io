@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yaaaaarrrrgh! - Queensland Pirates make UTSSU walk the plank
-categories: Sports Photography
+category: Sports
 author: pgmac
 ---
 Both the Men's and Women's teams came away with 2 wins from 2 games each.  Tops result that boys and girls.  Really tops stuff.The men were never really pushed too far, only dropping the 1 set from 6, but the games were tightly fought and only a couple runs of points in each set saw them get away.  This keeps the Men's team undefeated for the 2013 season so far.

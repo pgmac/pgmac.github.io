@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Soundtrack to your clown nightmare
-categories: Entertainmenu
+category: Entertainment
 youtubeId: VBmCJEehYtU
 author: pgmac
 ---
