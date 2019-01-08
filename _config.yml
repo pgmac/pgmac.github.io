@@ -14,9 +14,10 @@ baseurl: ""
 url: "http://localhost" # the base hostname & protocol for your site
 twitter_username: pmacdonnell
 github_username:  pgmac
-# paginate: 5
+paginate: 5
 
 # Build settings
 markdown: kramdown
-# plugins:
-#   jekyll-paginate
+plugins_dir: _scripts
+gems:
+  - jekyll-paginate
