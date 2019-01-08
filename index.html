@@ -11,7 +11,7 @@ layout: default
       {% assign author = site.data.authors[post.author] %}
       <li>
         <span class="post-meta">
-          {{ post.date | date: "%-d %b %Y" }}{% if post.author %} - {% if author.web %}<a href="{{ author.web }}">{% endif %}{{ author.name }}{% if author.web %}</a>{% endif %}{% endif %}
+          {{ post.date | date: "%Y-%m-%d" }}{% if post.author %} - {% if author.web %}<a href="{{ author.web }}">{% endif %}{{ author.name }}{% if author.web %}</a>{% endif %}{% endif %}
         </span>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
