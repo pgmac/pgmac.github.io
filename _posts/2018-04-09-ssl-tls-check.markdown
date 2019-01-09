@@ -2,6 +2,7 @@
 layout: post
 title: Quick SSL/TLS certificate check
 category: Technology
+tags: [SSL, TLS, curl, Scripts]
 author: pgmac
 ---
 While doing a lot of SSL/TLS renewals, transfers, migrations, etc recently; I was looking for a really simple tool to help me verify the certificate being served was the absolute correct one. It needed to check the:

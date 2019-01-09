@@ -2,6 +2,7 @@
 layout: post
 title: AWS Internet access from a Private subnet
 category: Technology
+tags: [AWS, Networking]
 author: pgmac
 ---
 To enable internet access from a private subnet, you will need do a couple of things.

@@ -2,6 +2,7 @@
 layout: post
 title: Get personal whiskey recommendations
 category: Entertainment
+tags: [Whiskey]
 author: pgmac
 ---
 This new web based app can give you some great tips on new and different types of whiskey.

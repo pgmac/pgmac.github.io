@@ -2,6 +2,7 @@
 layout: post
 title: Automating
 category: Technology
+tags: [Comic, Automation]
 author: pgmac
 ---
 If it wasn't so true, it'd be completely hilarious.

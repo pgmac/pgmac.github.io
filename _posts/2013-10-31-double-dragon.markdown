@@ -2,6 +2,7 @@
 layout: post
 title: Double Dragon Trilogy comes to smartphones everywhere
 category: Gaming
+tags: [Retro, Games, Mobile]
 author: pgmac
 ---
 DotEMu is reviving one of the best old school beat 'em ups for your iOS and Android smartphones.  Double Dragon!  The whole trilogy of them!

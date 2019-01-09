@@ -2,6 +2,7 @@
 layout: post
 title: Manual cert-bot renewals for certificates hosted on a Sophos UTM
 category: Technology
+tags: [cert-bot, letsencrypt, Sophos, UTM]
 author: pgmac
 ---
 

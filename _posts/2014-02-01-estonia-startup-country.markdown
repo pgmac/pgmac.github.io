@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Estonia - A "Start-Up" Country
-category: Startups
+category: Technology
+tags: [Business, Startups]
 author: pgmac
 ---
 After gaining independence from Russia in 1991, Estonia set about creating a technologically adept country the envy of the world

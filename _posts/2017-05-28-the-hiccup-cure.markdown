@@ -2,6 +2,7 @@
 layout: post
 title: The hiccup cure
 category: [No laughing matter]
+tags: [hiccups]
 author: pgmac
 ---
 We'd only been going out for a couple of months, when we were invited to one of my friends house parties. Kate was sitting on a couch on the sidelines, not feeling too comfortable - given she only knew a couple of people there. This was only exacerbated by her insistent hiccups.

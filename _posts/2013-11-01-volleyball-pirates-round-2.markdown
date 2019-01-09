@@ -2,6 +2,7 @@
 layout: post
 title: Queensland Pirates Indoor Volleyball - Round 2
 category: Sports
+tags: [Volleyball, Pirates, Photography]
 author: pgmac
 ---
 The Mens and Womens Queensland Pirates teams are both competing this weekend at Brisbane Grammar School in the MA Howell Sports Centre.

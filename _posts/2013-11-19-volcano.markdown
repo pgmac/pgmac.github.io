@@ -2,6 +2,7 @@
 layout: post
 title: Mt Etna volcano eruptions
 category: Photography
+tags: [Photography, Geology]
 author: pgmac
 youtubeId: WIHk_A0z0Rc
 ---

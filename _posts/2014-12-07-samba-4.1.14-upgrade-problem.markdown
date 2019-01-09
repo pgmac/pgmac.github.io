@@ -2,6 +2,7 @@
 layout: post
 title: Samba 4.1.14 upgrade problem
 category: Technology
+tags: [samba, Upgrades, YMMV]
 author: pgmac
 ---
 I just decided (in my infinite wisdom) to perform an upgrade of my samba-4.0.3 installation up to samba-4.1.14.

@@ -2,6 +2,7 @@
 layout: post
 title: Google Hangouts update
 category: Technology
+tags: [Google, Messaging]
 author: pgmac
 ---
 Google is [updating their Hangouts](http://googleblog.blogspot.com.au/2013/10/google-hangouts-and-photos-save-some.html){:target="_blank"} messaging app to include (among other things) SMS integration.  This is both great and scary.  Fingers crossed everything will work nicely and still be secure.
