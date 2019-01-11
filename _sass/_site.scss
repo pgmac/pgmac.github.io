@@ -139,6 +139,15 @@
     font-weight: 300;
 }
 
+.footer-col-wrapper {
+    background: #ffffff;
+    width: 50%;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3 {
+    width: 30%;
+}
+
 @media (max-width: 1050px) {
     .page-content{  
         margin: $spacing-unit 2%;
