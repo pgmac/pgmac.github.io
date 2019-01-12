@@ -100,6 +100,8 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+    margin: 30px auto;
+    width: 980px;
 }
 
 .footer-heading {
@@ -118,7 +120,7 @@
     color: $grey-color;
     margin-left: -$spacing-unit / 2;
     height: 100%;
-    width: 50%
+    width: 980px%;
 }
 
 .footer-col {

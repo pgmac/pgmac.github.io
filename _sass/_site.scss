@@ -141,11 +141,17 @@
 
 .footer-col-wrapper {
     background: #ffffff;
-    width: 50%;
 }
 
-.footer-col-1, .footer-col-2, .footer-col-3 {
-    width: 30%;
+.footer-col {
+    display: block;
+    width: 33%;
+    float: left;
+    padding: 2px;
+    margin: 0px;
+    height: 100%;
+    background: #ffffff;
+    text-align: center;
 }
 
 @media (max-width: 1050px) {
@@ -153,4 +159,9 @@
         margin: $spacing-unit 2%;
         width: 96%;
     }
+}
+
+.site-footer {
+    margin: 30px auto;
+    width: 980px;
 }
