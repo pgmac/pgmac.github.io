@@ -9,11 +9,15 @@ layout: default
     <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="{{ author.web }}">{{ author.name }}</a></span></span>{% endif %}</p>
   </header>
 
+  <p>&nbsp;</p>
+
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
 
-{% if author %}
+  <p>&nbsp;</p>
+
+  {% if author %}
   <p>
     Penned by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a><br/>
     {{ author.tag }}
