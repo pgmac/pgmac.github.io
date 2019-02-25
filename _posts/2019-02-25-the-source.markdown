@@ -5,7 +5,8 @@ category: Technology
 tags: [Coding, Source code]
 author: pgmac
 ---
-A little while I pennd a quick (and funny?) ditty about source code, loosely based on the theme song of the Mr Ed show.
+A little while I penned a quick (and funny?) ditty about source code, loosely based on the theme song of the Mr Ed show.
+
 
 The source is the source
 
