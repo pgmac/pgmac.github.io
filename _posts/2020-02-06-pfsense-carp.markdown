@@ -6,7 +6,7 @@ tags: [Networks, Firewall, VLAN, High Availability]
 author: pgmac
 ---
 
-Tricky trickness
+pfSense Tricky trickness
 
 # CARP
 
@@ -28,3 +28,22 @@ tcp connections fail
 
 pfSense only sync the base pfSense configuration items. They don't sync the configuration for any third party packages.
 I understand the decision for this, but it can be frustrating when your Highly Available pair of pfSense boxes don't work properly. Especially when BGP (frr) is involved.
+
+# BGP configuration
+
+## Neighbors
+
+Neighbors need to be configured.
+I have only seen the "Raw Config" optiont to add in neighbors. You need to configure the source(/local) address and the remote address. The MD5 auth password could be optional, but I've only even configured them with a MD5 auth password.
+The logs aren't always helpful when trying to diagnose what's happening. I found doing a tcpdump on the pfSense hosts gave me more information.
+tcpdump -ni eth0 port 179
+Without the MD5 auth password, I'd see messages like:
+"md5 shared secret not supplied with -M, can't check - <md5 hash>"
+
+The BGP Neighbor status will be shown as "Active" - which is actually very bad and means that nothing is happening.
+
+### BGP neighbor states
+
+*Active*: Not doing anything, not talking to any one. The exact opposite of "Active". This is likely a configuration problem with the neighbor (MD5 auth password, etc).
+*Connect*: It's trying to connect to the neighbor, but is likely having problems. Firewalls and routes are things to look at here.
+*Established*: It's alive! Things are good, routes are advertised. You should be good to go.
