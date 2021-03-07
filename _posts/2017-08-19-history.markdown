@@ -1,0 +1,35 @@
+---
+layout: post
+title: History
+category: Language
+tags: [Shower thoughts]
+author: pgmac
+---
+
+So, I've been thinking about the popular belief of the origin of the word "history". The concatenation of his-story. While not technically correct, you could argue there is some connection there from the original Greek word.
+
+| Origin: Greek                  |
+| :----------------------------- |
+| **histor**: Learned, wise man. |
+
+| Greek                                         |
+| :-------------------------------------------- |
+| **historia**: finding out, narrative, history |
+
+| Latin                                                             |
+| :---------------------------------------------------------------- |
+| **history**: The study of past events, particularly human affairs |
+
+<br>
+
+But, let's not let's not let the facts get in the way of a good story.
+
+Perhaps a better word may be "ourstory". Or maybe "thestory".
+
+But, we all know history is written by the winner. So these words don't really apply, when much of the past has only been expressed through one, or very few, view point(s).
+
+A more correct word maybe "astory".
+
+Going forward, with the advent of the internet, collaborative online sources of information (Wikipedia, etc), social media and blogs. A large portion of the people can now contribute to the narrative of human affairs.
+
+So, I think a word like "omnistory" might be a good alternative.
