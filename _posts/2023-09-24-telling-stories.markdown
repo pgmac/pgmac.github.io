@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Windows Server Virtual Interface with a configured VLAN with a custom MAC
+title: Telling stories
 category: Family
 tags: [Family, Stories]
 author: pgmac
