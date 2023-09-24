@@ -2,7 +2,7 @@
 layout: post
 title: The sleepy prince
 category: Family
-tags: [Family, Stories]
+tags: [Family, Stories, Tales]
 author: pgmac
 ---
 

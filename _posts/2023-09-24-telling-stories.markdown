@@ -15,6 +15,8 @@ I'll have to make one up.
 I'm not the best at making up stories, but every now and then things come together and pull some magic out - or at least something that works.
 These are the stories I made up while driving.
 
+****
+
 <ul class="posts">
 {% for post in site.tags.Stories limit: 20 %}
   <div class="post_info">
@@ -25,32 +27,3 @@ These are the stories I made up while driving.
     </div>
   {% endfor %}
 </ul>
-
-****
-
-{% for category in page.categories %}
-  {% assign moreThanOneInCategory = false %}
-  {% assign posts = site.categories[category] %}
-
-  {% for post in posts %}
-    {% if forloop.length > 1 %}
-      {% assign moreThanOneInCategory = true %}
-    {% endif %}
-  {% endfor %}
-  {% if moreThanOneInCategory == true %}
-    <div class="related-posts">
-      <h3>Other posts archived in “{{ category }}”</h3>
-      <ul>
-        {% for post in posts %}
-          {% unless post.url == page.url %}
-            <li>
-              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-
-              Published on <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-            </li>
-          {% endunless %}
-        {% endfor %}
-      </ul>
-    </div>
-  {% endif %}
-{% endfor %}
