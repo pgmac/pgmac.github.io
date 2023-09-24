@@ -6,8 +6,8 @@ tags: [Family, Stories, Tales]
 author: pgmac
 ---
 
-Once upon a time there was a sleepy prince. But no matter how hard he tried he just couldn't get comfortable enough to fall asleep.<br />
-Try as he might he just couldn't get comfortable.<br />
+Once upon a time there was a sleepy prince.<br />
+But no matter how hard he tried he just couldn't get comfortable enough to fall asleep.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get comfortable.
@@ -20,7 +20,7 @@ He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
 So they called for the royal tailor.<br />
-They made him some new pyjamas from the softest, most comforable materical.<br />
+They made him some new pyjamas from the softest, most comfortable material.<br />
 But that didn't work.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
