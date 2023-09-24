@@ -50,5 +50,6 @@ But just couldn't get to sleep.
 
 So they called for the royal storyteller.<br />
 They told the most calming and relaxing stories ever told.<br />
-Eventually, the little prince drifted off to sleep.  
+Eventually, the little prince drifted off to sleep.
+
 Night night, little price. Sleep tight. Sweet dreams. And I'll see you in the morning.
