@@ -16,9 +16,7 @@ I'm not the best at making up stories, but every now and then things come togeth
 
 ****
 
-These are the stories I made up:
-
-* while driving
+These are the stories I made up while driving.
 
 <ul class="posts">
 {% for post in site.tags.Tales limit: 20 %}
