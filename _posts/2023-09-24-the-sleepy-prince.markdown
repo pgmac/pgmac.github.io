@@ -6,8 +6,6 @@ tags: [Family, Stories, Tales]
 author: pgmac
 ---
 
-# The sleepy prince
-
 Once upon a time there was a sleepy prince. But no matter how hard he tried he just couldn't get comfortable enough to fall asleep.<br />
 Try as he might he just couldn't get comfortable.<br />
 He wiggled and jiggled.<br />
