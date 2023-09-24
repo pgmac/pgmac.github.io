@@ -17,4 +17,12 @@ These are the stories I made up while driving.
 
 ****
 
-{% link _posts/2023-09-24-telling-stories.markdown %}
+{% for category in page.categories %}
+  {% assign posts = site.categories[category] %}
+
+  {% for post in posts %}
+    {% if forloop.length > 1 %}
+      {% assign moreThanOneInCategory = true %}
+    {% endif %}
+  {% endfor %}
+{% endor %}
