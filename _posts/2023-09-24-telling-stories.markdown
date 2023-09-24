@@ -25,4 +25,4 @@ These are the stories I made up while driving.
       {% assign moreThanOneInCategory = true %}
     {% endif %}
   {% endfor %}
-{% endor %}
+{% endfor %}
