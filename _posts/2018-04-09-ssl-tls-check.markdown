@@ -112,7 +112,7 @@ else
 fi  
 ```
 
-While to worked, it relied on my doing the checks to ensure validity. It was good having the raw data there to verify, but I didn't want to be the verification engine. I wanted the tool to do that and let me know.
+While it worked, it relied on me doing the checks to ensure validity. It was good having the raw data there to verify, but I didn't want to be the verification engine. I wanted the tool to do that and let me know.
 
 Enter curl.
 
@@ -130,11 +130,11 @@ curl -v --resolve myhost.name:443:a.b.c.d
 
 Where:
 
-|Value|Description|
-|---:|---|
-|**"myhost.name"**|is the DNS name of the site to check|
-|**"443"**|is the port to connect to|
-|**"a.b.c.d"**|is the IP address of the server you want to check.|
+|             Value | Description                                        |
+| ----------------: | -------------------------------------------------- |
+| **"myhost.name"** | is the DNS name of the site to check               |
+|         **"443"** | is the port to connect to                          |
+|     **"a.b.c.d"** | is the IP address of the server you want to check. |
 
 EG:
 
