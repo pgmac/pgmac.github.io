@@ -17,4 +17,4 @@ These are the stories I made up while driving.
 
 ****
 
-{% link _posts/2023-09-24-telling-stories.markdown }
+{% link _posts/2023-09-24-telling-stories.markdown %}
