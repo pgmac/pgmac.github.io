@@ -7,10 +7,10 @@ author: pgmac
 ---
 
 Once upon a time there was a sleepy prince.<br />
-But no matter how hard he tried he just couldn't get comfortable enough to fall asleep.<br />
+No matter how hard he tried he just couldn't get comfortable enough to fall asleep.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
-But just couldn't get comfortable.
+But just couldn't get to sleep.
 
 So they called for the royal waiters.<br />
 They fetched him snacks and warm milk to help him sleep.<br />
