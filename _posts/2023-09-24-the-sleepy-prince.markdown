@@ -1,40 +1,40 @@
 ---
 layout: post
-title: The sleepy prince
+title: The Sleepy Prince
 category: Family
 tags: [Family, Stories, Tales]
 author: pgmac
 ---
 
-Once upon a time there was a sleepy prince.<br />
+Once upon a time there was a Sleepy Prince.<br />
 No matter how hard he tried he just couldn't get comfortable enough to fall asleep.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
-So they called for the royal waiters.<br />
-They fetched him snacks and warm milk to help him sleep.<br />
+So they called for the royal butlers.<br />
+The royal butlers fetched the Sleepy Prince some snacks and warm milk to help him sleep.<br />
 But that didn't work.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
 So they called for the royal tailor.<br />
-They made him some new pyjamas from the softest, most comfortable material.<br />
+The royal tailor made the Sleepy Prince some new pyjamas from the softest, most comfortable material ever.<br />
 But that didn't work.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
 So they called for the royal veteraniarian.<br />
-They brought the softest, cutest puppies and kittens for him to play with and cuddle.<br />
+The royal veteraniarian brought the Sleepy Prince the softest, cutest puppies and kittens for him to cuddle.<br />
 But that didn't work.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
 So they called for the royal storyteller.<br />
-They told the most calming and relaxing stories ever told.<br />
-Eventually, the little prince drifted off to sleep.
+The royal storyteller take told the Sleepy Price the most calming and relaxing stories ever told.<br />
+Eventually, the Sleepy Prince slowly drifted off to sleep.
 
-Night night, little price. Sleep tight. Sweet dreams. And I'll see you in the morning.
+Night night, Sleepy Price. Sleep tight. Sweet dreams. And I'll see you in the morning.
