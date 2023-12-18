@@ -34,7 +34,7 @@ He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
 So they called for the royal storyteller.<br />
-The royal storyteller take told the Sleepy Price the most calming and relaxing stories ever told.<br />
+The royal storyteller told the Sleepy Price the most calming and relaxing stories ever told.<br />
 Eventually, the Sleepy Prince slowly drifted off to sleep.
 
 Night night, Sleepy Price. Sleep tight. Sweet dreams. And I'll see you in the morning.
