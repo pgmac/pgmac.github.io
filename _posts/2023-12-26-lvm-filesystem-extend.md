@@ -2,7 +2,7 @@
 layout: post
 title: Extending/resizing a logical volume file system
 category: Technology
-tags: [lvm, pv, lv]
+tags: [lvm, pv, lv, storage]
 author: pgmac
 ---
 In my infinite wisdom, I recently decided to "Just add more disk" to address a problem I was having with garbage collection.
