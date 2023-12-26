@@ -53,3 +53,9 @@ This got me back about 5% disk space (on an 80GB file system).
 That'll do for now.
 
 Now - to schedule this on a regular period. But, that's a story for another night.
+
+What I would dearly love to do is to figure out WHY the kubelet found 0 eligible bytes for garbage collection.
+If I could do that, then address that problem, I'd be in a much happier place.
+
+By all reports from my searching, this seems to be poorly logged right now, so investigating is difficult.
+Garbage collection is a bit of a black art (not as bad as cache invalidation, of course).
