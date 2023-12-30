@@ -41,17 +41,17 @@ The combination of these that makes the magic work is:
 7. `df`<br/>
    Gaze in wonder at all the additional storage you have available to you now
 
-Other commands that might be helpful:
+Other commands that might be helpful:s
 
 Have a look at their manpages and/or --help system
 
 1. `partprobe`<br/>
-   This informs the operating system about partition table changes.
+   This informs the operating system about partition table changes. This is useful if/when your `lsblk`, `vgs` and/or `pvs` aren't seeing the updated numbers.
 2. `growpart`<br/>
-   This will rewrite the partition table so the partition takes up all the space it can
+   This will rewrite the partition table so the partition takes up all the space it can. This is more useful for systems NOT using LVM.
 3. `resize2fs`<br/>
-   The resize2fs program willresize ext2, ext3, or ext4 file systems.
+   The resize2fs program willresize ext2, ext3, or ext4 file systems. This is more useful for systems NOT using LVM.
 4. `fsadm`<br/>
-   This utility checks or resizes the filesystem on a device.
+   This utility checks or resizes the filesystem on a device. This is used by some internal systems. YMMV.
 5. `fdisk`<br/>
-   Display or manipulate a disk partition table.
+   Display or manipulate a disk partition table. You can create and destroy your file systems in here. You have been warned.
