@@ -54,4 +54,4 @@ Have a look at their manpages and/or --help system
 4. `fsadm`<br/>
    This utility checks or resizes the filesystem on a device. This is used by some internal systems. YMMV.
 5. `fdisk`<br/>
-   Display or manipulate a disk partition table. You can create and destroy your file systems in here. You have been warned.
+   Display or manipulate a disk partition table. You can create or destroy your file systems and data in here. You have been warned.
