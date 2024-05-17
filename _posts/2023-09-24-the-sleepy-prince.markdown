@@ -19,21 +19,28 @@ He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
-So they called for the royal tailor.<br />
+So they called for the royal <a title="clothes maker">tailor</a>.<br />
 The royal tailor made the Sleepy Prince some new pyjamas from the softest, most comfortable material ever.<br />
 But that didn't work.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
-So they called for the royal veteraniarian.<br />
+So they called for the royal <a title="plushie maker">plushie maker</a>.<br />
+The royal tailor made the Sleepy Prince a new plushie for him to cuddle.<br />
+That worked a little bit.<br />
+He wiggled and jiggled.<br />
+He jiggled and wiggled.<br />
+But just couldn't get to sleep.
+
+So they called for the royal <a title="animal doctor">veteraniarian</a>.<br />
 The royal veteraniarian brought the Sleepy Prince the softest, cutest puppies and kittens for him to cuddle.<br />
 But that didn't work.<br />
 He wiggled and jiggled.<br />
 He jiggled and wiggled.<br />
 But just couldn't get to sleep.
 
-So they called for the royal storyteller.<br />
+So they called for the royal <a title="story teller">bard</a>.<br />
 The royal storyteller told the Sleepy Price the most calming and relaxing stories ever told.<br />
 Eventually, the Sleepy Prince slowly drifted off to sleep.
 
