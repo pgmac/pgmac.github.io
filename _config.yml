@@ -31,6 +31,8 @@ paginate: 5
 tag_page_layout: tag_page
 tag_page_dir: tag
 tag_permalink_style: pretty
+tag_feed_layout: tag_feed
+tag_feed_dir: tag
 
 category_path: /
 
