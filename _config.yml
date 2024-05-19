@@ -28,6 +28,12 @@ twitter_username: pmacdonnell
 github_username:  pgmac
 paginate: 5
 
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
+
+category_path: /
+
 # Build settings
 theme: minima
 markdown: kramdown
@@ -36,6 +42,7 @@ gems:
   - jekyll-paginate
 plugins:
   - jekyll-feed
+  - jekyll-category-pages
 
 # Exclude from processing.
 # The following items will not be processed, by default.

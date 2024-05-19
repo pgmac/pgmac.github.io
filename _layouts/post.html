@@ -18,6 +18,14 @@ layout: default
 
   <p>&nbsp;</p>
 
+  <p>
+    <ul>
+{% for tags in page.tags %}
+      <li><a href="/tag/{{ tags | slugify }}">{{ tags }}</a></li>
+{% endfor %}
+    </ul>
+  </p>
+
   {% if author %}
   <p>
     Penned by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a><br/>
