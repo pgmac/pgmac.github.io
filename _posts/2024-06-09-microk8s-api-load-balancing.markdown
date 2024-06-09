@@ -9,6 +9,8 @@ author: pgmac
 Here's a tale of how I came to load balance the Control Plane API of my 3 node microk8s cluster running on VM's in my home lab.
 
 - [How?](#how)
+  - [Requirements](#requirements)
+    - [Stuff](#stuff)
   - [Update your microk8s certs](#update-your-microk8s-certs)
     - [Where the certs live](#where-the-certs-live)
     - [Verify your newly updated certs](#verify-your-newly-updated-certs)
@@ -22,10 +24,26 @@ Here's a tale of how I came to load balance the Control Plane API of my 3 node m
     - [Go TLS deep](#go-tls-deep)
     - [Does kubectl like it?](#does-kubectl-like-it)
 - [Why?](#why)
+- [Other ideas I probably should have thought of](#other-ideas-i-probably-should-have-thought-of)
+  - [DNS round-robin](#dns-round-robin)
+- [Other things I tried that didn't work](#other-things-i-tried-that-didnt-work)
+  - [tcp load balancer](#tcp-load-balancer)
+  - [Commenting out the `certificate-authority-data` entry in `~/.kube/config`](#commenting-out-the-certificate-authority-data-entry-in-kubeconfig)
+  - [Lots of HAProxy config trial and error](#lots-of-haproxy-config-trial-and-error)
 
 # How?
 
-Before we get started, here's some of my choices:
+Before we get started, here's some of my choices, limitations and requirements:
+
+## Requirements
+
+This is to make connecting to my cluster more reliable when a node is unavailable. Could be it's dead, could be it's in maintenance. Whatever.
+
+I don't want to change my `~/.kube/config` after this.
+
+### Stuff
+
+I have a pfSense firewall. I'll use that with HAProxy to provide Load Balancing.
 
 **Load Balancer IP**: `172.22.22.3`
 
@@ -183,7 +201,7 @@ EG:
 
 ### Create the frontend config
 
-
+checks need to accept a 403
 
 ## Update your `~/.kube/config`
 
@@ -333,7 +351,7 @@ closed
 ```
 
 That looks pretty good, too.
-The `Verify return code: 21 (unable to verify the first certificate)` is a little nervy. It IS still a self-signed cert, so it wouldn't be able to match it against the OS certificates. I reckon that makes sense.
+The `Verify return code: 21 (unable to verify the first certificate)` is a little nervy. It IS still a self-signed cert, so it wouldn't be able to match it against the OS CA certificates. I reckon that makes sense.
 
 ### Does kubectl like it?
 
@@ -352,8 +370,38 @@ You beauty! That looks like a winner to me.
 # Why?
 
 Well, my cluster isn't that stable. I'm constantly tinkering with it and it falls over pretty regularly, for one reason or another. I spend a reasonable amount of time picking the nodes back up and putting them back in the cluster again. It's mostly replicated shared storage (OpenEBS Jiva) that's the culprit here, but that's a story for another day.
+
 Because I'm running on VM's in a very limtied home lab, I have no room to scale, so I can't just run up another node to replace a faulty node. I need to get the faulty one working again. This is normally as simple as rebooting it. But that's actually not that simple. It's not difficult either, it's just a process. Thankfully I can automate that with Ansible.
 
-However, while that node is rebooting, that Control Place API host is also not available. At least one third of the time, that also means I can't manage, monitor, or otherwise maintain my cluster.
+However, while that node is rebooting, that Control Plane API host is also not available. At least one third of the time (during these reboots), that also means I can't manage, monitor, or otherwise maintain my cluster.
 
 So, to get around having to edit my `~/.kube/config` everytime, I thought I'd load balance the Control Plane API on my pfSense firewall. I figured if the pfSense isn't available, I've got bigger problems. Also, if I _really_ needed to, I could always edit my `~/.kube/config` and point it directly at a node in the cluster again.
+
+# Other ideas I probably should have thought of
+
+## DNS round-robin
+
+Using any of the existing SAN hostnames, I could have created an internal DNS entry for that name and pointed it to all of my node IP addresses.
+While not great, it would probably still work. The odd error would still come through if `kubectl` tried to connect to a node that was down at the time.
+Maybe `kubectl` is smart enough to retry these? Maybe not? I don't know. I didn't try it.
+
+# Other things I tried that didn't work
+
+## tcp load balancer
+
+This is how I know about IP Address SAN's (Subject Alternate Names).
+
+Because it verifies the IP SAN and the Load Balancer IP isn't on the list, it's invalid.
+
+Yeah, that doesn't work.
+
+## Commenting out the `certificate-authority-data` entry in `~/.kube/config`
+
+I saw some comments saying you could comment out the `certificate-authority-data` section in your cluster's config in `~/.kube/config` and it would ignore the certs.
+
+Yeah, that doesn't work.
+
+## Lots of HAProxy config trial and error
+
+- Don't configure client certificate details
+- 
