@@ -20,7 +20,7 @@ Here's a tale of how I came to load balance the Control Plane API of my 3 node m
   - [Setup HAProxy](#setup-haproxy)
     - [Create the HAProxy backend config](#create-the-haproxy-backend-config)
     - [Create the HAProxy frontend config](#create-the-haproxy-frontend-config)
-  - [Update your `~/.kube/config`](#update-your-kubeconfig)
+  - [Update your kubectl config](#update-your-kubectl-config)
   - [Test it](#test-it)
     - [Start with curl](#start-with-curl)
     - [Go TLS deep](#go-tls-deep)
@@ -191,12 +191,12 @@ X509v3 Subject Alternative Name:
 
 ## Import this updated cert and CA to pfSense
 
-![Importing the microk8s CA to pfSense](/assets/pfsense-certificate-ca.png)
+![Importing the microk8s CA to pfSense](/assets/pfsense-certificate-ca.png){:width="100%"}
 
 I added both the certificate and the key to my microk8s CA (Certificate Authority) to pfSEnse.
 You don't have to add the key, but I did. I've removed the key from the screenshot for obvious reasons.
 
-![Importing the microk8s certificate to pfSense](/assets/pfsense-certificate.png)
+![Importing the microk8s certificate to pfSense](/assets/pfsense-certificate.png){:width="100%"}
 
 I added both the certificate and the key to my microk8s certificate to pfSEnse.
 You don't have to add the key, but I did. I've removed the key from the screenshot for obvious reasons.
@@ -210,7 +210,7 @@ I'm using pfSense, so the HAProxy package is the perfect choice, here.
 Using my choice of Load Balancer IP address, I created a `Virtual IPs` entry in the pfSense Firewall section.
 
 EG:
-![pfSense Virtual IPs](/assets/pfsense-virtualips.png)
+![pfSense Virtual IPs](/assets/pfsense-virtualips.png){:width="100%"}
 
 ## Setup HAProxy
 
@@ -227,18 +227,18 @@ Here's a run down of the backend config. It's most straight forward.
    2. Select your CA you want to use
    3. DO NOT select Client Certificate. You'll have a bad day
 
-![pfSense HAProxy Backend Server Pool](/assets/pfsense-backend-serverpool.png)
+![pfSense HAProxy Backend Server Pool](/assets/pfsense-backend-serverpool.png){:width="100%"}
 
 2. Setup some health checks
    1. HTTP seemed like a good idea
    2. Logging felt good, too. Mostly so I could see why it broke as I was testing. You could probably turn this off.
 
-![pfSense HAProxy Backend Health Checking](/assets/pfsense-backend-healthchecking.png)
+![pfSense HAProxy Backend Health Checking](/assets/pfsense-backend-healthchecking.png){:width="100%"}
 
 3. Tweak some advanced bits
    1. Because you're going to get 403's from the backend server, you'd best say that's a good thing.
 
-![pfSense HAProxy Backend Advanced](/assets/pfsense-backend-advanced.png)
+![pfSense HAProxy Backend Advanced](/assets/pfsense-backend-advanced.png){:width="100%"}
 
 Please remember to enable stats, too. That's much nicer to understand what's going on and why your backend servers might be borked.
 
@@ -255,13 +255,13 @@ It'll need to be an `Active` status. Otherwise it just won't go.
 `type` is `tcp` or `ssl / https (TCP)`. Using `http/https(offloading)` breaks it :shrug:
 I started with `tcp` but ended up moving to `ssl / https (TCP)`. It just "felt" better.
 
-![pfSense HAProxy Frontend](/assets/pfsense-haproxy-frontend.png)
+![pfSense HAProxy Frontend](/assets/pfsense-haproxy-frontend.png){:width="100%"}
 
 Setup an ACL to select the backend group.
 I just did a dodgy one. You should probably do something better.
 I've only got the one backend group here, so I'm not worried.
 
-![pfSense HAProxy Frontend Backends](/assets/pfsense-frontend-backends.png)
+![pfSense HAProxy Frontend Backends](/assets/pfsense-frontend-backends.png){:width="100%"}
 
 SSL Offboarding config
 
@@ -270,7 +270,7 @@ I left the SNI Filter blank, you could probably put something there. I didn't.
 Select your microk8s Certificate.
 Check the Add ACL checkboxes for CommonName and SAN's
 
-![pfSense HAProxy Frontend SSL Offboarding](/assets/pfsense-frontend-ssloffboarding.png)
+![pfSense HAProxy Frontend SSL Offboarding](/assets/pfsense-frontend-ssloffboarding.png){:width="100%"}
 
 ## Update your kubectl config
 
