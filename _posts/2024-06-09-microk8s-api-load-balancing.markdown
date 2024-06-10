@@ -221,10 +221,10 @@ There's 2 parts to this HAProxy config. Well, pretty much any Load Balancer setu
 
 ### Create the HAProxy backend config
 
-Here's a run down of the backend config. It's most straight forward.
+Here's a run down of the backend config. It's mostly straight forward.
 
 1. Add your backend nodes
-   1. Ensure you check their certificates (it IS a nice to do afterall)
+   1. Ensure you check their certificates (it IS nice to do afterall)
    2. Select your CA you want to use
    3. DO NOT select Client Certificate. You'll have a bad day
 
@@ -242,6 +242,7 @@ Here's a run down of the backend config. It's most straight forward.
 ![pfSense HAProxy Backend Advanced](/assets/pfsense-backend-advanced.png){:width="100%"}
 
 Please remember to enable stats, too. That's much nicer to understand what's going on and why your backend servers might be borked.
+Or don't. Whatever. I'm not your mother.
 
 ### Create the HAProxy frontend config
 
