@@ -2,7 +2,7 @@
 layout: post
 title: Microk8s Control Plane API Load Balancing
 category: Tech
-tags: [Tech, k8s, HA]
+tags: [Tech, k8s, HA, HomeLab]
 author: pgmac
 ---
 
@@ -214,7 +214,7 @@ EG:
 
 ## Setup HAProxy
 
-There's 2 part to this HAProxy config. Well, pretty much any Load Balancer setup, really.
+There's 2 parts to this HAProxy config. Well, pretty much any Load Balancer setup, really.
 1. frontend
 2. backend
 
