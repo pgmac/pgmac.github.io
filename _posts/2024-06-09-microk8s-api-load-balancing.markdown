@@ -14,10 +14,12 @@ Here's a tale of how I came to load balance the Control Plane API of my 3 node m
   - [Update your microk8s certs](#update-your-microk8s-certs)
     - [Where the certs live](#where-the-certs-live)
     - [Verify your newly updated certs](#verify-your-newly-updated-certs)
+  - [Import this updated cert and CA to pfSense](#import-this-updated-cert-and-ca-to-pfsense)
   - [Setup your Load Balancer](#setup-your-load-balancer)
     - [Use a dedicated IP address](#use-a-dedicated-ip-address)
-    - [Create the backend config](#create-the-backend-config)
-    - [Create the frontend config](#create-the-frontend-config)
+  - [Setup HAProxy](#setup-haproxy)
+    - [Create the HAProxy backend config](#create-the-haproxy-backend-config)
+    - [Create the HAProxy frontend config](#create-the-haproxy-frontend-config)
   - [Update your `~/.kube/config`](#update-your-kubeconfig)
   - [Test it](#test-it)
     - [Start with curl](#start-with-curl)
@@ -51,20 +53,24 @@ I have a pfSense firewall. I'll use that with HAProxy to provide Load Balancing.
 
 `kubectl` does a check of the TLS cert to make sure it's valid (good `kubectl`).
 One of these checks is a CommonName and SAN (Subject Alternate Name) check.
-In the SAN checks, there is a hostname and an IP address listed.
+In the SAN config, there is a hostname and an IP address listed.
 We need to list the new Load Balancer IP address in the IP SAN list. Without this, the certificate is invalid when you try to connect to your Load Balancer IP address.
+
+We'll need to update the certificates on each of microk8s nodes, as this is a per-node thing.
 
 ### Where the certs live
 
-Certs live in `/var/snap/microk8s/certs/`
+On each microk8s node, the certs live in `/var/snap/microk8s/certs/`.
+Let's go there:
 
 ```
 cd /var/snap/microk8s/certs/
 ```
 
 We need to update `server.crt` and `full-proxy-client.crt` to add the Load Balancer IP address to make the cert valid.
+Realistically, it's probably only the `server.crt`, but it can't hurt to do both.
 
-To do this, we only need to update the `csr.conf.template` file.
+To do this, we only need to update the `csr.conf.template` file, as this is used to generate and refresh the certificates.
 Add the following line to the `[ alt_names ]` section, just above the `#MOREIPS` line:
 ```
 IP.3 = 172.22.22.3
@@ -107,6 +113,7 @@ I was considering ansbile-ing this, so I can replay it quick and easy if/when it
 
 You should get a lot of information about your cert, fingerprints, key info, serial number, issuer, validity dates.
 
+EG:
 ```
 Certificate:
     Data:
@@ -174,7 +181,7 @@ Certificate:
          96:4f:1b:75
 ```
 
-But most importantly (in this case) the `X509v3 Subject Alternative Name:` should be updated to include your Load Balancer IP address.
+But most importantly in this case, the `X509v3 Subject Alternative Name:` should be updated to include your Load Balancer IP address.
 
 EG:
 ```
@@ -182,26 +189,86 @@ X509v3 Subject Alternative Name:
     DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster, DNS:kubernetes.default.svc.cluster.local, IP Address:127.0.0.1, IP Address:10.152.183.1, IP Address:172.22.22.3, IP Address:172.22.22.9
 ```
 
+## Import this updated cert and CA to pfSense
+
+![Importing the microk8s CA to pfSense](pfsense-certificate-ca.png)
+
+I added both the certificate and the key to my microk8s CA (Certificate Authority) to pfSEnse.
+You don't have to add the key, but I did. I've removed the key from the screenshot for obvious reasons.
+
+![Importing the microk8s certificate to pfSense](pfsense-certificate.png)
+
+I added both the certificate and the key to my microk8s certificate to pfSEnse.
+You don't have to add the key, but I did. I've removed the key from the screenshot for obvious reasons.
+
 ## Setup your Load Balancer
 
 I'm using pfSense, so the HAProxy package is the perfect choice, here.
 
 ### Use a dedicated IP address
 
-Create a `Virtual IPs` entry in your pfSense Firewall section.
+Using my choice of Load Balancer IP address, I created a `Virtual IPs` entry in the pfSense Firewall section.
 
 EG:
-```
 ![alt text](pfsense-virtualips.png)
-```
 
-### Create the backend config
+## Setup HAProxy
 
+There's 2 part to this HAProxy config. Well, pretty much any Load Balancer setup, really.
+1. frontend
+2. backend
 
+### Create the HAProxy backend config
 
-### Create the frontend config
+Here's a run down of the backend config. It's most straight forward.
 
-checks need to accept a 403
+1. Add your backend nodes
+   1. Ensure you check their certificates (it IS a nice to do afterall)
+   2. Select your CA you want to use
+   3. DO NOT select Client Certificate. You'll have a bad day
+
+![alt text](pfsense-backend-serverpool.png)
+
+2. Setup some health checks
+   1. HTTP seemed like a good idea
+   2. Logging felt good, too. Mostly so I could see why it broke as I was testing. You could probably turn this off.
+
+![alt text](pfsense-backend-healthchecking.png)
+
+3. Tweak some advanced bits
+   1. Because you're going to get 403's from the backend server, you'd best say that's a good thing.
+
+![alt text](pfsense-backend-advanced.png)
+
+### Create the HAProxy frontend config
+
+Getting the frontend config right is where I lost the bulk of my time. I'll hit that first.
+
+Pretty straight forward so far, make sure you're using your chosen Load Balancer IP address and network CIDR range.
+
+It'll need to be an `Active` status. Otherwise it just won't go.
+
+`SSL Offboarding` is important here. This is what allows you set the certificate and CA to use below.
+
+`type` is `tcp` or `ssl / https (TCP)`. Using `http/https(offloading)` breaks it :shrug:
+I started with `tcp` but ended up moving to `ssl / https (TCP)`. It just "felt" better.
+
+![HAProxy Frontend](pfsense-haproxy-frontend.png)
+
+Setup an ACL to select the backend group.
+I just did a dodgy one. You should probably do something better.
+I've only got the one backend group here, so I'm not worried.
+
+![alt text](pfsense-frontend-backends.png)
+
+SSL Offboarding config
+
+I left the SNI Filter blank, you could probably put something there. I didn't.
+
+Select your microk8s Certificate.
+Check the Add ACL checkboxes for CommonName and SAN's
+
+![alt text](pfsense-frontend-ssloffboarding.png)
 
 ## Update your `~/.kube/config`
 
@@ -212,6 +279,8 @@ Find the correct cluster config and update the `server` entry:
     server: https://172.22.22.3:16433
   name: pvek8s-cluster
 ```
+
+That should be about it.
 
 ## Test it
 
