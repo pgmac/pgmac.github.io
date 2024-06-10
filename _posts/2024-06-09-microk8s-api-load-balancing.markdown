@@ -210,7 +210,7 @@ I'm using pfSense, so the HAProxy package is the perfect choice, here.
 Using my choice of Load Balancer IP address, I created a `Virtual IPs` entry in the pfSense Firewall section.
 
 EG:
-![alt text](pfsense-virtualips.png)
+![pfSense Virtual IPs](pfsense-virtualips.png)
 
 ## Setup HAProxy
 
@@ -227,18 +227,18 @@ Here's a run down of the backend config. It's most straight forward.
    2. Select your CA you want to use
    3. DO NOT select Client Certificate. You'll have a bad day
 
-![alt text](pfsense-backend-serverpool.png)
+![pfSense HAProxy Backend Server Pool](pfsense-backend-serverpool.png)
 
 2. Setup some health checks
    1. HTTP seemed like a good idea
    2. Logging felt good, too. Mostly so I could see why it broke as I was testing. You could probably turn this off.
 
-![alt text](pfsense-backend-healthchecking.png)
+![pfSense HAProxy Backend Health Checking](pfsense-backend-healthchecking.png)
 
 3. Tweak some advanced bits
    1. Because you're going to get 403's from the backend server, you'd best say that's a good thing.
 
-![alt text](pfsense-backend-advanced.png)
+![pfSense HAProxy Backend Advanced](pfsense-backend-advanced.png)
 
 Please remember to enable stats, too. That's much nicer to understand what's going on and why your backend servers might be borked.
 
@@ -255,13 +255,13 @@ It'll need to be an `Active` status. Otherwise it just won't go.
 `type` is `tcp` or `ssl / https (TCP)`. Using `http/https(offloading)` breaks it :shrug:
 I started with `tcp` but ended up moving to `ssl / https (TCP)`. It just "felt" better.
 
-![HAProxy Frontend](pfsense-haproxy-frontend.png)
+![pfSense HAProxy Frontend](pfsense-haproxy-frontend.png)
 
 Setup an ACL to select the backend group.
 I just did a dodgy one. You should probably do something better.
 I've only got the one backend group here, so I'm not worried.
 
-![alt text](pfsense-frontend-backends.png)
+![pfSense HAProxy Frontend Backends](pfsense-frontend-backends.png)
 
 SSL Offboarding config
 
@@ -270,7 +270,7 @@ I left the SNI Filter blank, you could probably put something there. I didn't.
 Select your microk8s Certificate.
 Check the Add ACL checkboxes for CommonName and SAN's
 
-![alt text](pfsense-frontend-ssloffboarding.png)
+![pfSense HAProxy Frontend SSL Offboarding](pfsense-frontend-ssloffboarding.png)
 
 ## Update your `~/.kube/config`
 
