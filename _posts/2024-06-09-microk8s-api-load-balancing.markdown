@@ -246,7 +246,7 @@ Or don't. Whatever. I'm not your mother.
 
 ### Create the HAProxy frontend config
 
-Getting the frontend config right is where I lost the bulk of my time. I'll hit that first.
+Getting the frontend config right is where I lost the bulk of my time.
 
 Pretty straight forward so far, make sure you're using your chosen Load Balancer IP address and network CIDR range.
 
