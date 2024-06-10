@@ -240,6 +240,8 @@ Here's a run down of the backend config. It's most straight forward.
 
 ![alt text](pfsense-backend-advanced.png)
 
+Please remember to enable stats, too. That's much nicer to understand what's going on and why your backend servers might be borked.
+
 ### Create the HAProxy frontend config
 
 Getting the frontend config right is where I lost the bulk of my time. I'll hit that first.
@@ -473,6 +475,6 @@ Yeah, that doesn't work.
 ## Lots of HAProxy config trial and error
 
 - Don't configure client certificate details
-- 
+- Differences between `http/https (Offloading)` and `ssl / https (TCP mode)`
 
 Yeah, that doesn't work.
