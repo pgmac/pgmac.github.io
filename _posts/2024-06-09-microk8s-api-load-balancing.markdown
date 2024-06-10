@@ -29,8 +29,9 @@ Here's a tale of how I came to load balance the Control Plane API of my 3 node m
 - [Other ideas I probably should have thought of](#other-ideas-i-probably-should-have-thought-of)
   - [DNS round-robin](#dns-round-robin)
 - [Other things I tried that didn't work](#other-things-i-tried-that-didnt-work)
-  - [tcp load balancer](#tcp-load-balancer)
-  - [Commenting out the `certificate-authority-data` entry in `~/.kube/config`](#commenting-out-the-certificate-authority-data-entry-in-kubeconfig)
+  - [tcp load balancer with SSL Offloading (SSL pass-thru)](#tcp-load-balancer-with-ssl-offloading-ssl-pass-thru)
+  - [Seting the client certificates](#seting-the-client-certificates)
+  - [Commenting out the `certificate-authority-data` entry in your kubectl config](#commenting-out-the-certificate-authority-data-entry-in-your-kubectl-config)
   - [Lots of HAProxy config trial and error](#lots-of-haproxy-config-trial-and-error)
 
 # How?
@@ -193,12 +194,12 @@ X509v3 Subject Alternative Name:
 
 ![Importing the microk8s CA to pfSense](/assets/pfsense-certificate-ca.png){:width="100%"}
 
-I added both the certificate and the key to my microk8s CA (Certificate Authority) to pfSEnse.
+I added both the certificate and the key to my microk8s CA (Certificate Authority) to pfSense.
 You don't have to add the key, but I did. I've removed the key from the screenshot for obvious reasons.
 
 ![Importing the microk8s certificate to pfSense](/assets/pfsense-certificate.png){:width="100%"}
 
-I added both the certificate and the key to my microk8s certificate to pfSEnse.
+I added both the certificate and the key to my microk8s certificate to pfSense.
 You don't have to add the key, but I did. I've removed the key from the screenshot for obvious reasons.
 
 ## Setup your Load Balancer
@@ -460,7 +461,7 @@ Maybe `kubectl` is smart enough to retry these? Maybe not? I don't know. I didn'
 
 # Other things I tried that didn't work
 
-## tcp load balancer
+## tcp load balancer with SSL Offloading (SSL pass-thru)
 
 This is how I know about IP Address SAN's (Subject Alternate Names).
 
@@ -468,9 +469,24 @@ Because it verifies the IP SAN and the Load Balancer IP isn't on the list, it's 
 
 Yeah, that doesn't work.
 
-## Commenting out the `certificate-authority-data` entry in `~/.kube/config`
+## Seting the client certificates
+
+Either in the HAProxy Frontend config, in the "`SSL Offloading - client certificates`".
+Or in the HAProxy Backend config, in the Server Pool - Server List - Client Certificate" entries for each individual backend server.
+
+Yeah, that doesn't work.
+
+## Commenting out the `certificate-authority-data` entry in your kubectl config
 
 I saw some comments saying you could comment out the `certificate-authority-data` section in your cluster's config in `~/.kube/config` and it would ignore the certs.
+
+This bit:
+```
+- cluster:
+    # certificate-authority-data: <secret cert and key business>
+    server: https://172.22.22.3:16443
+  name: pvek8s-cluster
+```
 
 Yeah, that doesn't work.
 
