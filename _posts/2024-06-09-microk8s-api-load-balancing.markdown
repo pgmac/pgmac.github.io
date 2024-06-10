@@ -272,7 +272,9 @@ Check the Add ACL checkboxes for CommonName and SAN's
 
 ![pfSense HAProxy Frontend SSL Offboarding](/assets/pfsense-frontend-ssloffboarding.png)
 
-## Update your `~/.kube/config`
+## Update your kubectl config
+
+The one in `~/.kube/config`
 
 Find the correct cluster config and update the `server` entry:
 ```
