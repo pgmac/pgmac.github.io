@@ -103,10 +103,10 @@ jobs:
 
       - name: Commit and push if the documents have changed
         run: |-
-          git diff
+          git status _posts
           git config --global user.email "lastweek-bot@pgmac.dev"
           git config --global user.name "lastweek-bot"
-          git diff --quiet _posts/ || (git add _posts/ && git commit -m "Interesting stuff from last week")
+          git add _posts/ && git commit -m "Interesting stuff from last week"
           git push
 
       - name: Get end time
