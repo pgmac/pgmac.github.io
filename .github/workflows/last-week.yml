@@ -31,9 +31,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Get start time
         run: |
           echo "start=$(date +%s)" >> $GITHUB_ENV
@@ -84,6 +81,13 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.PGMAC_SSH }}
 
       - name: Setup python
         uses: actions/setup-python@v5
