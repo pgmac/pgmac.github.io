@@ -122,8 +122,7 @@ for tag in tags:
                 page_tags.append(f"{post_tag}")
             message = (f"{message}"
                        f"[{title}]({url}) - "
-                       f"{excerpt}\n\n"
-                       f"{post_tags}\n\n")
+                       f"{excerpt}\n\n")
             # send_to_slack(message)
     else:
         no_posts_message = f"No posts found for tag '{tag}'"
@@ -133,12 +132,11 @@ for tag in tags:
 message = (f"---\nlayout: post\n"
            f"title: Some things I found interesting from {
                last_week.strftime("%Y-%m-%d")} to {today.strftime("%Y-%m-%d")}\n"
-           f"category: Last Week\n"
+           f"category: Last-Week\n"
            f"tags: {page_tags}\n"
            f"author: pgmac\n"
            "---\n\n"
-           f"# Some things I found interesting from {last_week.strftime(
-               "%Y-%m-%d")} to {today.strftime("%Y-%m-%d")}\n\n"
+           f"# My [GetPocket](https://getpocket.com/) articles I saved\n\n"
            f"{message}")
 
 print(message)
