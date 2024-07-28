@@ -10,6 +10,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
+  schedule:
+    - cron: "30 23 * * 0"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -106,7 +108,8 @@ jobs:
           git status _posts
           git config --global user.email "lastweek-bot@pgmac.dev"
           git config --global user.name "lastweek-bot"
-          git add _posts/ && git commit -m "Interesting stuff from last week"
+
+                       f"{post_tags}\n\n"          git add _posts/ && git commit -m "Interesting stuff from last week"
           git push
 
       - name: Get end time
