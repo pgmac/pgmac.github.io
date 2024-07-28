@@ -1,0 +1,194 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+name: Create last-week's interesting post
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get start time
+        run: |
+          echo "start=$(date +%s)" >> $GITHUB_ENV
+          echo "startfmt=$(date --iso-8601=minutes)" >> $GITHUB_ENV
+
+      - name: Send Slack message
+        id: slack
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          channel-id: "C01UGQ98P9U"
+          payload: |
+            {
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text", "pretext"],
+                  "fallback": ${{ toJSON(join(github.event.commits.*.message, '<br>') || ':clock6: Scheduled') }},
+                  "color": "${{ env.colour || 'grey' }}",
+                  "pretext": "${{ env.icon || ':checkered_flag:' }} ${{ github.workflow }} (${{ github.ref_name }}) #${{ github.run_number }}",
+                  "author_name": "${{ github.triggering_actor || github.actor }}",
+                  "title": "${{ github.workflow }}",
+                  "title_link": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                  "text": ${{ toJSON(join(github.event.commits.*.message, '\n') || ':clock6: Scheduled') }},
+                  "fields": [
+                    {
+                      "title": "Status",
+                      "short": true,
+                      "value": "In Progress"
+                    },
+                    {
+                      "title": "Start",
+                      "short": true,
+                      "value": "${{ env.startfmt }}"
+                    }
+                  ]
+                },
+                {
+                  "blocks": [
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "<${{ github.event.pull_request.html_url || github.event.head_commit.url || github.server_url }}|View commit>"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.10
+          cache: "pip"
+
+      - name: Build last-week page
+        run: .github/scripts/getpocket_news.py > _posts/$(date +%Y-%m-%d)-interesting-last-week.md
+        env:
+          consumer_key: ${{ secrets.consumer_key }}
+          access_token: ${{ secrets.access_token }}
+
+      - name: Commit and push if the documents have changed
+        run: |-
+          git diff
+          git config --global user.email "lastweek-bot@pgmac.dev"
+          git config --global user.name "lastweek-bot"
+          git diff --quiet _posts/ || (git add _postsdocs/ && git commit -m "Interesting stuff from last week")
+          git push
+
+      - name: Get end time
+        if: always()
+        run: |
+          echo "end=$(date +%s)" >> $GITHUB_ENV
+          echo "endfmt=$(date --iso-8601=minutes)" >> $GITHUB_ENV
+
+      - name: Get runtime difference
+        if: always()
+        run: echo "timediff=$(( (${{ env.end }} - ${{ env.start }})/60 )) minutes\n$(( (${{ env.end }} - ${{ env.start }})%60 )) seconds" >> $GITHUB_ENV
+
+      - name: On failure
+        if: failure()
+        run: |
+          echo "colour=danger" >> $GITHUB_ENV
+          echo "status=Failed" >> $GITHUB_ENV
+          echo "icon=🛑" >> $GITHUB_ENV
+
+      - name: On cancellation
+        if: cancelled()
+        run: |
+          echo "colour=warning" >> $GITHUB_ENV
+          echo "status=Cancelled" >> $GITHUB_ENV
+          echo "icon=⚠" >> $GITHUB_ENV
+
+      - name: On success
+        if: success()
+        run: |
+          echo "colour=good" >> $GITHUB_ENV
+          echo "status=Completed" >> $GITHUB_ENV
+          echo "icon=✅" >> $GITHUB_ENV
+
+      - name: Send Slack message
+        if: always()
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          update-ts: ${{ steps.slack.outputs.ts }}
+          channel-id: "C01UGQ98P9U"
+          payload: |
+            {
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text", "pretext"],
+                  "fallback": ${{ toJSON(join(github.event.commits.*.message, '<br>') || ':clock6: Scheduled') }},
+                  "color": "${{ env.colour || 'grey' }}",
+                  "pretext": "${{ env.icon || '?' }} ${{ github.workflow }} (${{ github.ref_name }}) #${{ github.run_number }}",
+                  "author_name": "${{ github.triggering_actor || github.actor }}",
+                  "title": "${{ github.workflow }}",
+                  "title_link": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                  "text": ${{ toJSON(join(github.event.commits.*.message, '\n') || ':clock6: Scheduled') }},
+                  "fields": [
+                    {
+                      "title": "Status",
+                      "short": true,
+                      "value": "${{ env.status }}"
+                    },
+                    {
+                      "title": "Start",
+                      "short": true,
+                      "value": "${{ env.startfmt }}"
+                    },
+                    {
+                      "title": "Run time",
+                      "short": true,
+                      "value": "${{ env.timediff }}"
+                    },
+                    {
+                      "title": "End",
+                      "short": true,
+                      "value": "${{ env.endfmt }}"
+                    }
+                  ]
+                },
+                {
+                  "blocks": [
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "<${{ github.event.pull_request.html_url || github.event.head_commit.url || github.server_url }}|View commit>"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
