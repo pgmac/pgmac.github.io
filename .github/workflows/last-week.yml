@@ -90,6 +90,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install requests
+        run: pip install requests
+
       - name: Build last-week page
         run: .github/scripts/getpocket_news.py > _posts/$(date +%Y-%m-%d)-interesting-last-week.md
         env:
