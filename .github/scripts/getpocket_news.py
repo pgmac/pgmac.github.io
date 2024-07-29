@@ -136,7 +136,8 @@ message = (f"---\nlayout: post\n"
            f"tags: {page_tags}\n"
            f"author: pgmac\n"
            "---\n\n"
-           f"# My [GetPocket](https://getpocket.com/) articles I saved\n\n"
-           f"{message}")
+           f"# Interesting things\n\n"
+           f"{message}\n\n"
+           f"All this was saved to my [GetPocket](https://getpocket.com/) over the week")
 
 print(message)

@@ -19,6 +19,7 @@ layout: default
   <p>&nbsp;</p>
 
   <p>
+    Tags on this page:
     <ul>
 {% for tags in page.tags %}
       <li><a href="/tag/{{ tags | slugify }}">{{ tags }}</a></li>
@@ -27,8 +28,9 @@ layout: default
   </p>
 
   {% if author %}
+  <hr/>
   <p>
-    Penned by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a><br/>
+    Penned by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a> on {{ page.date | date: "%Y-%m-%d" }}<br/>
     {{ author.tag }}
   </p>
 {% endif %}
