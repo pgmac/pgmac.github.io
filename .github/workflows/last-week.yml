@@ -196,3 +196,6 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+  deploy:
+    uses: ./.github/workflows/jekyll.yml
+    needs: [build]
