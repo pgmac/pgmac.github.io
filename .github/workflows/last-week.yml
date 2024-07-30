@@ -103,8 +103,7 @@ jobs:
           git status _posts
           git config --global user.email "lastweek-bot@pgmac.dev"
           git config --global user.name "lastweek-bot"
-
-                       f"{post_tags}\n\n"          git add _posts/ && git commit -m "Interesting stuff from last week"
+          git add _posts/ && git commit -m "Interesting stuff from last week"
           git push
 
       - name: Get end time
