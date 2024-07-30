@@ -93,7 +93,7 @@ jobs:
         run: pip install requests
 
       - name: Build last-week page
-        run: .github/scripts/getpocket_news.py > _posts/$(date +%Y-%m-%d)-interesting-last-week.md
+        run: .github/scripts/getpocket_news.py
         env:
           consumer_key: ${{ secrets.consumer_key }}
           access_token: ${{ secrets.access_token }}

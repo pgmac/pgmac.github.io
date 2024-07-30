@@ -105,6 +105,18 @@ def get_posts_for_tag(_tag):
         # print(response.json())
         return []
 
+# Function to create the actual blog post entry
+
+
+def create_blog_post(_message):
+    """ Write the message contents to an appropriately named file
+    """
+    with open(
+            f"_posts/{sun.strftime("%Y-%m-%d")}-interesting-last-week.md",
+            "w", encoding="utf-8") as blog_file:
+        blog_file.write(_message)
+    blog_file.close()
+
 
 # Fetch and send posts for each tag to my blog
 page_tags = []
@@ -130,7 +142,7 @@ for tag in tags:
                        f"{excerpt}\n\n")
             # send_to_slack(message)
     else:
-        no_posts_message = f"No posts found for tag '{tag}'"
+        no_posts_message = f"No posts found for this week"
         # send_to_slack(no_posts_message)
         print(no_posts_message)
 
@@ -145,4 +157,4 @@ message = (f"---\nlayout: post\n"
            f"{message}\n\n"
            f"All this was saved to my [GetPocket](https://getpocket.com/) over the week")
 
-print(message)
+create_blog_post(message)
