@@ -15,7 +15,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,8 +28,6 @@ concurrency:
 jobs:
   # Build job
   build:
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Get start time
