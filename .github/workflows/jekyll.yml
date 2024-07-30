@@ -10,6 +10,9 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
+    paths-ignore:
+      - ".github/workflows/last-week.yml"
+      - ".github/scripts/getpocket_news.yml"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   # Allows you to run this workflow from another workflow
