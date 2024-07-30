@@ -14,7 +14,9 @@ tags = ['tag1']  # Replace with your specific tags
 
 # Calculate the time range for the previous week
 today = datetime.now()
-last_week = today - timedelta(days=7)
+idx = (today.weekday() + 1) % 7
+sun = today - timedelta(idx)
+last_week = sun - timedelta(days=7)
 since = int(last_week.timestamp())
 
 # Pocket API endpoint
@@ -131,7 +133,7 @@ for tag in tags:
 
 message = (f"---\nlayout: post\n"
            f"title: Some things I found interesting from {
-               last_week.strftime("%Y-%m-%d")} to {today.strftime("%Y-%m-%d")}\n"
+               last_week.strftime("%Y-%m-%d")} to {sun.strftime("%Y-%m-%d")}\n"
            f"category: Last-Week\n"
            f"tags: {page_tags}\n"
            f"author: pgmac\n"

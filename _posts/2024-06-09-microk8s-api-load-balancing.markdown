@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microk8s Control Plane API Load Balancing
-category: Tech
+category: Technology
 tags: [Tech, k8s, HA, HomeLab]
 author: pgmac
 ---
