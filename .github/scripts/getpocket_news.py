@@ -11,11 +11,12 @@ import requests
 CONSUMER_KEY = os.environ.get('consumer_key')
 ACCESS_TOKEN = 'YOUR_POCKET_ACCESS_TOKEN'
 tags = ['tag1']  # Replace with your specific tags
+week_offset = os.environ.get('week_offset', 0)
 
 # Calculate the time range for the previous week
 today = datetime.now()
 idx = (today.weekday() + 1) % 7
-sun = today - timedelta(idx)
+sun = today - timedelta(idx + (int(week_offset)*7))
 last_week = sun - timedelta(days=7)
 since = int(last_week.timestamp())
 
@@ -114,6 +115,8 @@ for tag in tags:
 
     if posts:
         for item_id, item in posts:
+            if int(item['time_added']) > sun.timestamp():
+                continue
             title = item.get('resolved_title', 'No Title')
             url = item.get('resolved_url')
             excerpt = item.get('excerpt')
