@@ -120,12 +120,13 @@ def create_blog_post(_message):
 
 # Fetch and send posts for each tag to my blog
 page_tags = []
-message = ""
+articles = ""
 for tag in tags:
     # print(f"Posts with tag '{tag}':")
     posts = get_posts_for_tag(tag)
 
     if posts:
+        post_titles = []
         for item_id, item in posts:
             if int(item['time_added']) > sun.timestamp():
                 continue
@@ -137,24 +138,27 @@ for tag in tags:
             for post_tag in item.get('tags'):
                 post_tags.append(f"{post_tag}")
                 page_tags.append(f"{post_tag}")
-            message = (f"{message}"
-                       f"[{title}]({url}) - "
-                       f"{excerpt}\n\n")
-            # send_to_slack(message)
+            post_titles.append(title)
+            articles = (f"{articles}"
+                        f"<a name=\"{title}\">[{title}]({url})</a> - "
+                        f"{excerpt}\n\n")
     else:
         no_posts_message = f"No posts found for this week"
         # send_to_slack(no_posts_message)
         print(no_posts_message)
 
-message = (f"---\nlayout: post\n"
+message = (f"---\nlayout: last-week\n"
            f"title: Some things I found interesting from {
                last_week.strftime("%Y-%m-%d")} to {sun.strftime("%Y-%m-%d")}\n"
            f"category: Last-Week\n"
            f"tags: {page_tags}\n"
            f"author: pgmac\n"
            "---\n\n"
-           f"# Interesting things\n\n"
-           f"{message}\n\n"
-           f"All this was saved to my [GetPocket](https://getpocket.com/) over the week")
+           f"Internet Discoveries between {last_week.strftime("%e %B")} and {sun.strftime("%e %B")}\n")
+for title in post_titles:
+   message += (f"- {title}\n")
+message += (f"\n## Interesting details\n\n"
+            f"{articles}"
+            f"All this was saved to my [GetPocket](https://getpocket.com/) over the week")
 
 create_blog_post(message)
