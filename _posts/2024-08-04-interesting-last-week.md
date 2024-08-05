@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2024-07-28 to 2024-08-04
 category: Last-Week
-tags: ['certificates', 'security', 'security', '4g', '5g', 'bill', 'internet', 'nbnco', 'certificates', 'devsecops', 'github', 'security', 'ai', 'security', 'testing', 'git', 'releases', 'authentication', 'open source', 'saml', 'sso', 'macos', 'security', 'identity', 'security', 'github', 'secu', 'ai', 'image', 'open source', 'text', 'games', 'networks', 'proxy', 'security', 'ai', 'identity', 'security', 'ai', 'image', 'open source']
+tags: ['certificates', 'security', 'security', '4g', '5g', 'bill', 'internet', 'nbnco', 'certificates', 'devsecops', 'github', 'security', 'ai', 'security', 'testing', 'git', 'releases', 'authentication', 'open source', 'saml', 'sso', 'macos', 'security', 'identity', 'security', 'github', 'secu', 'ai', 'image', 'open source', 'text', 'games', 'networks', 'proxy', 'security', 'ai']
 author: pgmac
 ---
 
@@ -21,8 +21,6 @@ Internet Discoveries between 28 July and  4 August
 - Announcing Flux: The Next Leap in Text-to-Image Models
 - IPv4 Turf War
 - OpenAI’s Sam Altman is becoming one of the most powerful people on Earth. We should be very afraid
-- Implementing Identity Continuity With the NIST Cybersecurity Framework
-- black-forest-labs/flux-dev – Run with an API on Replicate
 
 ## Interesting details
 
@@ -53,9 +51,5 @@ Internet Discoveries between 28 July and  4 August
 <a name="IPv4 Turf War">[IPv4 Turf War](http://ipv4.games/)</a> - Claim The Land At Your IP (What is this?) Top Players Loading top players... All /8 Address Blocks Loading...
 
 <a name="OpenAI’s Sam Altman is becoming one of the most powerful people on Earth. We should be very afraid">[OpenAI’s Sam Altman is becoming one of the most powerful people on Earth. We should be very afraid](https://www.theguardian.com/technology/article/2024/aug/03/open-ai-sam-altman-chatgpt-gary-marcus-taming-silicon-valley)</a> - On 16 May 2023, Sam Altman, OpenAI’s charming, softly spoken, eternally optimistic billionaire CEO, and I stood in front of the US Senate judiciary subcommittee meeting on AI oversight. We were in Washington DC, and it was at the height of AI mania. Altman, then 38, was the poster boy for it all.
-
-<a name="Implementing Identity Continuity With the NIST Cybersecurity Framework">[Implementing Identity Continuity With the NIST Cybersecurity Framework](https://www.darkreading.com/cybersecurity-operations/implementing-identity-continuity-with-nist-cybersecurity-framework)</a> - Eric has made a career out of simplifying and securing enterprise identity management. He founded, scaled, and successfully exited both Securant/ClearTrust (Web Access Management) and Symplified, (the first IDaaS company).
-
-<a name="black-forest-labs/flux-dev – Run with an API on Replicate">[black-forest-labs/flux-dev – Run with an API on Replicate](https://replicate.com/black-forest-labs/flux-dev)</a> - FLUX.1 [dev] is a 12 billion parameter rectified flow transformer capable of generating images from text descriptions. For more information, please read our blog post. We provide a reference implementation of FLUX.1 [dev], as well as sampling code, in a dedicated github repository.
 
 All this was saved to my [GetPocket](https://getpocket.com/) over the week
