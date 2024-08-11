@@ -9,7 +9,7 @@ name: Create last-week's interesting post
 on:
   # Runs on pushes targeting the default branch
   schedule:
-    - cron: "30 13 * * 0"
+    - cron: "01 14 * * 0"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
