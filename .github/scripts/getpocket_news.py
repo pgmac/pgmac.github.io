@@ -34,7 +34,8 @@ def get_oauth_token():
     """ Auth on Oauth
     """
     try:
-        if os.environ.get('access_token') is not None:
+        access_token = os.environ.get('access_token', None)
+        if access_token is not None:
            return (access_token)
     except:
         pass
