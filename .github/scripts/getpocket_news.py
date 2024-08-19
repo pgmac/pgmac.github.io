@@ -34,8 +34,8 @@ def get_oauth_token():
     """ Auth on Oauth
     """
     try:
-        access_token = os.environ.get('access_token')
-        return (access_token)
+        if os.environ.get('access_token') is not None:
+           return (access_token)
     except:
         pass
 
@@ -65,8 +65,7 @@ def get_oauth_token():
             'code': data.get('code')
         }
 
-        print(f"{POCKET_HOST}/auth/authorize?request_token={
-            data.get('code')}&redirect_uri={POCKET_REDIRECT_URI}")
+        print(f"{POCKET_HOST}/auth/authorize?request_token={data.get('code')}&redirect_uri={POCKET_REDIRECT_URI}")
         letsgo = input("Auth this app, then go again")
 
         # Make it into an access_token now
@@ -112,7 +111,7 @@ def create_blog_post(_message):
     """ Write the message contents to an appropriately named file
     """
     with open(
-            f"_posts/{sun.strftime("%Y-%m-%d")}-interesting-last-week.md",
+            f"_posts/{sun.strftime('%Y-%m-%d')}-interesting-last-week.md",
             "w", encoding="utf-8") as blog_file:
         blog_file.write(_message)
     blog_file.close()
@@ -128,19 +127,19 @@ for tag in tags:
     if posts:
         post_titles = []
         for item_id, item in posts:
-            if int(item['time_added']) > sun.timestamp():
+            if int(item.get('time_added', 99999999999999999)) > sun.timestamp():
                 continue
             title = item.get('resolved_title', 'No Title')
             url = item.get('resolved_url')
             excerpt = item.get('excerpt')
-            time_added = datetime.fromtimestamp(int(item['time_added']))
+            time_added = datetime.fromtimestamp(int(item.get('time_added', 0)))
             post_tags = []
-            for post_tag in item.get('tags'):
+            for post_tag in item.get('tags', {}):
                 post_tags.append(f"{post_tag}")
                 page_tags.append(f"{post_tag}")
             post_titles.append(title)
             articles = (f"{articles}"
-                        f"<a name=\"{title}\">[{title}]({url})</a> - "
+                        f"<a name='{title}'>[{title}]({url})</a> - "
                         f"{excerpt}\n\n")
     else:
         no_posts_message = f"No posts found for this week"
@@ -148,13 +147,12 @@ for tag in tags:
         print(no_posts_message)
 
 message = (f"---\nlayout: last-week\n"
-           f"title: Some things I found interesting from {
-               last_week.strftime("%Y-%m-%d")} to {sun.strftime("%Y-%m-%d")}\n"
+           f"title: Some things I found interesting from {last_week.strftime('%Y-%m-%d')} to {sun.strftime('%Y-%m-%d')}\n"
            f"category: Last-Week\n"
            f"tags: {page_tags}\n"
            f"author: pgmac\n"
            "---\n\n"
-           f"Internet Discoveries between {last_week.strftime("%e %B")} and {sun.strftime("%e %B")}\n")
+           f"Internet Discoveries between {last_week.strftime('%e %B')} and {sun.strftime('%e %B')}\n")
 for title in post_titles:
    message += (f"- {title}\n")
 message += (f"\n## Interesting details\n\n"
