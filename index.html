@@ -11,9 +11,17 @@ layout: default
   <div class="posts card">
       <div class="card-content white-text">
       <h1 class="page-heading">Posts</h1>
-
         <ul class="post-list">
+          <li>
+            <span class="post-meta">
+              {{ date: "%Y-%m-%d" }} - <a href="https://pgmac.net.au">Paul Macdonnell</a>
+            </span>
+            <a class="post-link" href="/last-week/">Things I found interesting last week</a>
+          </li>
     {% for post in site.posts %}
+      {% if post.categories contains 'Last Week' %}
+        {% continue %}
+      {% endif %}
       {% assign author = site.data.authors[post.author] %}
           <li>
             <span class="post-meta">
