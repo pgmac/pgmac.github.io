@@ -14,7 +14,10 @@ layout: default
 
         <ul class="post-list">
     {% for post in site.posts %}
-      {% assign author = site.data.authors[post.author] %}
+      {% if post.categories contains 'Last Week' %}
+        {% continue %}
+      {% endif %}
+         {% assign author = site.data.authors[post.author] %}
           <li>
             <span class="post-meta">
               {{ post.date | date: "%Y-%m-%d" }}{% if post.author %} - {% if author.web %}<a href="{{ author.web }}">{% endif %}{{ author.name }}{% if author.web %}</a>{% endif %}{% endif %}
