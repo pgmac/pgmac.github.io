@@ -14,7 +14,7 @@ layout: default
 
         <ul class="post-list">
     {% for post in site.posts %}
-      {% if post.categories contains 'Last Week' %}
+      {% if post.categories contains 'Last-Week' %}
         {% continue %}
       {% endif %}
          {% assign author = site.data.authors[post.author] %}
