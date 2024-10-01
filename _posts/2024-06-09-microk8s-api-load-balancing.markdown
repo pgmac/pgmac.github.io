@@ -30,7 +30,7 @@ Here's a tale of how I came to load balance the Control Plane API of my 3 node m
   - [DNS round-robin](#dns-round-robin)
 - [Other things I tried that didn't work](#other-things-i-tried-that-didnt-work)
   - [tcp load balancer with SSL Offloading (SSL pass-thru)](#tcp-load-balancer-with-ssl-offloading-ssl-pass-thru)
-  - [Seting the client certificates](#seting-the-client-certificates)
+  - [Setting the client certificates](#setting-the-client-certificates)
   - [Commenting out the `certificate-authority-data` entry in your kubectl config](#commenting-out-the-certificate-authority-data-entry-in-your-kubectl-config)
   - [Lots of HAProxy config trial and error](#lots-of-haproxy-config-trial-and-error)
 
@@ -470,7 +470,7 @@ Because it verifies the IP SAN and the Load Balancer IP isn't on the list, it's 
 
 Yeah, that doesn't work.
 
-## Seting the client certificates
+## Setting the client certificates
 
 Either in the HAProxy Frontend config, in the "`SSL Offloading - client certificates`".
 Or in the HAProxy Backend config, in the Server Pool - Server List - Client Certificate" entries for each individual backend server.
