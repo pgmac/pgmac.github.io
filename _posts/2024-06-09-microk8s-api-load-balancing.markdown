@@ -448,7 +448,7 @@ Well, my cluster isn't that stable. I'm constantly tinkering with it and it fall
 
 Because I'm running on VM's in a very limited home lab, I have no room to scale, so I can't just run up another node to replace a faulty node. I need to get the faulty one working again. This is normally as simple as rebooting it. But that's actually not that simple. It's not difficult either, it's just a process. Thankfully I can automate that with Ansible.
 
-However, while that node is rebooting the Control Plane API endpoint is also not available for at least one third of the time (during these reboots). This also means I can't manage, monitor, or otherwise maintain my cluster.
+While that node is rebooting, the Control Plane API endpoint is also not available for at least one third of the time (during these reboots). This also means I can't manage, monitor, or otherwise maintain my cluster while my `~/.kube/config` is pointing at that host.
 
 To get around having to edit my `~/.kube/config` everytime, I thought I'd load balance the Control Plane API on my pfSense firewall. I figured if the pfSense isn't available, I've got bigger problems. Also, if I _really_ needed to, I could always edit my `~/.kube/config` and point it directly at a node in the cluster again.
 
