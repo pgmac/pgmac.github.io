@@ -193,8 +193,3 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-  deploy:
-    if: success()
-    needs: [build]
-    uses: ./.github/workflows/jekyll.yml
-    secrets: inherit
