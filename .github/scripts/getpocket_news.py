@@ -131,8 +131,8 @@ for tag in tags:
             if int(item.get('time_added', 99999999999999999)) > sun.timestamp():
                 continue
             title = item.get('resolved_title', 'No Title')
-            url = item.get('resolved_url')
-            excerpt = item.get('excerpt')
+            url = item.get('resolved_url', '#')
+            excerpt = item.get('excerpt', '&nbsp;')
             time_added = datetime.fromtimestamp(int(item.get('time_added', 0)))
             post_tags = []
             for post_tag in item.get('tags', {}):
