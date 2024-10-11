@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A death in the family
+title: A death in the (hardware) family
 category: Tech
 tags: ['samba', 'hardware', 'death']
 author: pgmac
