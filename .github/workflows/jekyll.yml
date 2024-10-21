@@ -17,6 +17,9 @@ on:
   workflow_dispatch:
   # Allows you to run this workflow from another workflow
   workflow_call:
+  workflow_run:
+    workflows: ["Create last-week's interesting post"]
+    types: [completed]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -46,6 +49,7 @@ jobs:
       - name: Send Slack message
         id: slack
         uses: slackapi/slack-github-action@v1.27.0
+        continue-on-error: true
         with:
           channel-id: "C01UGQ98P9U"
           payload: |
@@ -140,6 +144,7 @@ jobs:
       - name: Send Slack message
         if: always()
         uses: slackapi/slack-github-action@v1.27.0
+        continue-on-error: true
         with:
           update-ts: ${{ steps.slack.outputs.ts }}
           channel-id: "C01UGQ98P9U"
