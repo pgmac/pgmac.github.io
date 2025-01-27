@@ -18,6 +18,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -37,7 +38,7 @@ jobs:
 
       - name: Send Slack message
         id: slack
-        uses: slackapi/slack-github-action@v1.27.0
+        uses: slackapi/slack-github-action@v1.27.1
         with:
           channel-id: "C01UGQ98P9U"
           payload: |
@@ -139,7 +140,7 @@ jobs:
 
       - name: Send Slack message
         if: always()
-        uses: slackapi/slack-github-action@v1.27.0
+        uses: slackapi/slack-github-action@v1.27.1
         with:
           update-ts: ${{ steps.slack.outputs.ts }}
           channel-id: "C01UGQ98P9U"
@@ -193,8 +194,3 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-  deploy:
-    if: success()
-    needs: [build]
-    uses: ./.github/workflows/jekyll.yml
-    secrets: inherit

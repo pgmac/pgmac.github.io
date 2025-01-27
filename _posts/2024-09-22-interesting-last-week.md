@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2024-09-15 to 2024-09-22
 category: Last-Week
-tags: ['amazon', 'authentication', 'aws', 'saml', 'security', 'sso', 'authentication', 'aws', 'development', 'lambda', 'learning', 'amazon', 'authentication', 'aws', 'security', 'amazon', 'authentication', 'aws', 'cli', 'sso', 'authentication', 'security', 'authentication', 'security', 'authentication', 'aws', 'k8s', 'authentication', 'open source', 'security', 'github', 'security', 'supply chain', 'fun', 'time wasters', 'hardware', 'security', 'supply chain', 'linux', 'operating systems', 'lego', 'authentication', 'ubuntu', 'cost cutting', 'k8s', 'cga', 'demo', 'youtube', 'cyber', 'phishing', 'security', 'history', 'linux']
+tags: ['amazon', 'authentication', 'aws', 'saml', 'security', 'sso', 'authentication', 'aws', 'development', 'lambda', 'learning', 'amazon', 'authentication', 'aws', 'security', 'amazon', 'authentication', 'aws', 'cli', 'sso', 'authentication', 'security', 'authentication', 'security', 'authentication', 'aws', 'k8s', 'authentication', 'open source', 'security', 'github', 'security', 'supply chain', 'funny', 'networking', 'application security', 'cyber', 'engineering', 'platform', 'security', 'astronaut', 'space', 'text', 'writing', 'fun', 'time wasters', 'hardware', 'security', 'supply chain', 'linux', 'operating systems', 'lego', 'authentication', 'ubuntu', 'cost cutting', 'k8s', 'cga', 'demo', 'youtube', 'cyber', 'phishing', 'security', 'history', 'linux']
 author: pgmac
 ---
 
@@ -16,6 +16,11 @@ Internet Discoveries between 15 September and 22 September
 - Install EKS-D with MicroK8s
 - supertokens/supertokens-core
 - Artifact Attestations is generally available
+- The Bastard Operator From Hell Complete
+- NetworkManager or networkd
+- Platform Engineering Is Security Engineering
+- SpaceX Polaris Dawn spacewalk! See the first-ever private egress from crew
+- BULLSHIT REMOVER
 - WhenTaken
 - 
 - A word about systemd
@@ -45,6 +50,18 @@ Internet Discoveries between 15 September and 22 September
 <a name='supertokens/supertokens-core'>[supertokens/supertokens-core](https://github.com/supertokens/supertokens-core)</a> - Add secure login and session management to your apps. SDKs available for popular languages and front-end frameworks e.g. Node.js, Go, Python, React.js, React Native, Vanilla JS, etc. SuperTokens is an open-core alternative to proprietary login providers like Auth0 or AWS Cognito.
 
 <a name='Artifact Attestations is generally available'>[Artifact Attestations is generally available](https://github.blog/changelog/2024-06-25-artifact-attestations-is-generally-available/)</a> - We’re thrilled to announce the general availability of GitHub Artifact Attestations! Artifact Attestations allow you to guarantee the integrity of artifacts built inside GitHub Actions by creating and verifying signed attestations.
+
+<a name='The Bastard Operator From Hell Complete'>[The Bastard Operator From Hell Complete](http://bofh.bjash.com/)</a> - The Bastard Operator From HellThe Complete WWW Edition. This site contains adult themes, violence, profanities, and other such fun stuff. If it bothers you, just don't read it.
+
+<a name='NetworkManager or networkd'>[NetworkManager or networkd](https://lwn.net/Articles/990281/)</a> - Posted Sep 13, 2024 22:42 UTC (Fri) by NYKevin (subscriber, #129325) In reply to: NetworkManager or networkd by mathstuf Parent article: Debating ifupdown replacements for Debian trixie
+
+<a name='Platform Engineering Is Security Engineering'>[Platform Engineering Is Security Engineering](https://www.darkreading.com/application-security/platform-engineering-is-security-engineering)</a> - Copyright © 2024 Informa PLC Informa UK Limited is a company registered in England and Wales with company number 1072954 whose registered office is 5 Howick Place, London, SW1P 1WG.
+
+<a name='SpaceX Polaris Dawn spacewalk! See the first-ever private egress from crew'>[SpaceX Polaris Dawn spacewalk! See the first-ever private egress from crew](https://youtu.be/Jd2ZcpirFew?si=Z4LOg0o63j87zKQ4)</a> - SpaceX's Polaris Dawn mission conducted the first-ever private spacewalk on Sept. 12, 2024. Full Story: https://www.space.com/spacex-polaris-dawn-first-private-spacewalk
+
+During the spacewalk (also known as an extravehicular activity, or EVA), Polaris Dawn crewmembers Jared Isaacman (seen here) and
+
+<a name='BULLSHIT REMOVER'>[BULLSHIT REMOVER](https://www.bullshitremover.com/)</a> - Paste crap, get truth. Lorem ipsum dolor sit amet, here you'll get result...
 
 <a name='WhenTaken'>[WhenTaken](https://whentaken.com/)</a> - Welcome Gamers! We're thrilled to announce the launch of our newest game! As we embark on this exciting journey, we kindly ask for your patience and understanding - this is the softest launch ever, and we're still fine-tuning things in the late stages of development.
 
