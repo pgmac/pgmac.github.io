@@ -137,7 +137,7 @@ jobs:
           echo "colour=good" >> $GITHUB_ENV
           echo "status=Completed" >> $GITHUB_ENV
           echo "icon=✅" >> $GITHUB_ENV
-          echo "::notice::Check it out at [https://pgmac.net.au/last-week/](https://pgmac.net.au/last-week/)"
+          echo "::notice::Check it out at <a href='https://pgmac.net.au/last-week/'>pgmac.net.au/last-week</a>"
 
       - name: Send Slack message
         if: always()
