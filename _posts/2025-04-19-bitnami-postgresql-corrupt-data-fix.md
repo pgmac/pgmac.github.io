@@ -11,7 +11,7 @@ I am running the Dependency Track application in my homelab microk8s cluster. On
 
 Take note of the final number (16531 in my case), this is the file inode causing a problem. You'll need this later.
 
-## Bitname PostgreSQL background
+## Bitnami PostgreSQL background
 
 But first - a little background on postgresql in the bitnami container:
 
