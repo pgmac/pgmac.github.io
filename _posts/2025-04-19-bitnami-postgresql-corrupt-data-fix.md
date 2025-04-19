@@ -120,3 +120,5 @@ Everything _should_ be working just fine again. Assuming you don't have any othe
  relation base/16421/3192429](https://www.postgresql.org/message-id/CAA3DN%3DX-ZT27Knq5BOAcdD1LsiZoBuTm6UVso%3Dn5g0LRUdHsOg%40mail.gmail.com)
 
 [PostgreSQL Tutorial: Dealing with corrupted blocks - Redrock Postgres](https://www.rockdata.net/tutorial/troubleshooting-corrupted-blocks/)
+
+[Modify the default administrator password](https://docs.bitnami.com/virtual-machine/infrastructure/postgresql/administration/change-reset-password/)
