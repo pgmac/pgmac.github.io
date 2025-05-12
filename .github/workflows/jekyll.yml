@@ -140,6 +140,7 @@ jobs:
           echo "colour=good" >> $GITHUB_ENV
           echo "status=Completed" >> $GITHUB_ENV
           echo "icon=✅" >> $GITHUB_ENV
+          echo "Check it out at [PGMac . Net . AU](https://pgmac.net.au/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Send Slack message
         if: always()
