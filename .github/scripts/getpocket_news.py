@@ -147,13 +147,17 @@ for tag in tags:
         # send_to_slack(no_posts_message)
         print(no_posts_message)
 
+last_week_format = '%e %B'
+if last_week.strftime('%B') == sun.strftime('%B'):
+    last_week_format = '%e'
+
 message = (f"---\nlayout: last-week\n"
            f"title: Some things I found interesting from {last_week.strftime('%Y-%m-%d')} to {sun.strftime('%Y-%m-%d')}\n"
            f"category: Last-Week\n"
            f"tags: {page_tags}\n"
            f"author: pgmac\n"
            "---\n\n"
-           f"Internet Discoveries between {last_week.strftime('%e %B')} and {sun.strftime('%e %B')}\n")
+           f"Internet Discoveries between {last_week.strftime(last_week_format)} and {sun.strftime('%e %B')}\n")
 for title in post_titles:
    message += (f"- {title}\n")
 message += (f"\n## Interesting details\n\n"
