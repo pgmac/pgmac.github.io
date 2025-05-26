@@ -24,7 +24,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   Where I think about things and make the internet listen. Because it's important.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://pgmac.net.au" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: pmacdonnell
 github_username:  pgmac
 paginate: 5
 
