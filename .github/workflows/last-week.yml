@@ -98,6 +98,7 @@ jobs:
         env:
           consumer_key: ${{ secrets.consumer_key }}
           access_token: ${{ secrets.access_token }}
+          PGLINKS_KEY: ${{ secrets.PGLINKS_KEY }}
 
       - name: Commit and push if the documents have changed
         run: |-
