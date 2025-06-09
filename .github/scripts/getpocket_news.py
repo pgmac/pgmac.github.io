@@ -7,9 +7,6 @@ from datetime import datetime, timedelta
 import os
 import requests
 
-# Replace these with your Pocket API and Slack credentials
-CONSUMER_KEY = os.environ.get('consumer_key')
-ACCESS_TOKEN = 'YOUR_POCKET_ACCESS_TOKEN'
 tags = ['tag1']  # Replace with your specific tags
 week_offset = os.environ.get('week_offset', 0)
 
@@ -20,92 +17,60 @@ sun = today - timedelta(idx + (int(week_offset)*7))
 last_week = sun - timedelta(days=7)
 since = int(last_week.timestamp())
 
-# Pocket API endpoint
-POCKET_HOST = 'https://getpocket.com'
-POCKET_GET_URL = '/v3/get'
-POCKET_OAUTH_REQUEST = '/v3/oauth/request'
-POCKET_OAUTH_AUTH = '/v3/oauth/authorize'
-POCKET_REDIRECT_URI = 'News:authorizationFinished'
 
-
-# Function to get oauth token
-
-def get_oauth_token():
-    """ Auth on Oauth
+def get_link_tags(_linkid):
+    """ Get all the tags for a link
     """
-    try:
-        access_token = os.environ.get('access_token', None)
-        if access_token is not None:
-           return (access_token)
-    except:
-        pass
-
-    try:
-        with open("tokens.txt", "r") as in_file:
-            for line in in_file:
-                access_token = line
-        in_file.close()
-        return (access_token)
-    except:
-        pass
-
-    params = {
-        'consumer_key': CONSUMER_KEY,
-        'redirect_uri': POCKET_REDIRECT_URI
-    }
+    api_url = f"https://links.pgmac.net.au/api/v2/links/{_linkid}"
     headers = {
-        'Content-Type': 'application/json; charset=UTF-8',
-        'X-Accept': 'application/json'
+        'Authorization': f"Bearer {os.environ.get('PGLINKS_KEY')}",
+        'accept': 'application/json'
     }
-    response = requests.post(
-        f"{POCKET_HOST}{POCKET_OAUTH_REQUEST}", headers=headers, json=params, timeout=5)
-    if response.status_code == 200:
-        data = response.json()
-        _params = {
-            'consumer_key': CONSUMER_KEY,
-            'code': data.get('code')
-        }
+    try:
+        response = requests.get(api_url, timeout=30, headers=headers)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching tags for link {_linkid}: {e}")
+        return {}
 
-        print(f"{POCKET_HOST}/auth/authorize?request_token={data.get('code')}&redirect_uri={POCKET_REDIRECT_URI}")
-        letsgo = input("Auth this app, then go again")
+def get_link_notes(_linkid):
+    """ Get all the notes for a link
+    """
+    api_url = f"https://links.pgmac.net.au/api/v2/links/{_linkid}/notes"
+    headers = {
+        'Authorization': f"Bearer {os.environ.get('PGLINKS_KEY')}",
+        'accept': 'application/json'
+    }
+    try:
+        response = requests.get(api_url, timeout=30, headers=headers)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching notes for link {_linkid}: {e}")
+        return {}
 
-        # Make it into an access_token now
-        access = requests.post(
-            f"{POCKET_HOST}{POCKET_OAUTH_AUTH}", headers=headers, json=_params, timeout=5)
-        if access.status_code == 200:
-            atdata = access.json()
-            with open("tokens.txt", "w") as out_file:
-                out_file.write(atdata.get('access_token'))
-            out_file.close()
-            return data.get('access_token')
-
-
-# Function to get posts for a specific tag
-
-def get_posts_for_tag(_tag):
+def get_links():
     """ Get all the Pocket posts with a tag
     """
-    ACCESS_TOKEN = get_oauth_token()
-    params = {
-        'consumer_key': CONSUMER_KEY,
-        'access_token': ACCESS_TOKEN,
-        'since': since,
-        'detailType': 'complete',
-        'sort': 'oldest'
+    api_url = "https://links.pgmac.net.au/api/v2/links"
+    headers = {
+        'Authorization': f"Bearer {os.environ.get('PGLINKS_KEY')}",
+        'accept': 'application/json'
     }
-
-    response = requests.post(
-        f"{POCKET_HOST}{POCKET_GET_URL}", json=params, timeout=5)
-
-    if response.status_code == 200:
-        data = response.json()
-        return data.get('list', {}).items()
-    else:
-        print(f"Error: {response.status_code}")
-        # print(response.json())
-        return []
-
-# Function to create the actual blog post entry
+    params = {
+        'per_page': 100,
+        'order_by': 'created_at',
+        'order_dir': 'desc'
+    }
+    try:
+        response = requests.get(api_url, timeout=30, headers=headers, params=params)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching links from API: {e}")
+        return {}
+    return {}
 
 
 def create_blog_post(_message):
@@ -118,50 +83,68 @@ def create_blog_post(_message):
     blog_file.close()
 
 
-# Fetch and send posts for each tag to my blog
-page_tags = []
-articles = ""
-for tag in tags:
-    # print(f"Posts with tag '{tag}':")
-    posts = get_posts_for_tag(tag)
+def main():
+  # Fetch and send posts for each tag to my blog
+  page_tags = []
+  articles = ""
+  print(f"Fetching links between {last_week.strftime('%Y-%m-%d')} to {sun.strftime('%Y-%m-%d')}")
+  # from pprint import pprint
+  for tag in tags:
+      posts = get_links()
+      links_date_format = '%Y-%m-%dT%H:%M:%S.%fZ' # 2025-05-27T15:10:04.000000Z
 
-    if posts:
-        post_titles = []
-        for item_id, item in posts:
-            if int(item.get('time_added', 99999999999999999)) > sun.timestamp():
-                continue
-            title = item.get('resolved_title', 'No Title')
-            url = item.get('resolved_url', '#')
-            excerpt = item.get('excerpt', '&nbsp;')
-            time_added = datetime.fromtimestamp(int(item.get('time_added', 0)))
-            post_tags = []
-            for post_tag in item.get('tags', {}):
-                post_tags.append(f"{post_tag}")
-                page_tags.append(f"{post_tag}")
-            post_titles.append(title)
-            articles = (f"{articles}"
-                        f"<a name='{title}'>[{title}]({url})</a> - "
-                        f"{excerpt}\n\n")
-    else:
-        no_posts_message = f"No posts found for this week"
-        # send_to_slack(no_posts_message)
-        print(no_posts_message)
+      if posts:
+          post_titles = []
+          print("        Last week          <=      Link date      <=         Sunday             <-> Status")
+                 # 2025-06-01 23:03:06.259047  2025-06-01 23:03:06.259047  2025-06-01 23:03:06.259047
+          for item in posts['data']:
+              link_created_at = datetime.strptime(item.get('created_at', '3999-12-31T23:59:59.999999Z'), links_date_format)
+              print(f"{last_week} <= {link_created_at} <= {sun} <-> ", end="")
+              if link_created_at.timestamp() <= last_week.timestamp() or \
+                 link_created_at.timestamp() >= sun.timestamp():
+                  print("skipping")
+                  continue
+              else:
+                  print("processing")
+              title = item.get('title', 'No Title')
+              url = item.get('url', '#')
+              excerpt = item.get('description', '&nbsp;')
+              # time_added = datetime.fromtimestamp(datetime.strptime(item.get('created_at', '0000-00-00T00:00:00.000000Z'), links_date_format).timestamp())
+              post_tags = []
+              # item['tags'] = get_link_tags(item.get('id', 0)).get('tags', {})
+              item['tags'] = [tag['name'] for tag in get_link_tags(item.get('id', 0)).get('tags', {}) if tag.get('visibility') == 1]
+              item['notes'] = [note['note'] for note in get_link_notes(item.get('id', 0)).get('data', {}) if note.get('visibility') == 1]
+              for post_tag in item.get('tags', {}):
+                  post_tags.append(f"{post_tag}")
+                  page_tags.append(f"{post_tag}")
+              post_titles.append(title)
+              articles = (f"{articles}"
+                          f"<a name='{title}'>[{title}]({url})</a> - "
+                          f"{excerpt}\n\n")
+      else:
+          no_posts_message = "No posts found for this week"
+          # send_to_slack(no_posts_message)
+          print(no_posts_message)
+          return
 
-last_week_format = '%e %B'
-if last_week.strftime('%B') == sun.strftime('%B'):
-    last_week_format = '%e'
+  last_week_format = '%e %B'
+  if last_week.strftime('%B') == sun.strftime('%B'):
+      last_week_format = '%e'
 
-message = (f"---\nlayout: last-week\n"
-           f"title: Some things I found interesting from {last_week.strftime('%Y-%m-%d')} to {sun.strftime('%Y-%m-%d')}\n"
-           f"category: Last-Week\n"
-           f"tags: {page_tags}\n"
-           f"author: pgmac\n"
-           "---\n\n"
-           f"Internet Discoveries between {last_week.strftime(last_week_format)} and {sun.strftime('%e %B')}\n")
-for title in post_titles:
-   message += (f"- {title}\n")
-message += (f"\n## Interesting details\n\n"
-            f"{articles}"
-            f"All this was saved to my [GetPocket](https://getpocket.com/) over the week")
+  message = (f"---\nlayout: last-week\n"
+            f"title: Some things I found interesting from {last_week.strftime('%Y-%m-%d')} to {sun.strftime('%Y-%m-%d')}\n"
+            f"category: Last-Week\n"
+            f"tags: {page_tags}\n"
+            f"author: pgmac\n"
+            "---\n\n"
+            f"Internet Discoveries between {last_week.strftime(last_week_format)} and {sun.strftime('%e %B')}\n")
+  for title in post_titles:
+    message += (f"- {title}\n")
+  message += (f"\n## Interesting details\n\n"
+              f"{articles}"
+              f"All this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week")
 
-create_blog_post(message)
+  create_blog_post(message)
+
+if __name__ == "__main__":
+  main()
