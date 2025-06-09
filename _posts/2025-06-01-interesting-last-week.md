@@ -2,64 +2,32 @@
 layout: last-week
 title: Some things I found interesting from 2025-05-25 to 2025-06-01
 category: Last-Week
-tags: []
+tags: ['github', 'security', 'supply chain', 'funny', 'python', 'ansible', 'orchestration', 'terraform', 'cyber', 'pentest', 'security', 'cicd', 'cyber', 'security', 'ai', 'cyber', 'data', 'security', 'network', 'networking', 'cyber', 'ddos', 'security', 'cyber', 'data breach', 'passwords', 'security', 'git', 'integration', 'leadership', 'management', 'people', 'leadership', 'management', 'people', 'knowledge', 'management', 'notes', 'time', 'networking', 'security', 'history', 'lego', 'llm', 'actions', 'github', 'security', 'networking', 'browser', 'ai', 'llm', 'search', 'ai', 'interface', 'llm', 'user', 'ai', 'chat', 'llm', 'voice', 'language', 'knowledge', 'open source', 'software', 'writing', 'llm', 'writing', 'internet', 'privacy', 'web', 'actions', 'github', 'data', 'apache', 'open source', 'visualisation', 'actions', 'github', 'automation', 'cyber', 'pentest', 'security', 'testing', 'books', 'online', 'ai', 'cyber', 'security', 'ai', 'cyber', 'security', 'knowledge', 'management', 'diy', 'hardware', 'music', 'open source', 'development', 'ssh', 'tools', 'in memorium', 'networking', 'encryption', 'in memorium', 'games', 'time wasters', 'aviation', 'books', 'history', 'emulator', 'games', 'open source', 'cyber', 'github', 'secrets', 'security', 'ai', 'simulation', 'cyber', 'ingress', 'k8s', 'security', 'vulnerability', 'cyber', 'phishing', 'security', 'authentication', 'cloudflare', 'open source', 'ssh', 'ai', 'host your own', 'llm', 'open source', 'software', 'actions', 'github', 'operations', 'actions', 'github', 'security', 'supply chain']
 author: pgmac
 ---
 
 Internet Discoveries between 25 May and  1 June
-- Meta Pixel halts Android localhost tracking after disclosure • The Register
-- Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux
-- Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News
-- HashiCorp speaks up about adjusting to life under IBM • The Register
-- Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News
-- Covert Web-to-App Tracking via Localhost on Android
-- I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community
-- TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum
-- Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog
-- GitHub - unvalley/ephe: An Ephemeral Markdown Paper for today. Less but handy features for plain Markdown lovers.
-- I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far
-- GitHub - iib0011/omni-tools: Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking, just fast, accessible utilities right from your browser!
-- This no-code, security-focused n8n alternative works with everything, and it's free
-- Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot - The GitHub Blog
-- Mount Etna erupts, sending tourists running for safety - ABC News
-- Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS
+- Using artifact attestations to establish provenance for builds - GitHub Docs
+- GitHub - hxu296/tariff: The official repository for tariff
+- Red Hat Ansible and HashiCorp Terraform Will Be Coming Together - The New Stack
+- GitHub - OperantAI/woodpecker: Red Teaming for AI and Cloud
+- Securing CI/CD workflows with Wazuh
+- ASD releases joint advice on AI data security – ARN
 
 ## Interesting details
 
-<a name='Meta Pixel halts Android localhost tracking after disclosure • The Register'>[Meta Pixel halts Android localhost tracking after disclosure • The Register](https://www.theregister.com/2025/06/03/meta_pauses_android_tracking_tech/)</a> - : Zuckercorp and Yandex used localhost loophole to tie browser data to app users, say boffins
+<a name='Using artifact attestations to establish provenance for builds - GitHub Docs'>[Using artifact attestations to establish provenance for builds - GitHub Docs](https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds#verifying-artifact-attestations-with-the-github-cli)</a> - None
 
-<a name='Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux'>[Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux](https://cybersecuritynews.com/kali-gpt/)</a> - Kali GPT, a specialized AI model built on GPT-4 architecture, has been specifically developed to integrate seamlessly with Kali Linux, offering unprecedented support for offensive security professionals and students alike.
+<a name='GitHub - hxu296/tariff: The official repository for tariff'>[GitHub - hxu296/tariff: The official repository for tariff](https://github.com/hxu296/tariff)</a> - The official repository for tariff. Contribute to hxu296/tariff development by creating an account on GitHub.
 
-<a name='Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News'>[Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News](https://japannews.yomiuri.co.jp/science-nature/technology/20250605-259501/)</a> - None
+<a name='Red Hat Ansible and HashiCorp Terraform Will Be Coming Together - The New Stack'>[Red Hat Ansible and HashiCorp Terraform Will Be Coming Together - The New Stack](https://thenewstack.io/red-hat-ansible-and-hashicorp-terraform-will-be-coming-together/)</a> - While no hard plans were revealed at the Red Hat Summit, it's clear that Red Hat's DevOps and HashiCorp's IaC programs will end up working together.
 
-<a name='HashiCorp speaks up about adjusting to life under IBM • The Register'>[HashiCorp speaks up about adjusting to life under IBM • The Register](https://www.theregister.com/2025/06/05/hashicorp_ibm_hashidays/)</a> - : Freshly acquired cloud darling talks mainframes, Ansible, and influencing Big Blue at HashiDays event
+<a name='GitHub - OperantAI/woodpecker: Red Teaming for AI and Cloud'>[GitHub - OperantAI/woodpecker: Red Teaming for AI and Cloud](https://github.com/OperantAI/woodpecker)</a> - Red Teaming for AI and Cloud. Contribute to OperantAI/woodpecker development by creating an account on GitHub.
 
-<a name='Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News'>[Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News](https://www.thebrighterside.news/global-good/buried-under-2-kilometers-of-antarctic-ice-scientists-find-a-34-million-year-old-lost-world/)</a> - None
+<a name='Securing CI/CD workflows with Wazuh'>[Securing CI/CD workflows with Wazuh](https://thehackernews.com/2025/05/securing-cicd-workflows-with-wazuh.html?m=1)</a> - None
 
-<a name='Covert Web-to-App Tracking via Localhost on Android'>[Covert Web-to-App Tracking via Localhost on Android](https://localmess.github.io/)</a> - None
+<a name='ASD releases joint advice on AI data security – ARN'>[ASD releases joint advice on AI data security – ARN](https://www.arnnet.com.au/article/3993677/asd-releases-joint-advice-on-ai-data-security.html)</a> - The Australian Securities Directorate (ASD), in collaboration with international partners, has come with new advice on best practices for securing data throughout the artificial intelligence (AI) and machine learning (ML) system lifecycle.
 
-<a name='I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community'>[I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community](https://dev.to/composiodev/i-vibe-coded-a-20m-yc-app-in-a-weekend-heres-how-533o)</a> - I realised that many companies offer no-code platforms to their users for automating workflows. The... Tagged with webdev, programming, javascript, ai.
-
-<a name='TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum'>[TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum](https://forum.proxmox.com/threads/task-error-activating-lv-pve-data-failed-activation-of-logical-volume-pve-data-is-prohibited-while-logical-volume-pve-data_tdata-is-active.106225/)</a> - I have gotten this a couple of times and have been able to get past it, but I can no longer get me PVE sessions to start....
-
-I've already tried:
-
-lvchange...
-
-<a name='Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog'>[Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog](https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/)</a> - A full look at agent mode in GitHub Copilot, including what it can do, when to use it, and best practices.
-
-<a name='GitHub - unvalley/ephe: An Ephemeral Markdown Paper for today. Less but handy features for plain Markdown lovers.'>[GitHub - unvalley/ephe: An Ephemeral Markdown Paper for today. Less but handy features for plain Markdown lovers.](https://github.com/unvalley/ephe)</a> - An Ephemeral Markdown Paper for today. Less but handy features for plain Markdown lovers. - unvalley/ephe
-
-<a name='I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far'>[I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far](https://www.xda-developers.com/switched-from-tailscale-to-fully-self-hosted-alternative-netbird/)</a> - Who wouldn't want enterprise-level authentication for their own VPN?
-
-<a name='GitHub - iib0011/omni-tools: Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking, just fast, accessible utilities right from your browser!'>[GitHub - iib0011/omni-tools: Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking, just fast, accessible utilities right from your browser!](https://github.com/iib0011/omni-tools)</a> - Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking, just fast, accessible utilities right from your browser! - iib0011/omni-tools
-
-<a name='This no-code, security-focused n8n alternative works with everything, and it's free'>[This no-code, security-focused n8n alternative works with everything, and it's free](https://www.xda-developers.com/cloud-based-n8n-alternative/)</a> - Tines is worth trying out for a fully cloud-based, secure solution to automation.
-
-<a name='Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot - The GitHub Blog'>[Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot - The GitHub Blog](https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/)</a> - We’ll decode these two tools—and show you how to use them both to work more efficiently.
-
-<a name='Mount Etna erupts, sending tourists running for safety - ABC News'>[Mount Etna erupts, sending tourists running for safety - ABC News](https://www.abc.net.au/news/2025-06-02/mount-etna-erupts-sends-tourists-running/105368608)</a> - Witnessing an erupting volcano live in person is on my bucket list
-
-<a name='Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS'>[Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS](https://aws.amazon.com/about-aws/whats-new/2025/05/mountpoint-amazon-s3-mount-buckets-fstab/)</a> - Discover more about what's new at AWS with Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab
+---
 
 All this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week
