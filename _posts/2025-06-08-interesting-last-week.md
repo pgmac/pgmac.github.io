@@ -13,7 +13,7 @@ Internet Discoveries between  1 and  8 June
 - HashiCorp speaks up about adjusting to life under IBM • The Register
 - Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News
 - Covert Web-to-App Tracking via Localhost on Android
-- I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community
+- I vibe-coded a $20M YC app in a weekend, here is how🧙‍♂️ 🪄 - DEV Community
 - Proxmox lv pve/data activation failed
 - Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog
 - GitHub - unvalley/ephe: An Ephemeral Markdown Paper for today. Less but handy features for plain Markdown lovers.
@@ -38,7 +38,7 @@ Internet Discoveries between  1 and  8 June
 
 <a name='Covert Web-to-App Tracking via Localhost on Android'>[Covert Web-to-App Tracking via Localhost on Android](https://localmess.github.io/)</a> - Facebook and Yandex link Web and App usage via a localhost network connection
 
-<a name='I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community'>[I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community](https://dev.to/composiodev/i-vibe-coded-a-20m-yc-app-in-a-weekend-heres-how-533o)</a> - I realised that many companies offer no-code platforms to their users for automating workflows. The... Tagged with webdev, programming, javascript, ai.
+<a name='I vibe-coded a $20M YC app in a weekend, here is how🧙‍♂️ 🪄 - DEV Community'>[I vibe-coded a $20M YC app in a weekend, here is how🧙‍♂️ 🪄 - DEV Community](https://dev.to/composiodev/i-vibe-coded-a-20m-yc-app-in-a-weekend-heres-how-533o)</a> - I realised that many companies offer no-code platforms to their users for automating workflows. The... Tagged with webdev, programming, javascript, ai.
 
 <a name='Proxmox lv pve/data activation failed'>[Proxmox lv pve/data activation failed](https://forum.proxmox.com/threads/task-error-activating-lv-pve-data-failed-activation-of-logical-volume-pve-data-is-prohibited-while-logical-volume-pve-data_tdata-is-active.106225/)</a> - TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum
 
