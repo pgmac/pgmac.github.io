@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2025-06-01 to 2025-06-08
 category: Last-Week
-tags: ['ad', 'privacy', 'ai', 'cyber', 'llm', 'pentest', 'security', 'environment', 'science', 'ansible', 'open source', 'orchestration', 'terraform', 'geography', 'history', 'science', 'cyber', 'privacy', 'security', 'ai', 'coding assistant', 'llm', 'home', 'host your own', 'storage', 'ai', 'coding assistant', 'github', 'knowledge', 'management', 'markdown', 'host your own', 'networking', 'vpn', 'host your own', 'open source', 'tools', 'automation', 'cyber', 'security', 'workflow']
+tags: ['ai', 'cyber', 'llm', 'pentest', 'security', 'environment', 'science', 'ansible', 'open source', 'orchestration', 'terraform', 'geography', 'history', 'science', 'cyber', 'privacy', 'security', 'ai', 'coding assistant', 'llm', 'home', 'host your own', 'storage', 'ai', 'coding assistant', 'github', 'knowledge', 'management', 'markdown', 'host your own', 'networking', 'vpn', 'host your own', 'open source', 'tools', 'automation', 'cyber', 'security', 'workflow', 'ai', 'coding assistant', 'github', 'llm', 'earth', 'aws', 'file system', 's3']
 author: pgmac
 ---
 
@@ -14,7 +14,7 @@ Internet Discoveries between  1 and  8 June
 - Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News
 - Covert Web-to-App Tracking via Localhost on Android
 - I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community
-- TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum
+- Proxmox lv pve/data activation failed
 - Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog
 - GitHub - unvalley/ephe: An Ephemeral Markdown Paper for today. Less but handy features for plain Markdown lovers.
 - I switched from Tailscale to this fully self-hosted alternative, and I'm loving it so far
@@ -34,17 +34,15 @@ Internet Discoveries between  1 and  8 June
 
 <a name='HashiCorp speaks up about adjusting to life under IBM • The Register'>[HashiCorp speaks up about adjusting to life under IBM • The Register](https://www.theregister.com/2025/06/05/hashicorp_ibm_hashidays/)</a> - : Freshly acquired cloud darling talks mainframes, Ansible, and influencing Big Blue at HashiDays event
 
-<a name='Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News'>[Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News](https://www.thebrighterside.news/global-good/buried-under-2-kilometers-of-antarctic-ice-scientists-find-a-34-million-year-old-lost-world/)</a> - None
+<a name='Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News'>[Buried under 2 kilometers of Antarctic ice, scientists find a 34-million-year-old lost world - The Brighter Side of News](https://www.thebrighterside.news/global-good/buried-under-2-kilometers-of-antarctic-ice-scientists-find-a-34-million-year-old-lost-world/)</a> - A world lost under 34 million years of ice recently discovered by scientists
 
-<a name='Covert Web-to-App Tracking via Localhost on Android'>[Covert Web-to-App Tracking via Localhost on Android](https://localmess.github.io/)</a> - None
+<a name='Covert Web-to-App Tracking via Localhost on Android'>[Covert Web-to-App Tracking via Localhost on Android](https://localmess.github.io/)</a> - Facebook and Yandex link Web and App usage via a localhost network connection
 
 <a name='I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community'>[I vibe-coded a $20M YC app in a weekend, here's how🧙‍♂️ 🪄 - DEV Community](https://dev.to/composiodev/i-vibe-coded-a-20m-yc-app-in-a-weekend-heres-how-533o)</a> - I realised that many companies offer no-code platforms to their users for automating workflows. The... Tagged with webdev, programming, javascript, ai.
 
-<a name='TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum'>[TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum](https://forum.proxmox.com/threads/task-error-activating-lv-pve-data-failed-activation-of-logical-volume-pve-data-is-prohibited-while-logical-volume-pve-data_tdata-is-active.106225/)</a> - I have gotten this a couple of times and have been able to get past it, but I can no longer get me PVE sessions to start....
+<a name='Proxmox lv pve/data activation failed'>[Proxmox lv pve/data activation failed](https://forum.proxmox.com/threads/task-error-activating-lv-pve-data-failed-activation-of-logical-volume-pve-data-is-prohibited-while-logical-volume-pve-data_tdata-is-active.106225/)</a> - TASK ERROR: activating LV 'pve/data' failed: Activation of logical volume pve/data is prohibited while logical volume pve/data_tdata is active. | Proxmox Support Forum
 
-I've already tried:
-
-lvchange...
+I have gotten this a couple of times and have been able to get past it, but I can no longer get me PVE sessions to start....
 
 <a name='Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog'>[Agent mode 101: All about GitHub Copilot’s powerful mode - The GitHub Blog](https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/)</a> - A full look at agent mode in GitHub Copilot, including what it can do, when to use it, and best practices.
 
