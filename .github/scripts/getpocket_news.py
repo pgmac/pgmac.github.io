@@ -50,6 +50,7 @@ def get_link_notes(_linkid):
         print(f"Error fetching notes for link {_linkid}: {e}")
         return {}
 
+
 def get_links():
     """ Get all the Pocket posts with a tag
     """
