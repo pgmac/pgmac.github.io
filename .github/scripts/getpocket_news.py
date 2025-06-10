@@ -120,7 +120,7 @@ def main():
                   page_tags.append(f"{post_tag}")
               post_titles.append(title)
               articles = (f"{articles}"
-                          f"<a name='{title}'>[{title}]({url})</a> - "
+                          f"<a name=\"{title}\">[{title}]({url})</a> - "
                           f"{excerpt}\n\n")
       else:
           no_posts_message = "No posts found for this week"
@@ -138,12 +138,12 @@ def main():
             f"tags: {page_tags}\n"
             f"author: pgmac\n"
             "---\n\n"
-            f"Internet Discoveries between {last_week.strftime(last_week_format)} and {sun.strftime('%e %B')}\n")
+            f"Internet Discoveries between {last_week.strftime(last_week_format)} and {sun.strftime('%e %B')}\n\n")
   for title in post_titles:
     message += (f"- {title}\n")
   message += (f"\n## Interesting details\n\n"
               f"{articles}"
-              f"All this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week")
+              f"\n---\n\nAll this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week")
 
   create_blog_post(message)
 
