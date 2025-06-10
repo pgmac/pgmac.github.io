@@ -7,6 +7,7 @@ author: pgmac
 ---
 
 Internet Discoveries between  1 and  8 June
+
 - Meta Pixel halts Android localhost tracking after disclosure • The Register
 - Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux
 - Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News
@@ -27,6 +28,8 @@ Internet Discoveries between  1 and  8 June
 ## Interesting details
 
 <a name="Meta Pixel halts Android localhost tracking after disclosure • The Register">[Meta Pixel halts Android localhost tracking after disclosure • The Register](https://www.theregister.com/2025/06/03/meta_pauses_android_tracking_tech/)</a> - : Zuckercorp and Yandex used localhost loophole to tie browser data to app users, say boffins
+
+<a name="Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux">[Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux](https://cybersecuritynews.com/kali-gpt/)</a> - Kali GPT, a specialized AI model built on GPT-4 architecture, has been specifically developed to integrate seamlessly with Kali Linux, offering unprecedented support for offensive security professionals and students alike.
 
 <a name="Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News">[Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News](https://japannews.yomiuri.co.jp/science-nature/technology/20250605-259501/)</a> - None
 
@@ -57,5 +60,8 @@ I have gotten this a couple of times and have been able to get past it, but I ca
 <a name="Mount Etna erupts, sending tourists running for safety - ABC News">[Mount Etna erupts, sending tourists running for safety - ABC News](https://www.abc.net.au/news/2025-06-02/mount-etna-erupts-sends-tourists-running/105368608)</a> - Witnessing an erupting volcano live in person is on my bucket list
 
 <a name="Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS">[Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS](https://aws.amazon.com/about-aws/whats-new/2025/05/mountpoint-amazon-s3-mount-buckets-fstab/)</a> - Discover more about what's new at AWS with Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab
+
+
+---
 
 All this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week
