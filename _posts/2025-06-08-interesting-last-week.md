@@ -31,7 +31,7 @@ Internet Discoveries between  1 and  8 June
 
 <a name="Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux">[Kali GPT- AI Assistant That Transforms Penetration Testing on Kali Linux](https://cybersecuritynews.com/kali-gpt/)</a> - Kali GPT, a specialized AI model built on GPT-4 architecture, has been specifically developed to integrate seamlessly with Kali Linux, offering unprecedented support for offensive security professionals and students alike.
 
-<a name="Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News">[Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News](https://japannews.yomiuri.co.jp/science-nature/technology/20250605-259501/)</a> - None
+<a name="Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News">[Japanese Researchers Develop ‘Transparent Paper’ as Alternative to Plastics; New Material Is Biodegradable, Can Be Produced with Low Carbon Emissions - The Japan News](https://japannews.yomiuri.co.jp/science-nature/technology/20250605-259501/)</a> - Transparent Paper instead of plastic. Handy for food wraps.
 
 <a name="HashiCorp speaks up about adjusting to life under IBM • The Register">[HashiCorp speaks up about adjusting to life under IBM • The Register](https://www.theregister.com/2025/06/05/hashicorp_ibm_hashidays/)</a> - : Freshly acquired cloud darling talks mainframes, Ansible, and influencing Big Blue at HashiDays event
 
