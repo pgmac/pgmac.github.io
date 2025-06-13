@@ -114,10 +114,12 @@ def main():
               post_tags = []
               # item['tags'] = get_link_tags(item.get('id', 0)).get('tags', {})
               item['tags'] = [tag['name'] for tag in get_link_tags(item.get('id', 0)).get('tags', {}) if tag.get('visibility') == 1]
-              item['notes'] = [note['note'] for note in get_link_notes(item.get('id', 0)).get('data', {}) if note.get('visibility') == 1]
               for post_tag in item.get('tags', {}):
                   post_tags.append(f"{post_tag}")
                   page_tags.append(f"{post_tag}")
+              item['notes'] = [note['note'] for note in get_link_notes(item.get('id', 0)).get('data', {}) if note.get('visibility') == 1]
+              for post_note in item['notes']:
+                  excerpt += f"\n\n> {post_note.replace('\n', '\n> ')}"
               post_titles.append(title)
               articles = (f"{articles}"
                           f"<a name=\"{title}\">[{title}]({url})</a> - "
