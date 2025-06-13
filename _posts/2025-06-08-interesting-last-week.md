@@ -61,6 +61,12 @@ I have gotten this a couple of times and have been able to get past it, but I ca
 
 <a name="Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS">[Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab - AWS](https://aws.amazon.com/about-aws/whats-new/2025/05/mountpoint-amazon-s3-mount-buckets-fstab/)</a> - Discover more about what's new at AWS with Mountpoint for Amazon S3 now lets you automatically mount your S3 buckets using fstab
 
+> Yeah, yeah, yeah - we're not supposed to mount S3 buckets because they're object storage, not file system block storage devices.
+Just because they happen to be laid out very similarly to a file systems means nothing. Or the browser they have in the AWS portal is like browsing file system.
+Or people are entirely too used to directory structures, so use it everywhere (not just file systems, or object storage).
+> 
+> This could actually be a bit useful.
+
 
 ---
 
