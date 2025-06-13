@@ -94,7 +94,7 @@ jobs:
         run: pip install requests
 
       - name: Build last-week page
-        run: .github/scripts/getpocket_news.py
+        run: .github/scripts/get_interesting_news.py
         env:
           consumer_key: ${{ secrets.consumer_key }}
           access_token: ${{ secrets.access_token }}
