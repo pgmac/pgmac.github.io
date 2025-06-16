@@ -21,7 +21,7 @@ since = int(last_week.timestamp())
 def get_link_tags(_linkid):
     """ Get all the tags for a link
     """
-    api_url = f"https://links.int.pgmac.net/api/v2/links/{_linkid}"
+    api_url = f"https://links.pgmac.net.au/api/v2/links/{_linkid}"
     headers = {
         'Authorization': f"Bearer {os.environ.get('PGLINKS_KEY')}",
         'accept': 'application/json'
@@ -37,7 +37,7 @@ def get_link_tags(_linkid):
 def get_link_notes(_linkid):
     """ Get all the notes for a link
     """
-    api_url = f"https://links.int.pgmac.net/api/v2/links/{_linkid}/notes"
+    api_url = f"https://links.pgmac.net.au/api/v2/links/{_linkid}/notes"
     headers = {
         'Authorization': f"Bearer {os.environ.get('PGLINKS_KEY')}",
         'accept': 'application/json'
@@ -54,7 +54,7 @@ def get_link_notes(_linkid):
 def get_links():
     """ Get all the Pocket posts with a tag
     """
-    api_url = "https://links.int.pgmac.net/api/v2/links"
+    api_url = "https://links.pgmac.net.au/api/v2/links"
     headers = {
         'Authorization': f"Bearer {os.environ.get('PGLINKS_KEY')}",
         'accept': 'application/json'
