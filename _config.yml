@@ -46,6 +46,8 @@ plugins:
   - jekyll-feed
   - jekyll-category-pages
   - jekyll-sitemap
+feed:
+  tags: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
