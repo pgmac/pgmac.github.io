@@ -12,6 +12,16 @@ on:
     - cron: "01 14 * * 0"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  push:
+    branches: ["master"]
+    paths:
+      - '.github/scripts/get_interesting_news.py'
+      - '.github/workflows/last-week.yml'
+  pull_request:
+    branches: ["master"]
+    paths:
+      - '.github/scripts/get_interesting_news.py'
+      - '.github/workflows/last-week.yml'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
