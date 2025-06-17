@@ -47,7 +47,8 @@ plugins:
   - jekyll-category-pages
   - jekyll-sitemap
 feed:
-  tags: true
+  tags:
+    path: "feed/tags/"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
