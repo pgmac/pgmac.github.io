@@ -2,7 +2,7 @@
 layout: post
 title: Telling stories
 category: Family
-tags: [Family, Stories]
+tags: [family, stories]
 author: pgmac
 ---
 

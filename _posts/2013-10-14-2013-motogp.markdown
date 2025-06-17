@@ -2,7 +2,7 @@
 layout: post
 title: 2013 MotoGP
 category: Sport
-tags: [MotoGP, Photography]
+tags: [motogp, photography]
 author: pgmac
 ---
 Every year, a few mates and I head down to Phillip Island for the [Australian](http://www.motogp.com.au/){:target="_blank"} round of the [MotoGP](http://www.motogp.com/){:target="_blank"}.

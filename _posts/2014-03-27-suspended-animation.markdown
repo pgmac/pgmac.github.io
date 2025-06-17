@@ -2,7 +2,7 @@
 layout: post
 title: Suspended Animation - From Science Fiction to Real Life
 category: Science
-tags: [Suspended Animation]
+tags: [suspended animation]
 author: pgmac
 ---
 Doctors are ready to start human trials of suspending life to perform surgery, or otherwise "fix", patients who have suffered major trauma.

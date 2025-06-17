@@ -2,7 +2,7 @@
 layout: post
 title: Going Exploring
 category: Family
-tags: [Family, Stories, Tales]
+tags: [family, stories, tales]
 author: pgmac
 ---
 

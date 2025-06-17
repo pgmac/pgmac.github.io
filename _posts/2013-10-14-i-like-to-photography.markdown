@@ -2,7 +2,7 @@
 layout: post
 title: I Like To Photography
 category: Photography
-tags: [Photography]
+tags: [photography]
 author: pgmac
 ---
 Photography is one of my favourite hobbies. It's always great fun to get out there and find a different shot of something people know well.

@@ -2,7 +2,7 @@
 layout: post
 title: Windows Server Virtual Interface with a configured VLAN with a custom MAC
 category: Technology
-tags: [Windows, Server, VLAN]
+tags: [windows, server, vlan]
 author: pgmac
 ---
 

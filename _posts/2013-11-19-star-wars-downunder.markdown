@@ -2,7 +2,7 @@
 layout: post
 title: Star Wars Down Under
 category: Entertainment
-tags: [StarWars, Fan-Film]
+tags: [starwars, fan-film]
 author: pgmac
 youtubeId: mhTn8cjm9ZM
 ---

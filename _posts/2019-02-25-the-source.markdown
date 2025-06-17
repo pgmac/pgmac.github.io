@@ -2,7 +2,7 @@
 layout: post
 title: The Source
 category: Technology
-tags: [Coding, Source code]
+tags: [coding, source code]
 author: pgmac
 ---
 

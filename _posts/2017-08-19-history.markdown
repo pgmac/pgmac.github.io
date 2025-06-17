@@ -2,7 +2,7 @@
 layout: post
 title: History
 category: Language
-tags: [Shower thoughts]
+tags: [shower thoughts]
 author: pgmac
 ---
 

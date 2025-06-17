@@ -2,7 +2,7 @@
 layout: post
 title: MotoGP 2013 champion crowned
 category: Sports
-tags: [MotoGP]
+tags: [motogp]
 author: pgmac
 ---
 Marc Marquez is the 2013 MotoGP World Champion.

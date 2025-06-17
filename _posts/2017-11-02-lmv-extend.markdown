@@ -2,7 +2,7 @@
 layout: post
 title: How-To extend a Logical Volume using LVM on Linux
 category: Technology
-tags: [Linux, LVM, Storage]
+tags: [linux, lvm, storage]
 author: pgmac
 ---
 While not a difficult process, it's not the easiest of things to do either. Logical Volume Manager (LVM) lives up to *NIX's user friendly mantra - "UNIX is user friendly, it's just picky about who it's friends are".
