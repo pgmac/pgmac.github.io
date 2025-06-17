@@ -25,7 +25,7 @@ Internet Discoveries between  8 and 15 June
 - AWS Launches EKS Dashboard to Tackle Multi-Cloud Kubernetes Complexity - InfoQ
 - immich.app
 - www.evolutionaustralia.com.au
-- GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world
+- GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting `old` measuring units (water, power, gas, ...) to the digital world
 - IoTaWatt™ Open WiFi Electric Power Monitor
 - GitHub - resemble-ai/chatterbox: SoTA open-source TTS
 - It's The End Of Observability As We Know It (And I Feel Fine) | Honeycomb
@@ -104,7 +104,7 @@ Easily back up, organize, and manage your photos on your own server. Immich help
 > 
 > If a longer cable is required it can be extended using CAT5 Ethernet cable (to a max of 100m) or consider using the myenergi harvi to connect the CT over wireless.
 
-<a name="GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world">[GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world](https://github.com/jomjol/AI-on-the-edge-device)</a> - Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world - jomjol/AI-on-the-edge-device
+<a name="GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting `old` measuring units (water, power, gas, ...) to the digital world">[GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting `old` measuring units (water, power, gas, ...) to the digital world](https://github.com/jomjol/AI-on-the-edge-device)</a> - Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world - jomjol/AI-on-the-edge-device
 
 <a name="IoTaWatt™ Open WiFi Electric Power Monitor">[IoTaWatt™ Open WiFi Electric Power Monitor](https://iotawatt.com/)</a> - Electric Power Monitor. Residential and Commercial. Single, split and three-phase. Any voltage.  Local data storage and analysis and also upload to your cloud service. Economical. Ships worldwide, in use in dozens of countries on four continents.
 
