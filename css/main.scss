@@ -34,8 +34,8 @@ $card-padding: 20px !default;
 $card-bg-color: $background-color !default;
 $card-link-color: $brand-color !default;
 $card-link-color-light: lighten($card-link-color, 20%) !default;
-$element-top-margin: $spacing-unit/3 !default;
-$element-bottom-margin: ($spacing-unit*2)/3 !default;
+$element-top-margin: calc($spacing-unit/3) !default;
+$element-bottom-margin: calc(($spacing-unit*2)/3) !default;
 
 $anim-speed: 0.3s;
 
