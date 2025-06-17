@@ -80,9 +80,29 @@ Internet Discoveries between  8 and 15 June
 
 <a name="AWS Launches EKS Dashboard to Tackle Multi-Cloud Kubernetes Complexity - InfoQ">[AWS Launches EKS Dashboard to Tackle Multi-Cloud Kubernetes Complexity - InfoQ](https://www.infoq.com/news/2025/06/aws-eks-dashboard-kubernetes/)</a> - Introducing the Amazon EKS Dashboard: a centralized management tool delivering unified visibility across multiple Kubernetes clusters in AWS. Simplifying operational oversight, it offers insights on r
 
-<a name="immich.app">[immich.app](https://immich.app/)</a> - None
+<a name="immich.app">[immich.app](https://immich.app/)</a> - Self-hosted photo and video management solution
 
-<a name="www.evolutionaustralia.com.au">[www.evolutionaustralia.com.au](https://www.evolutionaustralia.com.au/product-page/myenergi-ct-clamp)</a> - None
+Easily back up, organize, and manage your photos on your own server. Immich helps you browse, search and organize your photos and videos with ease, without sacrificing your privacy.
+
+> A self-hosted photo editing app that reportedly challenges some of Google Photo's features.
+> I remain skeptical, but interested.
+
+<a name="www.evolutionaustralia.com.au">[www.evolutionaustralia.com.au](https://www.evolutionaustralia.com.au/product-page/myenergi-ct-clamp)</a> - myenergi CT Clamp
+
+> A clamp to go on your main electrical supply line that, when connected to appropriate device to capture and display the data.
+> 
+> From the page:
+> If you would like to see real time generation from your solar/wind system displayed on the LCD display of your product. You’ll need an additional CT. (additional option)
+> 
+> In some cases extra CT clamps are required i.e for 3 phase installs. 
+> 
+> Ver 2 Single Phase zappi comes with one wired CT clamp as standard.
+> 
+> Ver 2 Three Phase zappi comes with three wired CT clamps as standard.
+> 
+> CT clamps come with a 5m cable
+> 
+> If a longer cable is required it can be extended using CAT5 Ethernet cable (to a max of 100m) or consider using the myenergi harvi to connect the CT over wireless.
 
 <a name="GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world">[GitHub - jomjol/AI-on-the-edge-device: Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world](https://github.com/jomjol/AI-on-the-edge-device)</a> - Easy to use device for connecting "old" measuring units (water, power, gas, ...) to the digital world - jomjol/AI-on-the-edge-device
 
@@ -105,7 +125,9 @@ Internet Discoveries between  8 and 15 June
 
 <a name="USB-C was a missed opportunity and it’s too late to fix the mess">[USB-C was a missed opportunity and it’s too late to fix the mess](https://www.androidauthority.com/usb-c-cant-be-fixed-3560127/)</a> - USB-C aimed to unify charging and data, but years later, compatibility problems and complex specs make it a headache for consumers worldwide.
 
-<a name="abcnews.go.com">[abcnews.go.com](https://abcnews.go.com/US/sly-stone-pioneering-leader-funk-band-sly-family/story?id=122666345)</a> - None
+<a name="abcnews.go.com">[abcnews.go.com](https://abcnews.go.com/US/sly-stone-pioneering-leader-funk-band-sly-family/story?id=122666345)</a> - Sly Stone, the pioneering leader of the funk band bearing his name, Sly and the Family Stone, has died, according to his family. Stone was 82 years old.
+
+> The leader of the band Sly and the Family Stone, known for blending genres of funk, R&B, psychedelic and more, passed away after a battle with COPD and other health issues.
 
 <a name="Designing Blue Team playbooks with Wazuh for proactive incident response">[Designing Blue Team playbooks with Wazuh for proactive incident response](https://www.bleepingcomputer.com/news/security/designing-blue-team-playbooks-with-wazuh-for-proactive-incident-response/)</a> - Blue Team playbooks are essential—but tools like Wazuh take them to the next level. From credential dumping to web shells and brute-force attacks, see how Wazuh strengthens real-time detection and automated response.
 
