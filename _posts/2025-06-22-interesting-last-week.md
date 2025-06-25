@@ -20,7 +20,7 @@ Internet Discoveries between 15 and 22 June
 - The Latest X.Org Server Activity Are A Lot Of Code Reverts - Phoronix
 - These retro SEGA games are free on Android until they disappear - Android Authority
 - Building Effective AI Agents \ Anthropic
-- Honda Conducts Successful Launch and Landing Test of Experimental Reusable Rocket | Honda Global Corporate Website
+- Honda Conducts Successful Launch and Landing Test of Experimental Reusable Rocket - Honda Global Corporate Website
 - Actions Runner Controller 0.12.0 release - GitHub Changelog
 - Chawan: 0.2.0
 - OpenTelemetry for Go: measuring the overhead | Coroot
@@ -55,7 +55,7 @@ Internet Discoveries between 15 and 22 June
 
 <a name="Building Effective AI Agents \ Anthropic">[Building Effective AI Agents \ Anthropic](https://www.anthropic.com/engineering/building-effective-agents)</a> - Discover how Anthropic approaches the development of reliable AI agents. Learn about our research on agent capabilities, safety considerations, and technical framework for building trustworthy AI.
 
-<a name="Honda Conducts Successful Launch and Landing Test of Experimental Reusable Rocket | Honda Global Corporate Website">[Honda Conducts Successful Launch and Landing Test of Experimental Reusable Rocket | Honda Global Corporate Website](https://global.honda/en/topics/2025/c_2025-06-17ceng.html)</a> - Honda Global | Honda R&D Co., Ltd., a research and development subsidiary of Honda Motor Co., Ltd., today conducted a launch and landing test of an experimental reusable rocket*1 (6.3 m in length, 85 cm in diameter, 900 kg dry weight/1,312 kg wet weight) developed independently by Honda. The test was completed successfully, the first time Honda landed a rocket after reaching an altitude of 300 meters.
+<a name="Honda Conducts Successful Launch and Landing Test of Experimental Reusable Rocket - Honda Global Corporate Website">[Honda Conducts Successful Launch and Landing Test of Experimental Reusable Rocket - Honda Global Corporate Website](https://global.honda/en/topics/2025/c_2025-06-17ceng.html)</a> - Honda Global - Honda R&D Co., Ltd., a research and development subsidiary of Honda Motor Co., Ltd., today conducted a launch and landing test of an experimental reusable rocket*1 (6.3 m in length, 85 cm in diameter, 900 kg dry weight/1,312 kg wet weight) developed independently by Honda. The test was completed successfully, the first time Honda landed a rocket after reaching an altitude of 300 meters.
 
 > [Here's the video of the launch](https://global.honda/content/dam/site/global-en/topics-new/cq_img/2025/c_2025-06-17ceng/print/c_2025-06-17c_101H.mp4)
 
