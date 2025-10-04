@@ -111,6 +111,7 @@ jobs:
           PGLINKS_KEY: ${{ secrets.PGLINKS_KEY }}
 
       - name: Commit and push if the documents have changed
+        if: github.ref_name == 'master'
         run: |-
           git status _posts
           git config --global user.email "lastweek-bot@pgmac.dev"
