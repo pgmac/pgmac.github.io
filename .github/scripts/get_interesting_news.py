@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 
-"""Let's get some interesting things from Pocket and share them about"""
+"""
+Generate weekly blog posts from Link Ace bookmarks
+
+This script fetches public links, tags, and notes from Link Ace and creates
+a weekly blog post. Only public items (visibility == 1 or is_private == False)
+are included in the generated post.
+"""
 
 import os
 import re
@@ -68,13 +74,18 @@ def extract_youtube_id(url):
 
 
 def get_links():
-    """Get all the Pocket posts with a tag"""
+    """Get all the links from the API (public links only filtered in processing)"""
     api_url = "https://links.pgmac.net.au/api/v2/links"
     headers = {
         "Authorization": f"Bearer {os.environ.get('PGLINKS_KEY')}",
         "accept": "application/json",
     }
-    params = {"per_page": 100, "order_by": "created_at", "order_dir": "desc"}
+    params = {
+        "per_page": 100,
+        "order_by": "created_at",
+        "order_dir": "desc",
+        "private": 0,  # Only fetch public links
+    }
     try:
         response = requests.get(api_url, timeout=30, headers=headers, params=params)
         response.raise_for_status()
@@ -117,6 +128,11 @@ def main():
             )
             # 2025-06-01 23:03:06.259047  2025-06-01 23:03:06.259047  2025-06-01 23:03:06.259047
             for item in posts["data"]:
+                # Only process public links (visibility == 1)
+                if item.get("is_private", False):
+                    print(f"Skipping private link: {item.get('title', 'No Title')}")
+                    continue
+
                 link_created_at = datetime.strptime(
                     item.get("created_at", "3999-12-31T23:59:59.999999Z"),
                     links_date_format,
@@ -135,7 +151,7 @@ def main():
                 excerpt = item.get("description", "&nbsp;")
                 # time_added = datetime.fromtimestamp(datetime.strptime(item.get('created_at', '0000-00-00T00:00:00.000000Z'), links_date_format).timestamp())
                 post_tags = []
-                # item['tags'] = get_link_tags(item.get('id', 0)).get('tags', {})
+                # Fetch only public tags (visibility == 1)
                 item["tags"] = [
                     tag["name"]
                     for tag in get_link_tags(item.get("id", 0)).get("tags", {})
@@ -144,6 +160,7 @@ def main():
                 for post_tag in item.get("tags", {}):
                     post_tags.append(f"{post_tag}")
                     page_tags.append(f"{post_tag}")
+                # Fetch only public notes (visibility == 1)
                 item["notes"] = [
                     note["note"]
                     for note in get_link_notes(item.get("id", 0)).get("data", {})
