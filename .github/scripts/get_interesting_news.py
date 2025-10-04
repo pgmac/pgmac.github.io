@@ -163,7 +163,7 @@ def main():
                     )
                 else:
                     articles = (
-                        f'{articles}<a name="{title}">[{title}]({url})</a> - {excerpt}\n\n'
+                        f'{articles}<a name="{title}"></a>[{title}]({url}) - {excerpt}\n\n'
                     )
         else:
             no_posts_message = "No posts found for this week"
