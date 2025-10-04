@@ -1,0 +1,22 @@
+{% assign last_week_posts = site.categories['Last-Week'] | sort: 'date' %}
+{% for post in last_week_posts %}
+  {% if post.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% assign prev_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+{% if prev_index >= 0 %}
+  {% assign prev_post = last_week_posts[prev_index] %}
+{% endif %}
+{% if next_index < last_week_posts.size %}
+  {% assign next_post = last_week_posts[next_index] %}
+{% endif %}
+
+{% if prev_post or next_post %}
+<div style="display: flex; justify-content: space-between;">
+  <div>{% if prev_post %}<a href="{{ prev_post.url }}">&larr; Previous week</a>{% endif %}</div>
+  <div>{% if next_post %}<a href="{{ next_post.url }}">Next week &rarr;</a>{% endif %}</div>
+</div>
+{% endif %}
