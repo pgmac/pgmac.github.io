@@ -2,10 +2,12 @@
 """
 GitHub Releases RSS Feed Generator
 
-Generates an RSS feed from releases of your starred GitHub repositories.
+Generates an RSS feed from releases of starred GitHub repositories.
 
 Usage:
-    ./gh-releases-rss.py [--debug]
+    ./gh-releases-rss.py <username> [options]
+    ./gh-releases-rss.py pgmac -o releases.xml -n 5
+    ./gh-releases-rss.py pgmac --debug
 
 Environment Variables:
     GITHUB_TOKEN - GitHub personal access token (recommended for higher rate limits)
@@ -19,6 +21,7 @@ Environment Variables:
 # ]
 # ///
 
+import argparse
 import os
 import sys
 from dataclasses import dataclass
@@ -216,13 +219,42 @@ class GitHubReleasesRSSGenerator:
 
 def main():
     """Main entry point"""
-    # Parse arguments
-    debug_mode = "--debug" in sys.argv
+    parser = argparse.ArgumentParser(
+        description="Generate RSS feed from GitHub starred repository releases"
+    )
+    parser.add_argument(
+        "username",
+        help="GitHub username to fetch starred repositories for",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="github_releases.xml",
+        help="Output file path (default: github_releases.xml)",
+    )
+    parser.add_argument(
+        "-n",
+        "--num-releases",
+        type=int,
+        default=3,
+        help="Number of releases per repository (default: 3)",
+    )
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Debug mode: show starred repos count only",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="Verbose output",
+    )
 
-    # Load configuration
-    username = "pgmac"
+    args = parser.parse_args()
+
+    # Load GitHub token
     token = os.getenv("GITHUB_TOKEN")
-
     if not token:
         print(
             "Warning: GITHUB_TOKEN not set. API rate limits will be lower.",
@@ -233,7 +265,7 @@ def main():
     api_client = GitHubAPIClient(token)
 
     # Debug mode: just show starred repos
-    if debug_mode:
+    if args.debug:
         print("=== DEBUG MODE ===")
         repos = api_client.get_starred_repositories()
         print(f"Total starred repositories: {len(repos)}")
@@ -243,10 +275,10 @@ def main():
 
     # Generate RSS feed
     config = FeedConfig(
-        username=username,
-        output_file="github_releases.xml",
-        releases_per_repo=3,
-        verbose=False,
+        username=args.username,
+        output_file=args.output,
+        releases_per_repo=args.num_releases,
+        verbose=args.verbose,
     )
 
     generator = GitHubReleasesRSSGenerator(config, api_client)
