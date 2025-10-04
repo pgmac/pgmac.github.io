@@ -2,94 +2,91 @@
 """
 GitHub Releases RSS Feed Generator
 
-This script fetches release information from GitHub repositories you're watching
-and generates an RSS feed.
-
-Requirements:
-- pip install requests feedgen
+Generates an RSS feed from releases of your starred GitHub repositories.
 
 Usage:
-1. Set your GitHub username and optionally a personal access token
-2. Run the script to generate releases.xml
+    ./gh-releases-rss.py [--debug]
+
+Environment Variables:
+    GITHUB_TOKEN - GitHub personal access token (recommended for higher rate limits)
 """
 
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
-#     "datetime",
 #     "feedgen",
 #     "requests",
 # ]
 # ///
 
-# import json
 import os
+import sys
+from dataclasses import dataclass
 from datetime import datetime, timezone
+from typing import Optional
 
 import requests
 from feedgen.feed import FeedGenerator
 
 
-class GitHubRSSGenerator:
-    def __init__(self, username, token=None):
-        self.username = username
-        self.token = token
+# Constants
+GITHUB_API_BASE = "https://api.github.com"
+ITEMS_PER_PAGE = 100
+DEFAULT_RELEASES_PER_REPO = 3
+
+
+@dataclass
+class FeedConfig:
+    """Configuration for RSS feed generation"""
+
+    username: str
+    output_file: str = "github_releases.xml"
+    releases_per_repo: int = DEFAULT_RELEASES_PER_REPO
+    verbose: bool = False
+
+
+class GitHubAPIClient:
+    """Client for interacting with GitHub API"""
+
+    def __init__(self, token: Optional[str] = None):
         self.session = requests.Session()
-
-        # Set up authentication if token provided
+        headers = {"Accept": "application/vnd.github.v3+json"}
         if token:
-            self.session.headers.update(
-                {
-                    "Authorization": f"token {token}",
-                    "Accept": "application/vnd.github.v3+json",
-                }
-            )
-        else:
-            self.session.headers.update({"Accept": "application/vnd.github.v3+json"})
+            headers["Authorization"] = f"token {token}"
+        self.session.headers.update(headers)
 
-    def get_watched_repositories(self):
-        """Get list of repositories the user is watching"""
-        # url = f"https://api.github.com/users/{self.username}/subscriptions"
-        url = "https://api.github.com/user/subscriptions"
-        repos = []
+    def _paginate(self, url: str, resource_name: str) -> list[dict]:
+        """Generic pagination handler for GitHub API endpoints"""
+        items = []
         page = 1
 
         while True:
-            response = self.session.get(url, params={"page": page, "per_page": 100})
+            response = self.session.get(
+                url, params={"page": page, "per_page": ITEMS_PER_PAGE}
+            )
 
             if response.status_code != 200:
-                print(f"Error fetching watched repos: {response.status_code}")
+                print(f"Error fetching {resource_name}: {response.status_code}")
                 print(response.text)
                 break
 
-            page_repos = response.json()
-            if not page_repos:
+            page_items = response.json()
+            if not page_items:
                 break
 
-            repos.extend(page_repos)
+            items.extend(page_items)
             page += 1
 
-        return repos
+        return items
 
-    def get_latest_release(self, repo_full_name):
-        """Get the latest release for a repository"""
-        url = f"https://api.github.com/repos/{repo_full_name}/releases/latest"
-        response = self.session.get(url)
+    def get_starred_repositories(self) -> list[dict]:
+        """Fetch all starred repositories for the authenticated user"""
+        url = f"{GITHUB_API_BASE}/user/starred"
+        return self._paginate(url, "starred repositories")
 
-        if response.status_code == 200:
-            return response.json()
-        elif response.status_code == 404:
-            # No releases found
-            return None
-        else:
-            print(
-                f"Error fetching release for {repo_full_name}: {response.status_code}"
-            )
-            return None
-
-    def get_recent_releases(self, repo_full_name, limit=5):
-        """Get recent releases for a repository"""
-        url = f"https://api.github.com/repos/{repo_full_name}/releases"
+    def get_recent_releases(self, repo_full_name: str, limit: int) -> list[dict]:
+        """Fetch recent releases for a repository"""
+        url = f"{GITHUB_API_BASE}/repos/{repo_full_name}/releases"
         response = self.session.get(url, params={"per_page": limit})
 
         if response.status_code == 200:
@@ -97,128 +94,163 @@ class GitHubRSSGenerator:
         elif response.status_code == 404:
             return []
         else:
-            print(
-                f"Error fetching releases for {repo_full_name}: {response.status_code}"
-            )
             return []
 
-    def generate_rss_feed(self, include_all_recent=False, releases_per_repo=1):
-        """Generate RSS feed from watched repositories' releases"""
 
-        print(f"Fetching watched repositories for {self.username}...")
-        watched_repos = self.get_watched_repositories()
-        print(f"Found {len(watched_repos)} watched repositories")
+class GitHubReleasesRSSGenerator:
+    """Generator for creating RSS feeds from GitHub releases"""
 
-        # Create feed
+    def __init__(self, config: FeedConfig, api_client: GitHubAPIClient):
+        self.config = config
+        self.api = api_client
+
+    def _create_feed(self) -> FeedGenerator:
+        """Initialize RSS feed with metadata"""
         fg = FeedGenerator()
-        fg.title(f"{self.username}'s GitHub Releases")
-        fg.link(href=f"https://github.com/{self.username}", rel="alternate")
-        fg.description(f"Latest releases from repositories watched by {self.username}")
+        fg.title(f"{self.config.username}'s Starred Repo Releases")
+        fg.link(
+            href=f"https://github.com/{self.config.username}?tab=stars", rel="alternate"
+        )
+        fg.description(
+            f"Latest releases from repositories starred by {self.config.username}"
+        )
         fg.language("en")
         fg.lastBuildDate(datetime.now(timezone.utc))
+        return fg
 
-        all_releases = []
+    def _parse_datetime(self, date_str: str) -> datetime:
+        """Parse GitHub datetime string to datetime object"""
+        return datetime.fromisoformat(date_str.replace("Z", "+00:00"))
 
-        for repo_count, repo in enumerate(watched_repos):
-            repo_name = repo["full_name"]
-            print("\033[K", end="")  # Clear the line first
-            print(
-                f"Repo: {repo_count + 1}. Checking releases for {repo_name}...",
-                end="\r",
+    def _add_release_entry(
+        self, feed: FeedGenerator, repo: dict, release: dict
+    ) -> None:
+        """Add a single release entry to the RSS feed"""
+        entry = feed.add_entry()
+        entry.id(release["html_url"])
+        entry.title(f"{repo['full_name']} - {release['tag_name']}")
+        entry.link(href=release["html_url"])
+
+        # Build description HTML
+        description = f"""
+        <h3>{release.get("name") or release["tag_name"]}</h3>
+        <p><strong>Repository:</strong> <a href="{repo["html_url"]}">{repo["full_name"]}</a></p>
+        <p><strong>Release:</strong> {release["tag_name"]}</p>
+        <p><strong>Published:</strong> {release["published_at"]}</p>
+        """
+
+        if release.get("author"):
+            description += (
+                f"<p><strong>Author:</strong> {release['author']['login']}</p>"
             )
 
-            if include_all_recent:
-                releases = self.get_recent_releases(repo_name, releases_per_repo)
-            else:
-                latest_release = self.get_latest_release(repo_name)
-                releases = [latest_release] if latest_release else []
+        description += f"<div>{release.get('body') or 'No release notes provided.'}</div>"
+
+        entry.description(description)
+
+        # Set author
+        author_name = (
+            release["author"]["login"]
+            if release.get("author")
+            else repo["owner"]["login"]
+        )
+        entry.author(name=author_name)
+
+        # Set publication date
+        entry.pubDate(self._parse_datetime(release["published_at"]))
+
+    def _collect_releases(self, repos: list[dict]) -> list[dict]:
+        """Collect all releases from the given repositories"""
+        all_releases = []
+        total = len(repos)
+
+        for idx, repo in enumerate(repos, 1):
+            repo_name = repo["full_name"]
+
+            # Progress indicator
+            print(f"\rProcessing {idx}/{total}: {repo_name:<60}", end="", flush=True)
+
+            releases = self.api.get_recent_releases(
+                repo_name, self.config.releases_per_repo
+            )
+
+            if releases and self.config.verbose:
+                print(f"\n  Found {len(releases)} release(s)")
 
             for release in releases:
-                if release:  # Skip None releases
-                    all_releases.append({"repo": repo, "release": release})
-        print("")
+                all_releases.append({"repo": repo, "release": release})
 
-        # Sort releases by published date (newest first)
+        print()  # New line after progress
+        return all_releases
+
+    def generate(self) -> str:
+        """Generate RSS feed and save to file"""
+        print(f"Fetching starred repositories for {self.config.username}...")
+        repos = self.api.get_starred_repositories()
+        print(f"Found {len(repos)} starred repositories\n")
+
+        # Collect all releases
+        all_releases = self._collect_releases(repos)
+
+        # Sort by publication date (newest first)
         all_releases.sort(
-            key=lambda x: datetime.fromisoformat(
-                x["release"]["published_at"].replace("Z", "+00:00")
-            ),
+            key=lambda x: self._parse_datetime(x["release"]["published_at"]),
             reverse=True,
         )
 
-        print(f"Adding {len(all_releases)} releases to RSS feed...")
+        print(f"\nBuilding RSS feed with {len(all_releases)} release(s)...")
 
+        # Create feed and add entries
+        feed = self._create_feed()
         for item in all_releases:
-            repo = item["repo"]
-            release = item["release"]
-
-            fe = fg.add_entry()
-            fe.id(release["html_url"])
-            fe.title(f"{repo['full_name']} - {release['tag_name']}")
-            fe.link(href=release["html_url"])
-            fe.description(f"""
-            <h3>{release["name"] or release["tag_name"]}</h3>
-            <p><strong>Repository:</strong> <a href="{repo["html_url"]}">{repo["full_name"]}</a></p>
-            <p><strong>Release:</strong> {release["tag_name"]}</p>
-            <p><strong>Published:</strong> {release["published_at"]}</p>
-            {f"<p><strong>Author:</strong> {release['author']['login']}</p>" if release.get("author") else ""}
-            <div>{release["body"] or "No release notes provided."}</div>
-            """)
-            fe.author(
-                name=release["author"]["login"]
-                if release.get("author")
-                else repo["owner"]["login"]
-            )
-            fe.pubDate(
-                datetime.fromisoformat(release["published_at"].replace("Z", "+00:00"))
-            )
-
-        return fg
-
-    def save_feed(
-        self,
-        filename="github_releases.xml",
-        include_all_recent=False,
-        releases_per_repo=1,
-    ):
-        """Generate and save RSS feed to file"""
-        fg = self.generate_rss_feed(include_all_recent, releases_per_repo)
-
-        # Generate the RSS feed
-        rss_str = fg.rss_str(pretty=True)
+            self._add_release_entry(feed, item["repo"], item["release"])
 
         # Save to file
-        with open(filename, "wb") as f:
-            f.write(rss_str)
+        rss_content = feed.rss_str(pretty=True)
+        with open(self.config.output_file, "wb") as f:
+            f.write(rss_content)
 
-        print(f"RSS feed saved to {filename}")
-        return filename
+        print(f"✓ RSS feed saved to {self.config.output_file}")
+        return self.config.output_file
 
 
 def main():
-    # Configuration
-    USERNAME = "pgmac"  # Replace with your GitHub username
-    TOKEN = os.getenv(
-        "GITHUB_TOKEN"
-    )  # Optional: GitHub personal access token for higher rate limits
+    """Main entry point"""
+    # Parse arguments
+    debug_mode = "--debug" in sys.argv
 
-    # You can get a token at: https://github.com/settings/tokens
-    # TOKEN = "ghp_your_token_here"
+    # Load configuration
+    username = "pgmac"
+    token = os.getenv("GITHUB_TOKEN")
 
-    # Create generator
-    generator = GitHubRSSGenerator(USERNAME, TOKEN)
+    if not token:
+        print(
+            "Warning: GITHUB_TOKEN not set. API rate limits will be lower.",
+            file=sys.stderr,
+        )
+
+    # Initialize API client
+    api_client = GitHubAPIClient(token)
+
+    # Debug mode: just show starred repos
+    if debug_mode:
+        print("=== DEBUG MODE ===")
+        repos = api_client.get_starred_repositories()
+        print(f"Total starred repositories: {len(repos)}")
+        if repos:
+            print(f"First repository: {repos[0]['full_name']}")
+        return
 
     # Generate RSS feed
-    # Options:
-    # - include_all_recent=False: Only latest release per repo
-    # - include_all_recent=True: Multiple recent releases per repo
-    # - releases_per_repo: How many releases to include per repo (when include_all_recent=True)
-
-    generator.save_feed(
-        filename="github_releases.rss",
-        include_all_recent=False,  # Set to True for more releases per repo
-        releases_per_repo=3,  # Only used when include_all_recent=True
+    config = FeedConfig(
+        username=username,
+        output_file="github_releases.xml",
+        releases_per_repo=3,
+        verbose=False,
     )
+
+    generator = GitHubReleasesRSSGenerator(config, api_client)
+    generator.generate()
 
 
 if __name__ == "__main__":
