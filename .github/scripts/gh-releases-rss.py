@@ -52,7 +52,7 @@ class GitHubAPIClient:
         self.session = requests.Session()
         headers = {"Accept": "application/vnd.github.v3+json"}
         if token:
-            headers["Authorization"] = f"token {token}"
+            headers["Authorization"] = f"Bearer {token}"
         self.session.headers.update(headers)
 
     def _paginate(self, url: str, resource_name: str) -> list[dict]:
