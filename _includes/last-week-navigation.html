@@ -15,8 +15,9 @@
 {% endif %}
 
 {% if prev_post or next_post %}
-<div style="display: flex; justify-content: space-between;">
-  <div>{% if prev_post %}<a href="{{ prev_post.url }}">&larr; Previous week</a>{% endif %}</div>
-  <div>{% if next_post %}<a href="{{ next_post.url }}">Next week &rarr;</a>{% endif %}</div>
-</div>
+<p style="text-align: center;">
+  {% if prev_post %}<a href="{{ prev_post.url }}">&larr; Previous week</a>{% endif %}
+  {% if prev_post and next_post %} | {% endif %}
+  {% if next_post %}<a href="{{ next_post.url }}">Next week &rarr;</a>{% endif %}
+</p>
 {% endif %}
