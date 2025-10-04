@@ -120,8 +120,6 @@ jobs:
             git add _posts/
             git commit -m "Interesting stuff from last week"
             git push
-          else
-            true
           fi
 
       - name: Get end time
