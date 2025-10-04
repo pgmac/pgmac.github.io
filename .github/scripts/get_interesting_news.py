@@ -3,6 +3,7 @@
 """Let's get some interesting things from Pocket and share them about"""
 
 import os
+import re
 from datetime import datetime, timedelta
 
 import requests
@@ -48,6 +49,22 @@ def get_link_notes(_linkid):
     except requests.RequestException as e:
         print(f"Error fetching notes for link {_linkid}: {e}")
         return {}
+
+
+def extract_youtube_id(url):
+    """Extract YouTube video ID from various URL formats"""
+    patterns = [
+        r'(?:https?://)?(?:www\.)?youtube\.com/watch\?v=([^&]+)',
+        r'(?:https?://)?(?:www\.)?youtu\.be/([^?]+)',
+        r'(?:https?://)?(?:www\.)?youtube\.com/embed/([^?]+)',
+        r'(?:https?://)?(?:www\.)?youtube\.com/v/([^?]+)',
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, url)
+        if match:
+            return match.group(1)
+    return None
 
 
 def get_links():
@@ -135,9 +152,19 @@ def main():
                 for post_note in item["notes"]:
                     excerpt += f"\n\n> {post_note.replace('\n', '\n> ')}"
                 post_titles.append(title)
-                articles = (
-                    f'{articles}<a name="{title}">[{title}]({url})</a> - {excerpt}\n\n'
-                )
+
+                # Check if URL is a YouTube video
+                youtube_id = extract_youtube_id(url)
+                if youtube_id:
+                    articles = (
+                        f'{articles}<a name="{title}"></a>**[{title}]({url})**\n\n'
+                        f'{{% include youtube.html id="{youtube_id}" %}}\n\n'
+                        f'{excerpt}\n\n'
+                    )
+                else:
+                    articles = (
+                        f'{articles}<a name="{title}">[{title}]({url})</a> - {excerpt}\n\n'
+                    )
         else:
             no_posts_message = "No posts found for this week"
             # send_to_slack(no_posts_message)
