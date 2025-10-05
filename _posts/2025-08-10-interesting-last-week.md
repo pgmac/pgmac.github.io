@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2025-08-03 to 2025-08-10
 category: Last-Week
-tags: ['ai', 'google', 'llm', 'open source', 'python', 'text', 'ai', 'llm', 'text-to-speech', 'space', 'photography', 'actions', 'ai', 'github', 'google', 'llm', 'pentest', 'security', 'vulnerability', 'ai', 'llm', 'open source', 'technology']
+tags: ['ai', 'google', 'llm', 'open source', 'python', 'text', 'ai', 'llm', 'text-to-speech', 'ai', 'llm', 'open source', 'technology']
 author: pgmac
 ---
 
