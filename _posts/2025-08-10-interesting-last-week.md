@@ -2,12 +2,13 @@
 layout: last-week
 title: Some things I found interesting from 2025-08-03 to 2025-08-10
 category: Last-Week
-tags: ['ai', 'google', 'llm', 'open source', 'python', 'text', 'ai', 'llm', 'text-to-speech', 'ai', 'llm', 'open source', 'technology']
+tags: ['cyber', 'security', 'supply chain', 'ai', 'google', 'llm', 'open source', 'python', 'text', 'ai', 'llm', 'text-to-speech', 'space', 'photography', 'actions', 'ai', 'github', 'google', 'llm', 'pentest', 'security', 'vulnerability', 'ai', 'llm', 'open source', 'technology']
 author: pgmac
 ---
 
 Internet Discoveries between  3 and 10 August
 
+- The Critical Flaw in CVE Scoring
 - GitHub - google/langextract: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.
 - GitHub - denizsafak/abogen: Generate audiobooks from EPUBs, PDFs and text with synchronized captions.
 - Horizon at -27.46794, 153.02809
@@ -18,6 +19,8 @@ Internet Discoveries between  3 and 10 August
 - GitHub - openai/gpt-oss: gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI
 
 ## Interesting details
+
+<a name="The Critical Flaw in CVE Scoring"></a>[The Critical Flaw in CVE Scoring](https://www.darkreading.com/vulnerabilities-threats/critical-flaw-cve-scoring) - With informed decision-making, organizations can strengthen their overall resilience and maintain the agility needed to adapt to emerging threats, without sacrificing innovation or productivity.
 
 <a name="GitHub - google/langextract: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."></a>[GitHub - google/langextract: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.](https://github.com/google/langextract) - A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization. - google/langextract
 

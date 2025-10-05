@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2025-09-07 to 2025-09-14
 category: Last-Week
-tags: ['development', 'llm', 'funny', 'software', 'fun', 'games', 'phishing', 'security', 'supply chain', 'vulnerability', 'audio', 'hardware', 'history', 'demo', 'hacking']
+tags: ['development', 'llm', 'funny', 'software', 'fun', 'games', 'phishing', 'security', 'supply chain', 'vulnerability', 'audio', 'hardware', 'history', 'demo', 'hacking', 'docker']
 author: pgmac
 ---
 
@@ -14,6 +14,7 @@ Internet Discoveries between  7 and 14 September
 - We all dodged a bullet - Xe Iaso
 - The story of Creative Technology
 - The Demo Scene is Dying, But That's Alright - datagubbe.se
+- GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering
 
 ## Interesting details
 
@@ -28,6 +29,8 @@ Internet Discoveries between  7 and 14 September
 <a name="The story of Creative Technology"></a>[The story of Creative Technology](https://www.abortretry.fail/p/the-story-of-creative-technology) - &nbsp;
 
 <a name="The Demo Scene is Dying, But That's Alright - datagubbe.se"></a>[The Demo Scene is Dying, But That's Alright - datagubbe.se](https://www.datagubbe.se/sceneherit/) - &nbsp;
+
+<a name="GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering"></a>[GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering](https://github.com/docker/cagent) - Agent Builder and Runtime by Docker Engineering. Contribute to docker/cagent development by creating an account on GitHub.
 
 
 ---

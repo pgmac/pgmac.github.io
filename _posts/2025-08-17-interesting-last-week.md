@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2025-08-10 to 2025-08-17
 category: Last-Week
-tags: ['photography', 'encryption', 'iot', 'packaging', 'python', 'http', 'aws', 'data', 'open data', 'github', 'microsoft', 'technology', 'encryption', 'quantum', 'security', 'ssh', 'github', 'microsoft', 'technology', 'language', 'programming', 'user', 'cyber', 'security', 'supply chain']
+tags: ['photography', 'encryption', 'iot', 'packaging', 'python', 'http', 'aws', 'data', 'open data', 'github', 'microsoft', 'technology', 'encryption', 'quantum', 'security', 'ssh', 'github', 'microsoft', 'technology', 'language', 'programming', 'user', 'cyber', 'security', 'supply chain', 'ai', 'google', 'llm', 'open source', 'python', 'text', 'ai', 'llm', 'text-to-speech']
 author: pgmac
 ---
 
@@ -18,6 +18,9 @@ Internet Discoveries between 10 and 17 August
 - GitHub just got less independent at Microsoft after CEO resignation - The Verge
 - alumni.cs.ucr.edu
 - The Critical Flaw in CVE Scoring
+- GitHub - google/langextract: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.
+- GitHub - denizsafak/abogen: Generate audiobooks from EPUBs, PDFs and text with synchronized captions.
+- Horizon at -27.46794, 153.02809
 
 ## Interesting details
 
@@ -40,6 +43,12 @@ Internet Discoveries between 10 and 17 August
 <a name="alumni.cs.ucr.edu"></a>[alumni.cs.ucr.edu](http://alumni.cs.ucr.edu/~ratana/PaneRatanamahatanaMyers00.pdf) - &nbsp;
 
 <a name="The Critical Flaw in CVE Scoring"></a>[The Critical Flaw in CVE Scoring](https://www.darkreading.com/vulnerabilities-threats/critical-flaw-cve-scoring) - With informed decision-making, organizations can strengthen their overall resilience and maintain the agility needed to adapt to emerging threats, without sacrificing innovation or productivity.
+
+<a name="GitHub - google/langextract: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization."></a>[GitHub - google/langextract: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.](https://github.com/google/langextract) - A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization. - google/langextract
+
+<a name="GitHub - denizsafak/abogen: Generate audiobooks from EPUBs, PDFs and text with synchronized captions."></a>[GitHub - denizsafak/abogen: Generate audiobooks from EPUBs, PDFs and text with synchronized captions.](https://github.com/denizsafak/abogen) - Generate audiobooks from EPUBs, PDFs and text with synchronized captions. - denizsafak/abogen
+
+<a name="Horizon at -27.46794, 153.02809"></a>[Horizon at -27.46794, 153.02809](https://sky.dlazaro.ca/) - The current sky at your approximate location, rendered as a CSS gradient. Refreshes every minute using the `meta http-equiv=&quot;Refresh&quot;` tag. Created for HTML Day 2025.
 
 
 ---
