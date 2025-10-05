@@ -8,16 +8,16 @@ author: pgmac
 
 Internet Discoveries between  7 and 14 September
 
-- How to Use Claude Code Subagents to Parallelize Development | zach wills
+- How to Use Claude Code Subagents to Parallelize Development - zach wills
 - GitHub - iannuttall/fartscroll-lid: A hilarious macOS app that plays fart sounds as you open and close your MacBook lid
 - DOOMscroll — The Game
 - We all dodged a bullet - Xe Iaso
 - The story of Creative Technology
-- The Demo Scene is Dying, But That's Alright | datagubbe.se
+- The Demo Scene is Dying, But That's Alright - datagubbe.se
 
 ## Interesting details
 
-<a name="How to Use Claude Code Subagents to Parallelize Development | zach wills"></a>[How to Use Claude Code Subagents to Parallelize Development | zach wills](https://zachwills.net/how-to-use-claude-code-subagents-to-parallelize-development/) - In my last post I talked about how I spent a week heads down using AI to work on a greenfield engineering metrics tool. As I built it, I’d often navigate the web app and spot things that needed to be fleshed out. Sometimes it was a small typo; other times it was a bigger […]
+<a name="How to Use Claude Code Subagents to Parallelize Development - zach wills"></a>[How to Use Claude Code Subagents to Parallelize Development - zach wills](https://zachwills.net/how-to-use-claude-code-subagents-to-parallelize-development/) - In my last post I talked about how I spent a week heads down using AI to work on a greenfield engineering metrics tool. As I built it, I’d often navigate the web app and spot things that needed to be fleshed out. Sometimes it was a small typo; other times it was a bigger […]
 
 <a name="GitHub - iannuttall/fartscroll-lid: A hilarious macOS app that plays fart sounds as you open and close your MacBook lid"></a>[GitHub - iannuttall/fartscroll-lid: A hilarious macOS app that plays fart sounds as you open and close your MacBook lid](https://github.com/iannuttall/fartscroll-lid) - A hilarious macOS app that plays fart sounds as you open and close your MacBook lid - iannuttall/fartscroll-lid
 
@@ -27,7 +27,7 @@ Internet Discoveries between  7 and 14 September
 
 <a name="The story of Creative Technology"></a>[The story of Creative Technology](https://www.abortretry.fail/p/the-story-of-creative-technology) - &nbsp;
 
-<a name="The Demo Scene is Dying, But That's Alright | datagubbe.se"></a>[The Demo Scene is Dying, But That's Alright | datagubbe.se](https://www.datagubbe.se/sceneherit/) - &nbsp;
+<a name="The Demo Scene is Dying, But That's Alright - datagubbe.se"></a>[The Demo Scene is Dying, But That's Alright - datagubbe.se](https://www.datagubbe.se/sceneherit/) - &nbsp;
 
 
 ---

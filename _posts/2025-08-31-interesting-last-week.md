@@ -14,7 +14,7 @@ Internet Discoveries between 24 and 31 August
 - rv, a new kind of Ruby management tool
 - www.abc.net.au
 - Critical Docker Desktop flaw lets attackers hijack Windows hosts
-- Commodore raked in over $2 million during the new C64 Ultimate's debut week — roadmap will include three major releases a year | Tom's Hardware
+- Commodore raked in over $2 million during the new C64 Ultimate's debut week — roadmap will include three major releases a year - Tom's Hardware
 - sping Documentation
 - The UNIX-HATERS Handbook
 
@@ -32,7 +32,7 @@ Internet Discoveries between 24 and 31 August
 
 <a name="Critical Docker Desktop flaw lets attackers hijack Windows hosts"></a>[Critical Docker Desktop flaw lets attackers hijack Windows hosts](https://www.bleepingcomputer.com/news/security/critical-docker-desktop-flaw-lets-attackers-hijack-windows-hosts/) - A critical vulnerability in Docker Desktop for Windows and macOS allows compromising the host by running a malicious container, even if the Enhanced Container Isolation (ECI) protection is active.
 
-<a name="Commodore raked in over $2 million during the new C64 Ultimate's debut week — roadmap will include three major releases a year | Tom's Hardware"></a>[Commodore raked in over $2 million during the new C64 Ultimate's debut week — roadmap will include three major releases a year | Tom's Hardware](https://www.tomshardware.com/video-games/retro-gaming/commodore-took-in-over-usd2-million-during-the-c64-ultimates-debut-week-roadmap-will-include-three-major-releases-a-year) - The new Commodore is already thriving with $2m in sales in the first week of the C64 Ultimate's debut.
+<a name="Commodore raked in over $2 million during the new C64 Ultimate's debut week — roadmap will include three major releases a year - Tom's Hardware"></a>[Commodore raked in over $2 million during the new C64 Ultimate's debut week — roadmap will include three major releases a year - Tom's Hardware](https://www.tomshardware.com/video-games/retro-gaming/commodore-took-in-over-usd2-million-during-the-c64-ultimates-debut-week-roadmap-will-include-three-major-releases-a-year) - The new Commodore is already thriving with $2m in sales in the first week of the C64 Ultimate's debut.
 
 <a name="sping Documentation"></a>[sping Documentation](https://dseltzer.gitlab.io/sping/docs/) - &nbsp;
 
