@@ -17,17 +17,17 @@ Internet Discoveries between 31 August and  7 September
 
 ## Interesting details
 
-<a name="GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering">[GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering](https://github.com/docker/cagent)</a> - Agent Builder and Runtime by Docker Engineering. Contribute to docker/cagent development by creating an account on GitHub.
+<a name="GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering"></a>[GitHub - docker/cagent: Agent Builder and Runtime by Docker Engineering](https://github.com/docker/cagent) - Agent Builder and Runtime by Docker Engineering. Contribute to docker/cagent development by creating an account on GitHub.
 
-<a name="WiFi signals can measure heart rate—no wearables needed - News">[WiFi signals can measure heart rate—no wearables needed - News](https://news.ucsc.edu/2025/09/pulse-fi-wifi-heart-rate/)</a> - Engineers prove their technique is effective even with the lowest-cost WiFi devices
+<a name="WiFi signals can measure heart rate—no wearables needed - News"></a>[WiFi signals can measure heart rate—no wearables needed - News](https://news.ucsc.edu/2025/09/pulse-fi-wifi-heart-rate/) - Engineers prove their technique is effective even with the lowest-cost WiFi devices
 
-<a name="Addressing the unauthorized issuance of multiple TLS certificates for 1.1.1.1">[Addressing the unauthorized issuance of multiple TLS certificates for 1.1.1.1](https://blog.cloudflare.com/unauthorized-issuance-of-certificates-for-1-1-1-1/)</a> - Unauthorized TLS certificates were issued for 1.1.1.1 by a Certification Authority without permission from Cloudflare. These rogue certificates have now been revoked. Read our blog to see how this could affect you.
+<a name="Addressing the unauthorized issuance of multiple TLS certificates for 1.1.1.1"></a>[Addressing the unauthorized issuance of multiple TLS certificates for 1.1.1.1](https://blog.cloudflare.com/unauthorized-issuance-of-certificates-for-1-1-1-1/) - Unauthorized TLS certificates were issued for 1.1.1.1 by a Certification Authority without permission from Cloudflare. These rogue certificates have now been revoked. Read our blog to see how this could affect you.
 
-<a name="zed.dev">[zed.dev](https://zed.dev/blog/claude-code-via-acp)</a> - None
+<a name="zed.dev"></a>[zed.dev](https://zed.dev/blog/claude-code-via-acp) - &nbsp;
 
-<a name="GitHub - aws-samples/sample-developer-tutorials">[GitHub - aws-samples/sample-developer-tutorials](https://github.com/aws-samples/sample-developer-tutorials/tree/main)</a> - Contribute to aws-samples/sample-developer-tutorials development by creating an account on GitHub.
+<a name="GitHub - aws-samples/sample-developer-tutorials"></a>[GitHub - aws-samples/sample-developer-tutorials](https://github.com/aws-samples/sample-developer-tutorials/tree/main) - Contribute to aws-samples/sample-developer-tutorials development by creating an account on GitHub.
 
-<a name="Kazeta - Just Play">[Kazeta - Just Play](https://kazeta.org/)</a> - None
+<a name="Kazeta - Just Play"></a>[Kazeta - Just Play](https://kazeta.org/) - &nbsp;
 
 
 ---
