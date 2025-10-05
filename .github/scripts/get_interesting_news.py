@@ -146,9 +146,9 @@ def main():
                     continue
                 else:
                     print("processing")
-                title = (item.get("title") or "No Title").replace('"', '&quot;')
+                title = (item.get("title") or "No Title").replace('"', '&quot;').replace('|', '-')
                 url = item.get("url", "#")
-                excerpt = (item.get("description") or "&nbsp;").replace('"', '&quot;')
+                excerpt = (item.get("description") or "&nbsp;").replace('"', '&quot;').replace('|', '-')
                 # time_added = datetime.fromtimestamp(datetime.strptime(item.get('created_at', '0000-00-00T00:00:00.000000Z'), links_date_format).timestamp())
                 post_tags = []
                 # Fetch only public tags (visibility == 1)
@@ -167,7 +167,7 @@ def main():
                     if note.get("visibility") == 1
                 ]
                 for post_note in item["notes"]:
-                    excerpt += f"\n\n> {(post_note or '').replace('"', '&quot;').replace('\n', '\n> ')}"
+                    excerpt += f"\n\n> {(post_note or '').replace('"', '&quot;').replace('\n', '\n> ').replace('|', '-')}"
                 post_titles.append(title)
 
                 # Check if URL is a YouTube video
