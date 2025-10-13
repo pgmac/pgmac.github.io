@@ -107,8 +107,7 @@ Deloitte has issued a partial refund to the government after they delivered a re
 
 <a name="GitHub - activepieces/activepieces: AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents"></a>[GitHub - activepieces/activepieces: AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents](https://github.com/activepieces/activepieces) - AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents - activepieces/activepieces
 
-> Heard about this from XDA
-> https://www.xda-developers.com/free-automation-tool-you-never-heard-of-replaced-zapier-with-it/
+> [Heard about this from XDA](https://www.xda-developers.com/free-automation-tool-you-never-heard-of-replaced-zapier-with-it/)
 
 
 ---
