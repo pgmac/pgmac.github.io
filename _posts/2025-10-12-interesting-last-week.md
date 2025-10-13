@@ -33,7 +33,7 @@ Internet Discoveries between  5 and 12 October
 
 <a name="Anthropic's Prompt Engineering Tutorial"></a>[Anthropic's Prompt Engineering Tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial) - Anthropic's Interactive Prompt Engineering Tutorial - anthropics/prompt-eng-interactive-tutorial
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45551260
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45551260)
 
 <a name="The Prodigy Medley - The Bands of HM Royal Marines - YouTube"></a>**[The Prodigy Medley - The Bands of HM Royal Marines - YouTube](https://youtu.be/FJBdGTN56rU?si=w9K1mweFTm3pjYTN)**
 
@@ -43,19 +43,19 @@ The Prodigy medley, arranged by Band Corporal Aaron Pitman, and performed at the
 
 <a name="Show HN: Rift – A tiling window manager for macOS"></a>[Show HN: Rift – A tiling window manager for macOS](https://github.com/acsandmann/rift) - a tiling window manager for macos. Contribute to acsandmann/rift development by creating an account on GitHub.
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45553995
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45553995)
 
 <a name="Vibing a non-trivial Ghostty feature"></a>[Vibing a non-trivial Ghostty feature](https://mitchellh.com/writing/non-trivial-vibing) - I recently shipped a non-trivial Ghostty feature (unobtrusive macOS automatic updates) that was largely developed with AI.
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45549434
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45549434)
 
 <a name="I built physical album cards with NFC tags to teach my son music discovery"></a>[I built physical album cards with NFC tags to teach my son music discovery](https://fulghum.io/album-cards) - Albums you can hold again
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45543475
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45543475)
 
 <a name="Show HN: Timelinize – Privately organize your own data from everywhere, locally"></a>[Show HN: Timelinize – Privately organize your own data from everywhere, locally](https://timelinize.com) - Timelinize (&quot;time-lynn-eyes&quot;) is an open source personal archival suite, designed for modern family history. It organizes all your data onto a single, unified timeline on your own computer.
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45504973
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45504973)
 
 <a name="Honest Trailers - Tron: Legacy - YouTube"></a>**[Honest Trailers - Tron: Legacy - YouTube](https://youtu.be/LSsYT0utKHw?si=jqKWo473xcyKuqJn)**
 
@@ -67,7 +67,7 @@ It’s the Honest Trailer for Tron colon Legacy! The rebootquel to the 80’s mo
 
 <a name="Pdoc – Generate API documentation for Python projects"></a>[Pdoc – Generate API documentation for Python projects](https://pdoc.dev/) - pdoc auto-generates API documentation that follows your project's Python module hierarchy. It requires no configuration, has first-class support for type annotations, cross-links between identifiers, comes with an integrated live-reloading web server, and understands numpydoc or Google-style docstrings.
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45499170
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45499170)
 
 <a name="Deloitte delivers report to government using AI which contained errors - ABC NEWS - YouTube"></a>**[Deloitte delivers report to government using AI which contained errors - ABC NEWS - YouTube](https://youtu.be/C17KWJ02Goo)**
 
@@ -81,7 +81,7 @@ Deloitte has issued a partial refund to the government after they delivered a re
 
 <a name="The least amount of CSS for a decent looking site (2023)"></a>[The least amount of CSS for a decent looking site (2023)](https://thecascade.dev/article/least-amount-of-css/) - People often over-engineer solutions, and it leads to them running into problems with their CSS. In this article, we'll take a look at the least amount of CSS that you need to make a decent looking page.
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45497624
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45497624)
 
 <a name="Introducing CodeMender: an AI agent for code security - Google DeepMind"></a>[Introducing CodeMender: an AI agent for code security - Google DeepMind](https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security/) - CodeMender is a new AI-powered agent that improves code security automatically. It instantly patches new software vulnerabilities, and rewrites and secures existing code, eliminating entire...
 
@@ -89,25 +89,19 @@ Deloitte has issued a partial refund to the government after they delivered a re
 
 <a name="Mise: Monorepo Tasks"></a>[Mise: Monorepo Tasks](https://github.com/jdx/mise/discussions/6564) - Introducing Monorepo Tasks
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45491621
-
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45491621
-
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45491621
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45491621)
 
 <a name="Structured Procrastination"></a>[Structured Procrastination](https://structuredprocrastination.com) - ``. . . anyone can do any amount of work, provided it isn't the work he is supposed to be doing at that moment.&quot; -- Robert Benchley, in Chips off the Old Benchley, 1949
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45488261
-
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45488261
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45488261)
 
 <a name="Sonic Robo Blast 2: 25 year old continuously developed DOOM engine-based fangame"></a>[Sonic Robo Blast 2: 25 year old continuously developed DOOM engine-based fangame](https://www.srb2.org/) - Sonic Robo Blast 2 is a 3D open-source Sonic the Hedgehog fangame built using a modified version of the Doom Legacy port of Doom. SRB2 is closely inspired by the original Sonic games from the Sega Genesis, and attempts to recreate the design in 3D. While SRB2 isn't fully completed, it already features tons of levels, enemies, speed, and quite a lot of the fun that the original Sonic games provided.
 
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45447226
-
-> Found @ YCombinator Hacker News: https://news.ycombinator.com/item?id=45447226
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45447226>/)
 
 <a name="Way past its prime: how did Amazon get so rubbish?"></a>[Way past its prime: how did Amazon get so rubbish?](https://www.theguardian.com/technology/2025/oct/05/way-past-its-prime-how-did-amazon-get-so-rubbish) - Sick of scrolling through junk results, AI-generated ads and links to lookalike products? The author and activist behind the term ‘enshittification’ explains what’s gone wrong with the internet – and what we can do about it
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45479103)
 
 <a name="How to Save Your SSH Key Passphrase to Your Apple Keychain On MacOS"></a>[How to Save Your SSH Key Passphrase to Your Apple Keychain On MacOS](https://hyperion360.com/blog/how-to-save-ssh-key-passphrase-to-apple-keychain-macos/) - Resolve SSH key passphrase prompts on macOS! Quick, updated guide to storing SSH key passphrases in Apple Keychain for hassle-free GitHub use
 
