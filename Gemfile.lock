@@ -72,6 +72,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     mercenary (0.4.0)
     minima (2.5.2)
       jekyll (>= 3.5, < 5.0)
@@ -105,12 +106,14 @@ PLATFORMS
   universal-darwin-20
 
 DEPENDENCIES
+  csv
   jekyll (~> 4.4.0)
   jekyll-category-pages
   jekyll-feed (~> 0.12)
   jekyll-paginate
   jekyll-sitemap
   jekyll-tagging
+  logger
   minima (~> 2.5)
   tzinfo (~> 2.0)
   tzinfo-data
