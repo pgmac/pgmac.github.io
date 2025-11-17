@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2025-11-02 to 2025-11-09
 category: Last-Week
-tags: ['motor racing', 'sport', 'hackernews', 'automation', 'home assistant', 'ai', 'coding assistant', 'llm', 'hackernews', 'movies', 'vehicles', 'hackernews', 'games', 'google', 'play', 'google', 'security', 'cyber', 'security', 'vulnerability', 'security', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'mobile', 'open source', 'operating systems', 'privacy']
+tags: ['motor racing', 'sport', 'ai', 'hackernews', 'llm', 'automation', 'home assistant', 'ai', 'coding assistant', 'llm', 'hackernews', 'software', 'movies', 'vehicles', 'browser', 'hackernews', 'games', 'google', 'play', 'google', 'security', 'cyber', 'security', 'vulnerability', 'security', 'hackernews', 'history', 'image', 'people', 'hackernews', 'history', 'people', 'video', 'automation', 'hackernews', 'hackernews', 'self-hosting', 'mobile', 'open source', 'operating systems', 'privacy']
 author: pgmac
 ---
 

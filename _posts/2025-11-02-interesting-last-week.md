@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2025-10-26 to 2025-11-02
 category: Last-Week
-tags: ['mobile', 'open source', 'operating systems', 'privacy', 'incident management', 'sre', 'systems', 'thinking', 'incident management', 'sre', 'systems', 'thinking', 'ai', 'collaborate', 'llm', 'mcp servers', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'code', 'diagrams', 'hackernews', 'file serve', 'hackernews']
+tags: ['mobile', 'open source', 'operating systems', 'privacy', 'incident management', 'sre', 'systems', 'thinking', 'incident management', 'sre', 'systems', 'thinking', 'ai', 'collaborate', 'llm', 'mcp servers', 'hackernews', 'management', 'secrets', 'hackernews', 'legal', 'youtube', 'ai', 'cyber', 'hackernews', 'llm', 'mcp servers', 'security', 'hackernews', 'movies', 'code', 'diagrams', 'hackernews', 'hackernews', 'people', 'code', 'diagrams', 'hackernews', 'file serve', 'hackernews']
 author: pgmac
 ---
 

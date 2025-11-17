@@ -2,12 +2,13 @@
 layout: last-week
 title: Some things I found interesting from 2025-10-12 to 2025-10-19
 category: Last-Week
-tags: ['hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'comic', 'hackernews', 'ai', 'anthropic', 'claude code', 'llm', 'ai', 'github', 'llm', 'mcp servers', 'open source', 'hackernews', 'application security', 'education', 'open source', 'security', 'software', 'hackernews', 'android', 'free', 'fsf', 'hackernews', 'mobile', 'software', 'hackernews', 'hackernews', 'music', 'hackernews', 'open source', 'software', 'tiling', 'window-manager', 'development', 'hackernews', 'llm']
+tags: ['audio', 'hackernews', 'audio', 'hackernews', 'hackernews', 'hardware', 'hackernews', 'k8s', 'testing', 'books', 'education', 'free', 'hackernews', 'learning', 'hackernews', 'history', 'ide', 'comic', 'ai', 'hackernews', 'llm', 'mcp servers', 'ai', 'anthropic', 'claude code', 'llm', 'ai', 'github', 'llm', 'mcp servers', 'open source', 'ai', 'claude code', 'hackernews', 'llm', 'application security', 'education', 'open source', 'security', 'software', 'ai', 'hackernews', 'llm', 'ollama', 'open source', 'android', 'free', 'fsf', 'hackernews', 'mobile', 'software', 'hackernews', 'incident management', 'ai', 'anthropic', 'hackernews', 'learning', 'llm', 'music', 'hackernews', 'open source', 'software', 'tiling', 'window-manager', 'development', 'hackernews', 'llm']
 author: pgmac
 ---
 
 Internet Discoveries between 12 and 19 October
 
+- EQ: A video about all forms of equalizers
 - Tinnitus Neuromodulator
 - ./watch
 - K8s with 1M nodes
@@ -28,6 +29,12 @@ Internet Discoveries between 12 and 19 October
 - Vibing a non-trivial Ghostty feature
 
 ## Interesting details
+
+<a name="EQ: A video about all forms of equalizers"></a>**[EQ: A video about all forms of equalizers](https://www.youtube.com/watch?v=CLAt95PrwL4)**
+
+{% include youtube.html id="CLAt95PrwL4" %}
+
+Support my projects on Patreon (please only if you have the means): https://patreon.com/posyA video about all forms of equalizers. From one-click bass button...
 
 <a name="Tinnitus Neuromodulator"></a>[Tinnitus Neuromodulator](https://mynoise.net/NoiseMachines/neuromodulationTonesGenerator.php) - De-stressing and pushing your tinnitus out of your mind are probably among the best pieces of advice you can get. Tinnitus can jump in and play with your nerves, you need to stop letting it do so and teach your brain to tune it out.
 

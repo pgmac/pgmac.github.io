@@ -2,12 +2,14 @@
 layout: last-week
 title: Some things I found interesting from 2025-10-19 to 2025-10-26
 category: Last-Week
-tags: ['code', 'diagrams', 'hackernews', 'file serve', 'hackernews', 'ai', 'claude code', 'hackernews', 'llm', 'doom', 'open source', 'space', 'llm', 'mcp servers', 'search', 'self-hosting', 'hackernews', 'hardware', 'photography', '2019-02-02', 'compliance', 'database', 'funny', 'hackernews', 'aws', 'incident', 'incident management', 'hardware', 'networking', 'ai', 'claude code', 'hackernews', 'llm', 'docker', 'hackernews', 'open source', 'software', 'funny', 'hackernews', 'hackernews', 'health', 'medicine', 'ai', 'claude code', 'hackernews', 'llm', 'encryption', 'hackernews', 'history', 'git', 'hackernews', 'aws', 'hackernews', 'incident', 'incident management', 'docker', 'hackernews', 'incident', 'ai', 'funny', 'hackernews', 'llm', 'hackernews', 'rss', 'audio', 'hackernews', 'audio', 'hackernews', 'hackernews', 'hardware', 'hackernews', 'k8s', 'testing']
+tags: ['code', 'diagrams', 'hackernews', 'hackernews', 'people', 'code', 'diagrams', 'hackernews', 'file serve', 'hackernews', 'ai', 'claude code', 'hackernews', 'llm', 'doom', 'open source', 'space', 'llm', 'mcp servers', 'search', 'self-hosting', 'hackernews', 'hardware', 'photography', '2019-02-02', 'compliance', 'database', 'funny', 'hackernews', 'aws', 'incident', 'incident management', 'hardware', 'networking', 'ai', 'claude code', 'hackernews', 'llm', 'docker', 'hackernews', 'open source', 'software', 'funny', 'hackernews', 'hackernews', 'health', 'medicine', 'ai', 'claude code', 'hackernews', 'llm', 'encryption', 'hackernews', 'history', 'git', 'hackernews', 'aws', 'hackernews', 'incident', 'incident management', 'docker', 'hackernews', 'incident', 'ai', 'funny', 'hackernews', 'llm', 'hackernews', 'rss', 'audio', 'hackernews', 'audio', 'hackernews', 'hackernews', 'hardware', 'hackernews', 'k8s', 'testing']
 author: pgmac
 ---
 
 Internet Discoveries between 19 and 26 October
 
+- D2: Diagram Scripting Language
+- A worker fell into a nuclear reactor pool
 - Show HN: Diagram as code tool with draggable customizations
 - WebDAV isn't dead yet
 - Claudeskills.cc – Share, Discover, and Reuse Claude/OpenAI Agent Skills
@@ -34,6 +36,10 @@ Internet Discoveries between 19 and 26 October
 - K8s with 1M nodes
 
 ## Interesting details
+
+<a name="D2: Diagram Scripting Language"></a>[D2: Diagram Scripting Language](https://d2lang.com/tour/intro/) - &nbsp;
+
+<a name="A worker fell into a nuclear reactor pool"></a>[A worker fell into a nuclear reactor pool](https://www.nrc.gov/reading-rm/doc-collections/event-status/event/2025/20251022en?brid=vscAjql9kZL1FfGE7TYHVw#en57996:~:text=TRANSPORT%20OF%20CONTAMINATED%20PERSON%20OFFSITE) - &nbsp;
 
 <a name="Show HN: Diagram as code tool with draggable customizations"></a>[Show HN: Diagram as code tool with draggable customizations](https://github.com/RohanAdwankar/oxdraw) - Diagram as Code Tool Written in Rust with Draggable Editing - RohanAdwankar/oxdraw
 

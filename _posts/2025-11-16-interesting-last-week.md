@@ -2,12 +2,13 @@
 layout: last-week
 title: Some things I found interesting from 2025-11-09 to 2025-11-16
 category: Last-Week
-tags: ['automation', 'software', 'photography', 'hackernews', 'hackernews', 'iac', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'funny', 'history', 'internet', 'hackernews', 'hackernews', 'hackernews', 'browser', 'privacy', 'funny', 'xkcd', 'hackernews', 'hackernews', 'funny', 'history', 'hackernews', 'hackernews', 'hackernews', 'hackernews']
+tags: ['comic', 'funny', 'self', 'automation', 'software', 'photography', 'browser', 'hackernews', 'hackernews', 'k8s', 'iac', 'ai', 'hackernews', 'llm', 'hackernews', 'people', 'games', 'hackernews', 'hackernews', 'helm', 'k8s', 'open source', 'software', 'games', 'hackernews', 'freebsd', 'hackernews', 'open source', 'operating systems', 'space', 'cyber', 'open source', 'security', 'software', 'funny', 'history', 'internet', 'hackernews', 'space', 'hackernews', 'privacy', 'cyber', 'google', 'hackernews', 'open source', 'security', 'software', 'video', 'browser', 'privacy', 'funny', 'xkcd', 'hackernews', 'history', 'unix', 'hackernews', 'privacy', 'funny', 'video', 'youtube', 'funny', 'history', 'hackernews', 'hackernews', 'music', 'generator', 'hackernews', 'static', 'website', 'games', 'hackernews', 'history']
 author: pgmac
 ---
 
 Internet Discoveries between  9 and 16 November
 
+- Saturday Morning Breakfast Cereal - Conscious
 - This automation platform is Zapier and n8n on steroids and I can’t recommend it enough
 - “The Fall Of Icarus”: Astrophotographer Snaps Skydiver Falling In Front Of The Sun In Spectacular Photo - IFLScience
 - Launch HN: Tweeks (YC W25) – Browser extension to deshittify the web
@@ -37,6 +38,8 @@ Internet Discoveries between  9 and 16 November
 - Reviving Classic Unix Games: A 20-Year Journey Through Software Archaeology
 
 ## Interesting details
+
+<a name="Saturday Morning Breakfast Cereal - Conscious"></a>[Saturday Morning Breakfast Cereal - Conscious](https://www.smbc-comics.com/comic/conscious-8) - SMBC is a daily comic strip about life, philosophy, science, mathematics, and dirty jokes.
 
 <a name="This automation platform is Zapier and n8n on steroids and I can’t recommend it enough"></a>[This automation platform is Zapier and n8n on steroids and I can’t recommend it enough](https://www.xda-developers.com/automation-platform-is-zapier-and-n8n-on-steroids/) - The powerhouse platform
 
@@ -78,7 +81,7 @@ We recommend migrating to one of the many alternatives.
 
 <a name="Perkeep – Personal storage system for life"></a>[Perkeep – Personal storage system for life](https://perkeep.org/) - &nbsp;
 
-<a name="FFmpeg to Google: Fund us or stop sending bugs"></a>[FFmpeg to Google: Fund us or stop sending bugs](https://thenewstack.io/ffmpeg-to-google-fund-us-or-stop-sending-bugs/) - A lively discussion about open source, security, and who pays the bills has erupted on Twitter. 
+<a name="FFmpeg to Google: Fund us or stop sending bugs"></a>[FFmpeg to Google: Fund us or stop sending bugs](https://thenewstack.io/ffmpeg-to-google-fund-us-or-stop-sending-bugs/) - A lively discussion about open source, security, and who pays the bills has erupted on Twitter.
 
 <a name="Firefox expands fingerprint protections: advancing towards a more private web"></a>[Firefox expands fingerprint protections: advancing towards a more private web](https://blog.mozilla.org/en/firefox/fingerprinting-protections/) - With Firefox 145, we’re rolling out major privacy upgrades that take on browser fingerprinting — a pervasive and hidden tracking technique that lets we
 
@@ -111,7 +114,6 @@ What if Jurassic World: Rebirth was full of prehistoric gas?We reimagine the blo
 <a name="Beets: The music geek’s media organizer"></a>[Beets: The music geek’s media organizer](https://beets.io/) - &nbsp;
 
 <a name="Zensical – A modern static site generator built by the Material for MkDocs team"></a>[Zensical – A modern static site generator built by the Material for MkDocs team](https://squidfunk.github.io/mkdocs-material/blog/2025/11/05/zensical/) - We are thrilled to announce Zensical, our next-gen static site generator that addresses and overcomes the technical limitations of MkDocs
-
 
 <a name="Reviving Classic Unix Games: A 20-Year Journey Through Software Archaeology"></a>[Reviving Classic Unix Games: A 20-Year Journey Through Software Archaeology](https://vejeta.com/reviving-classic-unix-games-a-20-year-journey-through-software-archaeology/) - How I spent two decades tracking down the creators of a 1987 USENET game and learned modern packaging tools in the process. The Discovery: A Digital Time Capsule from 1987 Picture this: October 26, 1987. The Berlin Wall still stands, the World Wide Web is just text, and software is distributed through USENET newsgroups in […]
 
