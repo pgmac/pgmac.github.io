@@ -37,15 +37,21 @@ DRC-X Season 1 - Event 2 - Round 3 - Team Ford vs. AudiThe most exciting diecast
 
 <a name="You should write an agent"></a>[You should write an agent](https://fly.io/blog/everyone-write-an-agent/) - They're like riding a bike: easy, and you don't get it until you try.
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45840088)
+
 <a name="Ikea’s Big Smart Home Push Arrives With 21 New Matter Devices"></a>[Ikea’s Big Smart Home Push Arrives With 21 New Matter Devices](https://www.forbes.com/sites/paullamkin/2025/11/06/ikeas-big-smart-home-push-arrives-with-21-new-matter-devices/) - Ikea's new Matter range goes lives with affordable price tags
 
 <a name="GitHub - gensyn-ai/codeassist: A completely private and local AI coding assistant, developed by Gensyn. It helps you practice programming problems and train a novel assistant to help you code."></a>[GitHub - gensyn-ai/codeassist: A completely private and local AI coding assistant, developed by Gensyn. It helps you practice programming problems and train a novel assistant to help you code.](https://github.com/gensyn-ai/codeassist) - A completely private and local AI coding assistant, developed by Gensyn. It helps you practice programming problems and train a novel assistant to help you code. - gensyn-ai/codeassist
 
 <a name="Ratatui – App Showcase"></a>[Ratatui – App Showcase](https://ratatui.rs/showcase/apps/) - &nbsp;
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45830829)
+
 <a name="Movie Car Museum Liquidating 50 Famous Vehicles at No Reserve"></a>[Movie Car Museum Liquidating 50 Famous Vehicles at No Reserve](https://www.thedrive.com/news/movie-car-museum-liquidating-50-famous-vehicles-at-no-reserve) - A Mustang driven by Keanu Reeves in John Wick and an Evo driven by Paul Walker in 2Fast 2Furious are a couple of highlights from this sale.
 
 <a name="Firefox profiles: Private, focused spaces for all the ways you browse"></a>[Firefox profiles: Private, focused spaces for all the ways you browse](https://blog.mozilla.org/en/firefox/profile-management/) - Every part of your life has its own rhythm: work, school, family, personal projects. Beginning Oct. 14, we’re rolling out a new profile management featur
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45744038)
 
 <a name="Epic and Google agree to settle their lawsuit and change Android’s fate globally - The Verge"></a>[Epic and Google agree to settle their lawsuit and change Android’s fate globally - The Verge](https://www.theverge.com/policy/813991/epic-google-proposed-settlement) - Google is agreeing to reduce its standard fee to 20 percent or 9 percent and change Android globally in an Epic settlement.
 
@@ -59,11 +65,19 @@ DRC-X Season 1 - Event 2 - Round 3 - Team Ford vs. AudiThe most exciting diecast
 
 I have spent 10,000+ hours to create an accurate record of their work but I'm not complaining. The 'as-close-to-possible'
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45816853)
+
 <a name="When stick figures fought"></a>[When stick figures fought](https://animationobsessive.substack.com/p/when-stick-figures-fought) - &nbsp;
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45806348)
 
 <a name="You can't cURL a Border"></a>[You can't cURL a Border](https://drobinin.com/posts/you-cant-curl-a-border/) - Country borders don't return JSON, they return judgment. So I built a state machine for travel when governments won't expose your state.
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45806263)
+
 <a name="Using FreeBSD to make self-hosting fun again"></a>[Using FreeBSD to make self-hosting fun again](https://jsteuernagel.de/posts/using-freebsd-to-make-self-hosting-fun-again/) - Feeling like a kid in a candy store, once more
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45789424)
 
 <a name="Info - Sailfish OS"></a>[Info - Sailfish OS](https://sailfishos.org/info/) - &nbsp;
 

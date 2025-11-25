@@ -33,19 +33,35 @@ Internet Discoveries between 26 October and  2 November
 
 <a name="Fnox, a secret manager that pairs well with mise"></a>[Fnox, a secret manager that pairs well with mise](https://github.com/jdx/mise/discussions/6779) - Introducing fnox: A secret manager that pairs well with mise
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45722931)
+
 <a name="10M people watched a YouTuber shim a lock; the lock company sued him – bad idea"></a>[10M people watched a YouTuber shim a lock; the lock company sued him – bad idea](https://arstechnica.com/tech-policy/2025/10/suing-a-popular-youtuber-who-shimmed-a-130-lock-what-could-possibly-go-wrong/) - It’s still legal to pick locks, even when you swing your legs.
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45720376)
 
 <a name="MCP-Scanner – Scan MCP Servers for vulnerabilities"></a>[MCP-Scanner – Scan MCP Servers for vulnerabilities](https://github.com/cisco-ai-defense/mcp-scanner) - Scan MCP Servers for vulnerabilities. Contribute to cisco-ai-defense/mcp-scanner development by creating an account on GitHub.
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45723699)
+
 <a name="Downloadable movie posters from the 40s, 50s, 60s, and 70s"></a>[Downloadable movie posters from the 40s, 50s, 60s, and 70s](https://hrc.contentdm.oclc.org/digital/collection/p15878coll84/search) - &nbsp;
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45630599)
 
 <a name="D2: Diagram Scripting Language"></a>[D2: Diagram Scripting Language](https://d2lang.com/tour/intro/) - &nbsp;
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45707539)
+
 <a name="A worker fell into a nuclear reactor pool"></a>[A worker fell into a nuclear reactor pool](https://www.nrc.gov/reading-rm/doc-collections/event-status/event/2025/20251022en?brid=vscAjql9kZL1FfGE7TYHVw#en57996:~:text=TRANSPORT%20OF%20CONTAMINATED%20PERSON%20OFFSITE) - &nbsp;
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45708292)
 
 <a name="Show HN: Diagram as code tool with draggable customizations"></a>[Show HN: Diagram as code tool with draggable customizations](https://github.com/RohanAdwankar/oxdraw) - Diagram as Code Tool Written in Rust with Draggable Editing - RohanAdwankar/oxdraw
 
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45707539)
+
 <a name="WebDAV isn't dead yet"></a>[WebDAV isn't dead yet](https://blog.feld.me/posts/2025/09/webdav-isnt-dead-yet/) - &nbsp;
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=45698070)
 
 
 ---
