@@ -94,7 +94,7 @@ jobs:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@b90be12699fdfcbee4440c2bba85f6f460446bb0 # v1.279.0
+        uses: ruby/setup-ruby@d5f787ce339eb0767271bc01d922e85644c2c8ab # v1.280.0
         with:
           ruby-version: "3.4.8" # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
