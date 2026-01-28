@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh pr view:*)"
+      "Bash(gh pr view:*)",
+      "Bash(git log:*)",
+      "Bash(ruff check:*)",
+      "Bash(pylint:*)",
+      "mcp__acp__Edit"
     ],
     "deny": [],
     "ask": []
