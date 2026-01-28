@@ -11,7 +11,8 @@ are included in the generated post.
 import os
 import re
 import time
-from datetime import datetime, timedelta
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional
 
 import requests
@@ -22,6 +23,7 @@ class Config:
 
     API_BASE_URL = "https://links.pgmac.net.au/api/v2"
     LINKS_DATE_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ"
+    YOUTUBE_RSS_DATE_FORMAT = "%Y-%m-%dT%H:%M:%S%z"
     REQUEST_TIMEOUT = 30
     LINKS_PER_PAGE = 100
     MAX_RETRIES = 5
@@ -31,12 +33,18 @@ class Config:
     def __init__(self):
         self.api_key = os.environ.get("PGLINKS_KEY")
         self.week_offset = int(os.environ.get("week_offset", 0))
+        self.youtube_playlist_url = os.environ.get(
+            "YOUTUBE_PLAYLIST_RSS_URL",
+            "https://www.youtube.com/feeds/videos.xml?playlist_id="
+            "PLWfiBYGRBPAX2TsTJLC_Fy31obsBb9ETs"
+        )
 
         if not self.api_key:
             raise ValueError("PGLINKS_KEY environment variable is required")
 
     @property
     def headers(self) -> Dict[str, str]:
+        """Return authorization headers for API requests"""
         return {
             "Authorization": f"Bearer {self.api_key}",
             "accept": "application/json",
@@ -47,7 +55,7 @@ class DateRange:
     """Calculate and store the date range for the blog post"""
 
     def __init__(self, week_offset: int = 0):
-        today = datetime.now()
+        today = datetime.now(timezone.utc)
         days_since_sunday = (today.weekday() + 1) % 7
         end_day = today - timedelta(days_since_sunday + (week_offset * 7))
         start_day = end_day - timedelta(days=7)
@@ -107,14 +115,20 @@ class LinkAceAPI:
                         else:
                             wait_time = backoff
 
-                        print(f"Rate limited on {endpoint}. Waiting {wait_time}s before retry {attempt + 1}/{self.config.MAX_RETRIES}...")
+                        print(
+                            f"Rate limited on {endpoint}. Waiting {wait_time}s "
+                            f"before retry {attempt + 1}/{self.config.MAX_RETRIES}..."
+                        )
                         time.sleep(wait_time)
 
                         # Exponential backoff with cap
                         backoff = min(backoff * 2, self.config.MAX_BACKOFF)
                         continue
                     else:
-                        print(f"Rate limit exceeded for {endpoint} after {self.config.MAX_RETRIES} retries")
+                        print(
+                            f"Rate limit exceeded for {endpoint} "
+                            f"after {self.config.MAX_RETRIES} retries"
+                        )
                         return {}
 
                 response.raise_for_status()
@@ -127,7 +141,10 @@ class LinkAceAPI:
                     backoff = min(backoff * 2, self.config.MAX_BACKOFF)
                     continue
                 else:
-                    print(f"Error fetching from {endpoint} after {self.config.MAX_RETRIES} retries: {e}")
+                    print(
+                        f"Error fetching from {endpoint} "
+                        f"after {self.config.MAX_RETRIES} retries: {e}"
+                    )
                     return {}
 
         return {}
@@ -155,6 +172,106 @@ class LinkAceAPI:
         return [note["note"] for note in notes if note.get("visibility") == 1]
 
 
+class YouTubeRSSFeed:
+    """Client for fetching and parsing YouTube RSS feeds"""
+
+    # Atom namespace used in YouTube RSS feeds
+    ATOM_NS = "{http://www.w3.org/2005/Atom}"
+    MEDIA_NS = "{http://search.yahoo.com/mrss/}"
+    YT_NS = "{http://www.youtube.com/xml/schemas/2015}"
+
+    def __init__(self, config: Config):
+        self.config = config
+
+    def fetch_feed(self, date_range: "DateRange") -> List[Dict]:
+        """Fetch and parse YouTube RSS feed for videos in date range"""
+        print(
+            f"Fetching YouTube RSS feed videos between "
+            f"{date_range.format_title()}"
+        )
+
+        try:
+            response = requests.get(
+                self.config.youtube_playlist_url,
+                timeout=self.config.REQUEST_TIMEOUT
+            )
+            response.raise_for_status()
+        except requests.RequestException as e:
+            print(f"Error fetching YouTube RSS feed: {e}")
+            return []
+
+        try:
+            root = ET.fromstring(response.content)
+        except ET.ParseError as e:
+            print(f"Error parsing YouTube RSS feed XML: {e}")
+            return []
+
+        videos = []
+        for entry in root.findall(f"{self.ATOM_NS}entry"):
+            video = self._parse_entry(entry, date_range)
+            if video:
+                videos.append(video)
+
+        print(f"Found {len(videos)} YouTube videos in date range")
+        return videos
+
+    def _parse_entry(
+        self, entry: ET.Element, date_range: "DateRange"
+    ) -> Optional[Dict]:
+        """Parse a single entry from the RSS feed"""
+        # Extract video ID
+        video_id_elem = entry.find(f"{self.YT_NS}videoId")
+        if video_id_elem is None:
+            return None
+        video_id = video_id_elem.text
+
+        # Extract title
+        title_elem = entry.find(f"{self.ATOM_NS}title")
+        title = title_elem.text if title_elem is not None else "No Title"
+
+        # Extract published date (when video was added to playlist)
+        published_elem = entry.find(f"{self.ATOM_NS}published")
+        if published_elem is None:
+            return None
+
+        try:
+            published_date = datetime.strptime(
+                published_elem.text, self.config.YOUTUBE_RSS_DATE_FORMAT
+            )
+        except ValueError:
+            print(f"Could not parse published date: {published_elem.text}")
+            return None
+
+        # Check if video is in date range
+        if not date_range.is_in_range(published_date):
+            return None
+
+        # Extract description from media:group/media:description
+        description = ""
+        media_group = entry.find(f"{self.MEDIA_NS}group")
+        if media_group is not None:
+            desc_elem = media_group.find(f"{self.MEDIA_NS}description")
+            if desc_elem is not None and desc_elem.text:
+                description = desc_elem.text
+
+        # Extract channel/author info
+        author_elem = entry.find(f"{self.ATOM_NS}author")
+        channel_title = "Unknown Channel"
+        if author_elem is not None:
+            name_elem = author_elem.find(f"{self.ATOM_NS}name")
+            if name_elem is not None and name_elem.text:
+                channel_title = name_elem.text
+
+        return {
+            "id": video_id,
+            "title": title,
+            "url": f"https://www.youtube.com/watch?v={video_id}",
+            "description": description,
+            "published_at": published_date,
+            "channel_title": channel_title
+        }
+
+
 class Link:
     """Represents a link with its metadata"""
 
@@ -165,20 +282,39 @@ class Link:
         r'(?:https?://)?(?:www\.)?youtube\.com/v/([^?]+)',
     ]
 
-    def __init__(self, data: Dict, api: LinkAceAPI, fetch_details: bool = True):
+    def __init__(
+        self,
+        data: Dict,
+        api: Optional[LinkAceAPI] = None,
+        fetch_details: bool = True,
+        source: str = "linkace"
+    ):
+        self.source = source  # "linkace" or "youtube"
         self.id = data.get("id", 0)
         self.title = self._sanitize(data.get("title") or "No Title")
         self.url = data.get("url", "#")
         self.description = self._sanitize(data.get("description") or "&nbsp;")
         self.is_private = data.get("is_private", False)
-        self.created_at = datetime.strptime(
-            data.get("created_at", "3999-12-31T23:59:59.999999Z"),
-            Config.LINKS_DATE_FORMAT,
-        )
         self.tags = []
         self.notes = []
 
-        if fetch_details:
+        # Handle different date formats and sources
+        if source == "youtube":
+            # YouTube RSS feed - use published date (when added to playlist)
+            self.created_at = data.get("published_at")
+            self.channel_title = data.get("channel_title", "")
+        else:
+            # LinkAce - use created_at date (parse as UTC since it ends with 'Z')
+            naive_dt = datetime.strptime(
+                data.get("created_at", "3999-12-31T23:59:59.999999Z"),
+                Config.LINKS_DATE_FORMAT,
+            )
+            # Convert to timezone-aware UTC datetime
+            self.created_at = naive_dt.replace(tzinfo=timezone.utc)
+            self.channel_title = None
+
+        # Fetch additional details for LinkAce links only
+        if fetch_details and api and source == "linkace":
             self.tags = api.get_link_tags(self.id)
             self.notes = api.get_link_notes(self.id)
 
@@ -199,6 +335,11 @@ class Link:
     def format_excerpt(self) -> str:
         """Format the description with notes"""
         excerpt = self.description
+
+        # Add channel title for YouTube videos
+        if self.source == "youtube" and self.channel_title:
+            excerpt = f"From: {self.channel_title}\n\n{excerpt}"
+
         for note in self.notes:
             sanitized_note = self._sanitize(note).replace('\n', '\n> ')
             excerpt += f"\n\n> {sanitized_note}"
@@ -215,21 +356,29 @@ class Link:
                 f'{{% include youtube.html id="{self.youtube_id}" %}}\n\n'
                 f'{excerpt}\n\n'
             )
-        else:
-            return f'{anchor}[{self.title}]({self.url}) - {excerpt}\n\n'
+        return f'{anchor}[{self.title}]({self.url}) - {excerpt}\n\n'
 
 
 class BlogPostGenerator:
     """Generates the blog post from links"""
 
-    def __init__(self, api: LinkAceAPI, date_range: DateRange):
+    def __init__(
+        self,
+        api: LinkAceAPI,
+        date_range: DateRange,
+        youtube_feed: Optional[YouTubeRSSFeed] = None
+    ):
         self.api = api
+        self.youtube_feed = youtube_feed
         self.date_range = date_range
 
     def fetch_links(self) -> List[Link]:
         """Fetch and filter links for the date range"""
         print(f"Fetching links between {self.date_range.format_title()}")
-        print("        Start date         <=      Link date      <=         End date           <-> Status")
+        print(
+            "        Start date         <=      Link date      "
+            "<=         End date           <-> Status"
+        )
 
         response = self.api.get_links()
         if not response or "data" not in response:
@@ -243,8 +392,12 @@ class BlogPostGenerator:
                 continue
 
             # Create link without fetching details yet
-            link = Link(item, self.api, fetch_details=False)
-            print(f"{self.date_range.start_date} <= {link.created_at} <= {self.date_range.end_date} <-> ", end="")
+            link = Link(item, self.api, fetch_details=False, source="linkace")
+            print(
+                f"{self.date_range.start_date} <= {link.created_at} "
+                f"<= {self.date_range.end_date} <-> ",
+                end=""
+            )
 
             if self.date_range.is_in_range(link.created_at):
                 print("processing")
@@ -256,6 +409,36 @@ class BlogPostGenerator:
                 print("skipping")
 
         return links
+
+    def fetch_youtube_videos(self) -> List[Link]:
+        """Fetch YouTube RSS feed videos and convert to Link objects"""
+        if not self.youtube_feed:
+            return []
+
+        youtube_videos = self.youtube_feed.fetch_feed(self.date_range)
+        links = []
+
+        for video in youtube_videos:
+            # Convert YouTube video dict to Link object
+            link = Link(video, api=None, fetch_details=False, source="youtube")
+            # Add YouTube tag
+            link.tags = ["YouTube"]
+            links.append(link)
+
+        return links
+
+    def merge_and_sort_links(
+        self, linkace_links: List[Link], youtube_links: List[Link]
+    ) -> List[Link]:
+        """Merge LinkAce and YouTube links, then sort by add date"""
+        all_links = linkace_links + youtube_links
+
+        # Sort by created_at date (oldest to newest)
+        # For LinkAce: created_at = when added to LinkAce
+        # For YouTube: created_at = published date in RSS feed
+        all_links.sort(key=lambda x: x.created_at)
+
+        return all_links
 
     def generate_post(self, links: List[Link]) -> str:
         """Generate the complete blog post content"""
@@ -271,10 +454,14 @@ class BlogPostGenerator:
             titles.append(link.title)
             articles += link.to_markdown()
 
+        title_line = (
+            "Some things I found interesting from "
+            f"{self.date_range.format_title()}"
+        )
         front_matter = (
             f"---\n"
             f"layout: last-week\n"
-            f"title: Some things I found interesting from {self.date_range.format_title()}\n"
+            f"title: {title_line}\n"
             f"category: Last-Week\n"
             f"tags: {all_tags}\n"
             f"author: pgmac\n"
@@ -307,14 +494,31 @@ def main():
         config = Config()
         date_range = DateRange(config.week_offset)
         api = LinkAceAPI(config)
-        generator = BlogPostGenerator(api, date_range)
 
-        links = generator.fetch_links()
-        if not links:
+        # Initialize YouTube RSS feed parser
+        youtube_feed = YouTubeRSSFeed(config)
+
+        generator = BlogPostGenerator(api, date_range, youtube_feed)
+
+        # Fetch LinkAce links
+        linkace_links = generator.fetch_links()
+
+        # Fetch YouTube videos from RSS feed
+        youtube_links = generator.fetch_youtube_videos()
+
+        # Merge and sort all links by add date
+        all_links = generator.merge_and_sort_links(linkace_links, youtube_links)
+
+        if not all_links:
             print("No links found for the specified date range")
             return
 
-        content = generator.generate_post(links)
+        print(
+            f"\nTotal links to include: {len(all_links)} "
+            f"(LinkAce: {len(linkace_links)}, YouTube: {len(youtube_links)})"
+        )
+
+        content = generator.generate_post(all_links)
         generator.save_post(content)
 
     except Exception as e:
