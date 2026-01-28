@@ -12,7 +12,7 @@ import os
 import re
 import time
 import xml.etree.ElementTree as ET
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional
 
 import requests
@@ -55,7 +55,7 @@ class DateRange:
     """Calculate and store the date range for the blog post"""
 
     def __init__(self, week_offset: int = 0):
-        today = datetime.now()
+        today = datetime.now(timezone.utc)
         days_since_sunday = (today.weekday() + 1) % 7
         end_day = today - timedelta(days_since_sunday + (week_offset * 7))
         start_day = end_day - timedelta(days=7)
@@ -304,11 +304,13 @@ class Link:
             self.created_at = data.get("published_at")
             self.channel_title = data.get("channel_title", "")
         else:
-            # LinkAce - use created_at date
-            self.created_at = datetime.strptime(
+            # LinkAce - use created_at date (parse as UTC since it ends with 'Z')
+            naive_dt = datetime.strptime(
                 data.get("created_at", "3999-12-31T23:59:59.999999Z"),
                 Config.LINKS_DATE_FORMAT,
             )
+            # Convert to timezone-aware UTC datetime
+            self.created_at = naive_dt.replace(tzinfo=timezone.utc)
             self.channel_title = None
 
         # Fetch additional details for LinkAce links only
