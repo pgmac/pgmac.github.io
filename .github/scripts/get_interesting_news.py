@@ -63,11 +63,17 @@ class DateRange:
         # Set start to beginning of day (00:00:00)
         self.start_date = start_day.replace(hour=0, minute=0, second=0, microsecond=0)
         # Set end to end of day (23:59:59)
-        self.end_date = end_day.replace(hour=23, minute=59, second=59, microsecond=999999)
+        self.end_date = end_day.replace(
+            hour=23, minute=59, second=59, microsecond=999999
+        )
 
     def is_in_range(self, timestamp: datetime) -> bool:
         """Check if a timestamp falls within this date range (inclusive)"""
-        return self.start_date.timestamp() <= timestamp.timestamp() <= self.end_date.timestamp()
+        return (
+            self.start_date.timestamp()
+            <= timestamp.timestamp()
+            <= self.end_date.timestamp()
+        )
 
     def format_title(self) -> str:
         """Format the date range for the post title"""
@@ -106,7 +112,7 @@ class LinkAceAPI:
                 if response.status_code == 429:
                     if attempt < self.config.MAX_RETRIES - 1:
                         # Check for Retry-After header
-                        retry_after = response.headers.get('Retry-After')
+                        retry_after = response.headers.get("Retry-After")
                         if retry_after:
                             try:
                                 wait_time = int(retry_after)
@@ -136,7 +142,9 @@ class LinkAceAPI:
 
             except requests.RequestException as e:
                 if attempt < self.config.MAX_RETRIES - 1:
-                    print(f"Request error on {endpoint}: {e}. Retrying in {backoff}s...")
+                    print(
+                        f"Request error on {endpoint}: {e}. Retrying in {backoff}s..."
+                    )
                     time.sleep(backoff)
                     backoff = min(backoff * 2, self.config.MAX_BACKOFF)
                     continue
@@ -276,10 +284,10 @@ class Link:
     """Represents a link with its metadata"""
 
     YOUTUBE_PATTERNS = [
-        r'(?:https?://)?(?:www\.)?youtube\.com/watch\?v=([^&]+)',
-        r'(?:https?://)?(?:www\.)?youtu\.be/([^?]+)',
-        r'(?:https?://)?(?:www\.)?youtube\.com/embed/([^?]+)',
-        r'(?:https?://)?(?:www\.)?youtube\.com/v/([^?]+)',
+        r"(?:https?://)?(?:www\.)?youtube\.com/watch\?v=([^&]+)",
+        r"(?:https?://)?(?:www\.)?youtu\.be/([^?]+)",
+        r"(?:https?://)?(?:www\.)?youtube\.com/embed/([^?]+)",
+        r"(?:https?://)?(?:www\.)?youtube\.com/v/([^?]+)",
     ]
 
     def __init__(
@@ -321,7 +329,7 @@ class Link:
     @staticmethod
     def _sanitize(text: str) -> str:
         """Sanitize text for markdown output"""
-        return text.replace('"', '&quot;').replace('|', '-')
+        return text.replace('"', "&quot;").replace("|", "-")
 
     @property
     def youtube_id(self) -> Optional[str]:
@@ -341,7 +349,7 @@ class Link:
             excerpt = f"From: {self.channel_title}\n\n{excerpt}"
 
         for note in self.notes:
-            sanitized_note = self._sanitize(note).replace('\n', '\n> ')
+            sanitized_note = self._sanitize(note).replace("\n", "\n> ")
             excerpt += f"\n\n> {sanitized_note}"
         return excerpt
 
@@ -352,9 +360,9 @@ class Link:
 
         if self.youtube_id:
             return (
-                f'{anchor}**[{self.title}]({self.url})**\n\n'
+                f"{anchor}**[{self.title}]({self.url})**\n\n"
                 f'{{% include youtube.html id="{self.youtube_id}" %}}\n\n'
-                f'{excerpt}\n\n'
+                f"{excerpt}\n\n"
             )
         return f'{anchor}[{self.title}]({self.url}) - {excerpt}\n\n'
 
@@ -404,10 +412,16 @@ class BlogPostGenerator:
                 # Only fetch tags and notes for links in the date range
                 link.tags = self.api.get_link_tags(link.id)
                 link.notes = self.api.get_link_notes(link.id)
-                links.append(link)
+                # Only keep YouTube videos with a 'liked' tag (case-insensitive)
+                if link.youtube_id and any(t.lower() == "liked" for t in link.tags):
+                    links.append(link)
+                else:
+                    print("skipping liked filter")
             else:
                 print("skipping")
 
+        # Sort links by created_at
+        links.sort(key=lambda l: l.created_at)
         return links
 
     def fetch_youtube_videos(self) -> List[Link]:
@@ -468,13 +482,17 @@ class BlogPostGenerator:
             f"---\n\n"
         )
 
-        intro = f"Internet Discoveries between {self.date_range.format_description()}\n\n"
+        intro = (
+            f"Internet Discoveries between {self.date_range.format_description()}\n\n"
+        )
 
         toc = "".join(f"- {title}\n" for title in titles)
 
         footer = "\n---\n\nAll this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week"
 
-        return f"{front_matter}{intro}{toc}\n## Interesting details\n\n{articles}{footer}"
+        return (
+            f"{front_matter}{intro}{toc}\n## Interesting details\n\n{articles}{footer}"
+        )
 
     def save_post(self, content: str) -> None:
         """Save the blog post to a file"""
