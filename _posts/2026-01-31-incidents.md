@@ -19,7 +19,7 @@ To do option 1, I cheated. I used to Claude Code to grab a bunch of information,
 
 To do option 2, I cheated. I used Claude Code to take the status from my home Nagios monitoring system, pick out some important hosts and services and display that status on a public website.
 
-## Option 1 - incident docs
+## Option 1 - Incident docs
 
 To record and display this, I'm keeping the markdown docs in a [repo](https://github.com/pgmac-net/incidents/) and using mkdocs to generate html files and serve on a my [Incidents site](https://incidents.pgmac.net.au/docs/) (hosted by GitHub Pages).
 
@@ -27,4 +27,10 @@ To record and display this, I'm keeping the markdown docs in a [repo](https://gi
 
 I created and open sourced a python API to grab the status of some carefully selected Nagios hosts and services. Then, I grab this with a vue.js front end to make it look pretty.
 
+Here're my [hosts and services I advertise](https://statuspage.pgmac.net.au/)
+
 I preseent to you, the very aptly named: [nagios-public-status-page](https://github.com/pgmac-net/nagios-public-status-page)
+
+## PS
+
+If either the Statuspage site is unavailable, that'll be because my home internet is borked, or my k8s cluster isn't clustering very well.
