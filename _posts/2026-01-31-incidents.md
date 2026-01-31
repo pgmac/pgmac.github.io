@@ -33,4 +33,4 @@ I preseent to you, the very aptly named: [nagios-public-status-page](https://git
 
 ## PS
 
-If either the Statuspage site is unavailable, that'll be because my home internet is borked, or my k8s cluster isn't clustering very well.
+If the Statuspage site is unavailable, that'll be because my home internet is borked, or my k8s cluster isn't clustering very well.
