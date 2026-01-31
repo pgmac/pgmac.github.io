@@ -21,7 +21,7 @@ To do option 2, I cheated. I used Claude Code to take the status from my home Na
 
 ## Option 1 - incident docs
 
-To record and display this, I'm keeping the markdown docs in a [repo](https://github.com/pgmac-net/incidents/) and using mkdocs to generate html files and serve on a my [Incidents site](https://incidents.pgmac.net.au) (hosted by GitHub Pages).
+To record and display this, I'm keeping the markdown docs in a [repo](https://github.com/pgmac-net/incidents/) and using mkdocs to generate html files and serve on a my [Incidents site](https://incidents.pgmac.net.au/docs/) (hosted by GitHub Pages).
 
 ## Option 2 - Public Status page
 
