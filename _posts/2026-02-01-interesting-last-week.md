@@ -2,11 +2,71 @@
 layout: last-week
 title: Some things I found interesting from 2026-01-25 to 2026-02-01
 category: Last-Week
-tags: ['YouTube', 'ai', 'anthropic', 'claude code', 'llm', 'hackernews', 'history', 'funny', 'movies', 'youtube', 'code', 'diagrams', 'hackernews', 'visualisation', 'email', 'hackernews', 'history', 'internet', 'funny', 'sre', 'youtube', 'hackernews', 'YouTube', 'code', 'diagrams', 'hackernews', 'visualisation', 'games', 'hackernews', 'hardware', 'history', 'ai', 'llm', 'personal', 'ai', 'llm', 'personal', 'ai', 'anthropic', 'knowledge', 'learning', 'llm', 'ai', 'knowledge', 'learning', 'llm', 'ai', 'hackernews', 'llm', 'personal', 'YouTube', 'education', 'programming', 'hackernews', 'http', 'code', 'iac', 'infrastructure']
+tags:
+  [
+    "YouTube",
+    "ai",
+    "anthropic",
+    "claude code",
+    "llm",
+    "hackernews",
+    "history",
+    "funny",
+    "movies",
+    "youtube",
+    "code",
+    "diagrams",
+    "hackernews",
+    "visualisation",
+    "email",
+    "hackernews",
+    "history",
+    "internet",
+    "funny",
+    "sre",
+    "youtube",
+    "hackernews",
+    "YouTube",
+    "code",
+    "diagrams",
+    "hackernews",
+    "visualisation",
+    "games",
+    "hackernews",
+    "hardware",
+    "history",
+    "ai",
+    "llm",
+    "personal",
+    "ai",
+    "llm",
+    "personal",
+    "ai",
+    "anthropic",
+    "knowledge",
+    "learning",
+    "llm",
+    "ai",
+    "knowledge",
+    "learning",
+    "llm",
+    "ai",
+    "hackernews",
+    "llm",
+    "personal",
+    "YouTube",
+    "education",
+    "programming",
+    "hackernews",
+    "http",
+    "code",
+    "iac",
+    "infrastructure",
+  ]
 author: pgmac
 ---
 
-Internet Discoveries between 25 January and  1 February
+Internet Discoveries between 25 January and 1 February
 
 - Honest Trailers - The Lord of the Rings: The Return of the King
 - GitHub - affaan-m/everything-claude-code: Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs. Battle-tested configs from an Anthropic hackathon winner.
@@ -57,12 +117,6 @@ VP Content: Max Dionne
 
 > [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46781530)
 
-<a name="Honest Trailers - The Lord of the Rings: The Return of the King"></a>**[Honest Trailers - The Lord of the Rings: The Return of the King](https://www.youtube.com/watch?v=oJ7mRS5XZZY)**
-
-{% include youtube.html id="oJ7mRS5XZZY" %}
-
-It’s the Honest Trailer for The Lord of the Rings: The Return of The King! After an extended edition sized sabbatical in the woods, Aragon has been given a r...
-
 <a name="Render Mermaid diagrams as SVGs or ASCII art"></a>[Render Mermaid diagrams as SVGs or ASCII art](https://github.com/lukilabs/beautiful-mermaid) - Contribute to lukilabs/beautiful-mermaid development by creating an account on GitHub.
 
 > [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46804828)
@@ -75,7 +129,7 @@ It’s the Honest Trailer for The Lord of the Rings: The Return of The King! Aft
 
 {% include youtube.html id="ia8Q51ouA_s" %}
 
-there will never be another outage again //  featuring Alexis Gay:  https://www.instagram.com/yayalexisgay    // more krazam scenes: https://www.patreon.com/...
+there will never be another outage again // featuring Alexis Gay: https://www.instagram.com/yayalexisgay // more krazam scenes: https://www.patreon.com/...
 
 <a name="An Illustrated Guide to Hippo Castration (2014)"></a>[An Illustrated Guide to Hippo Castration (2014)](https://www.science.org/content/article/scienceshot-illustrated-guide-hippo-castration) - &nbsp;
 
@@ -87,7 +141,7 @@ there will never be another outage again //  featuring Alexis Gay:  https://www.
 
 From: Ozzy Man Reviews
 
-Here's me commentary on design fails. Cheers ya legends! 
+Here's me commentary on design fails. Cheers ya legends!
 Send ya videos: https://ozzyman.com/submit
 
 <a name="Mermaid ASCII: Render Mermaid diagrams in your terminal"></a>[Mermaid ASCII: Render Mermaid diagrams in your terminal](https://mermaid-ascii.art/) - &nbsp;
@@ -98,7 +152,7 @@ Send ya videos: https://ozzyman.com/submit
 
 > [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46814743)
 
-<a name="GitHub - moltbot/moltbot: Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"></a>[GitHub - moltbot/moltbot: Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞](https://github.com/moltbot/moltbot) - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞  - GitHub - moltbot/moltbot: Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
+<a name="GitHub - moltbot/moltbot: Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞"></a>[GitHub - moltbot/moltbot: Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞](https://github.com/moltbot/moltbot) - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 - GitHub - moltbot/moltbot: Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞
 
 <a name="Users flock to open source Moltbot for always-on AI, despite major risks - Ars Technica"></a>[Users flock to open source Moltbot for always-on AI, despite major risks - Ars Technica](https://arstechnica.com/ai/2026/01/viral-ai-assistant-moltbot-rapidly-gains-popularity-but-poses-security-risks/) - The open source &quot;Jarvis&quot; chats via WhatsApp but requires access to your files and accounts.
 
@@ -140,7 +194,6 @@ https://www.youtube.com/channel/UCjN5K3IYZgz-vCWhI_DD01A/join
 That’s where formae comes in. It’s an Infrastructure-as-Code (IaC) platform that unifies your live environment into a single, versioned system of record, giving you the power to safely manage and evolve it with code. It automatically discovers and tracks new resources and changes across your infrastructure, regardless of their origin. formae versions every change in its internal state and makes your infrastructure accessible as code at any level of granularity—always up to date.
 
 > [Formae](https://platform.engineering/formae)
-
 
 ---
 
