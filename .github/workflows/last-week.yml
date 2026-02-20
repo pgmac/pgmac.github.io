@@ -12,6 +12,11 @@ on:
     - cron: "01 14 * * 0"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      week_offset:
+        description: "Week offset (0 = last week, 1 = week before, etc.)"
+        required: false
+        default: "0"
   push:
     branches: ["master"]
     paths:
@@ -40,6 +45,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      week_offset: ${{ github.event.inputs.week_offset || '0' }}
     steps:
       - name: Get start time
         run: |
