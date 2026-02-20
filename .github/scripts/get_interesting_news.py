@@ -36,7 +36,7 @@ class Config:
         self.youtube_playlist_url = os.environ.get(
             "YOUTUBE_PLAYLIST_RSS_URL",
             "https://www.youtube.com/feeds/videos.xml?playlist_id="
-            "PLWfiBYGRBPAX2TsTJLC_Fy31obsBb9ETs"
+            "PLWfiBYGRBPAX2TsTJLC_Fy31obsBb9ETs",
         )
 
         if not self.api_key:
@@ -193,15 +193,11 @@ class YouTubeRSSFeed:
 
     def fetch_feed(self, date_range: "DateRange") -> List[Dict]:
         """Fetch and parse YouTube RSS feed for videos in date range"""
-        print(
-            f"Fetching YouTube RSS feed videos between "
-            f"{date_range.format_title()}"
-        )
+        print(f"Fetching YouTube RSS feed videos between {date_range.format_title()}")
 
         try:
             response = requests.get(
-                self.config.youtube_playlist_url,
-                timeout=self.config.REQUEST_TIMEOUT
+                self.config.youtube_playlist_url, timeout=self.config.REQUEST_TIMEOUT
             )
             response.raise_for_status()
         except requests.RequestException as e:
@@ -276,7 +272,7 @@ class YouTubeRSSFeed:
             "url": f"https://www.youtube.com/watch?v={video_id}",
             "description": description,
             "published_at": published_date,
-            "channel_title": channel_title
+            "channel_title": channel_title,
         }
 
 
@@ -295,7 +291,7 @@ class Link:
         data: Dict,
         api: Optional[LinkAceAPI] = None,
         fetch_details: bool = True,
-        source: str = "linkace"
+        source: str = "linkace",
     ):
         self.source = source  # "linkace" or "youtube"
         self.id = data.get("id", 0)
@@ -364,7 +360,7 @@ class Link:
                 f'{{% include youtube.html id="{self.youtube_id}" %}}\n\n'
                 f"{excerpt}\n\n"
             )
-        return f'{anchor}[{self.title}]({self.url}) - {excerpt}\n\n'
+        return f"{anchor}[{self.title}]({self.url}) - {excerpt}\n\n"
 
 
 class BlogPostGenerator:
@@ -374,7 +370,7 @@ class BlogPostGenerator:
         self,
         api: LinkAceAPI,
         date_range: DateRange,
-        youtube_feed: Optional[YouTubeRSSFeed] = None
+        youtube_feed: Optional[YouTubeRSSFeed] = None,
     ):
         self.api = api
         self.youtube_feed = youtube_feed
@@ -404,19 +400,15 @@ class BlogPostGenerator:
             print(
                 f"{self.date_range.start_date} <= {link.created_at} "
                 f"<= {self.date_range.end_date} <-> ",
-                end=""
+                end="",
             )
 
             if self.date_range.is_in_range(link.created_at):
-                print("processing")
+                print(f"processing {link.url}")
                 # Only fetch tags and notes for links in the date range
                 link.tags = self.api.get_link_tags(link.id)
                 link.notes = self.api.get_link_notes(link.id)
-                # Only keep YouTube videos with a 'liked' tag (case-insensitive)
-                if link.youtube_id and any(t.lower() == "liked" for t in link.tags):
-                    links.append(link)
-                else:
-                    print("skipping liked filter")
+                links.append(link)
             else:
                 print("skipping")
 
@@ -469,8 +461,7 @@ class BlogPostGenerator:
             articles += link.to_markdown()
 
         title_line = (
-            "Some things I found interesting from "
-            f"{self.date_range.format_title()}"
+            f"Some things I found interesting from {self.date_range.format_title()}"
         )
         front_matter = (
             f"---\n"
