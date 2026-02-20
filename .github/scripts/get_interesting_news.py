@@ -479,7 +479,7 @@ class BlogPostGenerator:
 
         toc = "".join(f"- {title}\n" for title in titles)
 
-        footer = "\n---\n\nAll this was saved to my [Link Ace](https://links.pgmac.net.au/) over the week"
+        footer = "\n---\n\nAll this was saved to my [Link Ace](https://links.pgmac.net.au/) and YouTube Interesting playlist over the week"
 
         return (
             f"{front_matter}{intro}{toc}\n## Interesting details\n\n{articles}{footer}"
