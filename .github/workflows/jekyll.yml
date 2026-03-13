@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Get start time
         run: |
@@ -48,12 +48,14 @@ jobs:
 
       - name: Send Slack message
         id: slack
-        uses: slackapi/slack-github-action@v1.27.1
+        uses: slackapi/slack-github-action@v3.0.1
         continue-on-error: true
         with:
-          channel-id: "C01UGQ98P9U"
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             {
+              "channel": "C01UGQ98P9U",
               "attachments": [
                 {
                   "mrkdwn_in": ["text", "pretext"],
@@ -90,13 +92,10 @@ jobs:
                 }
               ]
             }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@ab177d40ee5483edb974554986f56b33477e21d0 # v1.265.0
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4.7" # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
@@ -144,13 +143,15 @@ jobs:
 
       - name: Send Slack message
         if: always()
-        uses: slackapi/slack-github-action@v1.27.1
+        uses: slackapi/slack-github-action@v3.0.1
         continue-on-error: true
         with:
-          update-ts: ${{ steps.slack.outputs.ts }}
-          channel-id: "C01UGQ98P9U"
+          method: chat.update
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             {
+              "channel": "C01UGQ98P9U",
+              "ts": "${{ steps.slack.outputs.ts }}",
               "attachments": [
                 {
                   "mrkdwn_in": ["text", "pretext"],
@@ -197,8 +198,6 @@ jobs:
                 }
               ]
             }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
   # Deployment job
   deploy:
