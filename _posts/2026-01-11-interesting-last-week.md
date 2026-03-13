@@ -2,7 +2,7 @@
 layout: last-week
 title: Some things I found interesting from 2026-01-04 to 2026-01-11
 category: Last-Week
-tags: ['hackernews', 'ai', 'claude code', 'llm', 'hackernews', 'hackernews', 'availability', 'incident management', 'monitoring', 'observability', 'open source', 'software', 'electronics', 'gadgets', 'coffee', 'coffee', 'coffee', 'motor racing', 'rally', 'hackernews', 'hackernews', 'bgp', 'cloudflare', 'internet', 'routing', 'hackernews', 'hackernews', 'alternatives', 'youtube', 'photography', 'space', 'hackernews', 'hackernews', 'hackernews', 'youtube', 'youtube', 'youtube', 'youtube', 'youtube', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'youtube']
+tags: ['collaborate', 'hackernews', 'programming', 'ai', 'claude code', 'knowledge', 'llm', 'ai', 'hackernews', 'llm', 'terminal', 'ai', 'books', 'claude code', 'hackernews', 'llm', 'availability', 'incident management', 'monitoring', 'observability', 'open source', 'software', 'electronics', 'gadgets', 'coffee', 'coffee', 'coffee', 'motor racing', 'rally', 'hackernews', 'hackernews', 'bgp', 'cloudflare', 'internet', 'routing', 'hackernews', 'hackernews', 'alternatives', 'youtube', 'photography', 'space', 'hackernews', 'hackernews', 'hackernews', 'youtube', 'youtube', 'youtube', 'youtube', 'youtube', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'hackernews', 'youtube']
 author: pgmac
 ---
 

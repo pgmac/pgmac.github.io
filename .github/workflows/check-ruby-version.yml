@@ -1,0 +1,31 @@
+name: Check Ruby version availability
+
+on:
+  push:
+    paths:
+      - ".ruby-version"
+      - ".github/workflows/check-ruby-version.yml"
+  pull_request:
+    paths:
+      - ".ruby-version"
+      - ".github/workflows/check-ruby-version.yml"
+
+jobs:
+  check-ruby-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Ruby version is available in ruby-build
+        run: |
+          RUBY_VERSION=$(cat .ruby-version | tr -d '[:space:]')
+          echo "Checking availability of Ruby ${RUBY_VERSION}..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://raw.githubusercontent.com/rbenv/ruby-build/master/share/ruby-build/${RUBY_VERSION}")
+          if [ "${HTTP_STATUS}" != "200" ]; then
+            echo "::error::Ruby ${RUBY_VERSION} is not yet available in ruby-build (HTTP ${HTTP_STATUS})."
+            echo "::error::Check https://github.com/rbenv/ruby-build/tree/master/share/ruby-build for available versions."
+            exit 1
+          fi
+          echo "Ruby ${RUBY_VERSION} is available."

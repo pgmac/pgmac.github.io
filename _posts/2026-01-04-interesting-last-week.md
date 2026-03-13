@@ -2,12 +2,14 @@
 layout: last-week
 title: Some things I found interesting from 2025-12-28 to 2026-01-04
 category: Last-Week
-tags: ['youtube', 'ai', 'claude code', 'google', 'llm', 'music', 'streaming', 'hackernews', 'history', 'unix', 'hackernews', 'publishing', 'hackernews', 'music', 'books', 'hackernews', 'hackernews', 'iac', 'infrastructure', 'orchestration', 'ai', 'claude code', 'llm', 'history', 'alternatives', 'cloudflare', 'edge computing', 'hackernews', 'hackernews', 'space ships', 'ai', 'claude code', 'hackernews', 'llm', 'graphics', 'hackernews', 'open source', 'software', 'apple', 'hackernews', 'linux', 'messaging', 'hackernews', 'k8s', 'networking', 'hackernews', 'photography', 'hackernews', 'programming', 'cyber', 'gnupg', 'hackernews', 'security', 'vulnerability', 'ai', 'hackernews', 'llm', 'git', 'hackernews', 'programming', 'hackernews', 'time', 'communication', 'hackernews']
+tags: ['hackernews', 'hackernews', 'youtube', 'ai', 'claude code', 'google', 'llm', 'music', 'streaming', 'hackernews', 'history', 'unix', 'hackernews', 'publishing', 'hackernews', 'music', 'books', 'hackernews', 'hackernews', 'iac', 'infrastructure', 'orchestration', 'ai', 'claude code', 'llm', 'history', 'alternatives', 'cloudflare', 'edge computing', 'hackernews', 'hackernews', 'space ships', 'ai', 'claude code', 'hackernews', 'llm', 'graphics', 'hackernews', 'open source', 'software', 'apple', 'hackernews', 'linux', 'messaging', 'hackernews', 'k8s', 'networking']
 author: pgmac
 ---
 
 Internet Discoveries between 28 December and  4 January
 
+- Odoo: Open-Source ERP
+- The PGP problem (2019)
 - The 2026 Grammys...Proof Music is Getting Worse
 - Google engineer says Claude Code built in one hour what her team spent a year on
 - www.friskyradio.com
@@ -24,15 +26,16 @@ Internet Discoveries between 28 December and  4 January
 - Tixl: Open-source realtime motion graphics
 - IUseLinux: Access iMessage from your Linux (or windows) computer
 - Kubernetes egress control with squid proxy
-- What an unprocessed photo looks like
-- Replacing JavaScript with Just HTML
-- Gpg.fail
-- Show HN: Mysti – Claude, Codex, and Gemini debate your code, then synthesize
-- Pre-commit hooks are broken
-- Clock synchronization is a nightmare
-- How we lost communication to entertainment
 
 ## Interesting details
+
+<a name="Odoo: Open-Source ERP"></a>[Odoo: Open-Source ERP](https://github.com/odoo/odoo) - Odoo. Open Source Apps To Grow Your Business. Contribute to odoo/odoo development by creating an account on GitHub.
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46439993)
+
+<a name="The PGP problem (2019)"></a>[The PGP problem (2019)](https://www.latacora.com/blog/2019/07/16/the-pgp-problem/) - The PGP problem
+
+> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46486326)
 
 <a name="The 2026 Grammys...Proof Music is Getting Worse"></a>**[The 2026 Grammys...Proof Music is Getting Worse](https://www.youtube.com/watch?v=YXzB4v1Toj4)**
 
@@ -91,34 +94,6 @@ In this episode, I compare this year's Grammy nominees for Song of the Year to t
 <a name="Kubernetes egress control with squid proxy"></a>[Kubernetes egress control with squid proxy](https://interlaye.red/kubernetes_002degress_002dsquid.html) - Kubernetes Egress Control with Squid proxy (interlaye.red)
 
 > [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46419659)
-
-<a name="What an unprocessed photo looks like"></a>[What an unprocessed photo looks like](https://maurycyz.com/misc/raw_photo/) - &nbsp;
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46415225)
-
-<a name="Replacing JavaScript with Just HTML"></a>[Replacing JavaScript with Just HTML](https://www.htmhell.dev/adventcalendar/2025/27/) - A collection of bad practices in HTML, copied from real websites.
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46407337)
-
-<a name="Gpg.fail"></a>[Gpg.fail](https://gpg.fail) - &nbsp;
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46403200)
-
-<a name="Show HN: Mysti – Claude, Codex, and Gemini debate your code, then synthesize"></a>[Show HN: Mysti – Claude, Codex, and Gemini debate your code, then synthesize](https://github.com/DeepMyst/Mysti) - AI coding dream team of agents for VS Code. Claude Code + openai Codex collaborate in brainstorm mode, debate solutions, and synthesize the best approach for your code. - DeepMyst/Mysti
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46365105)
-
-<a name="Pre-commit hooks are broken"></a>[Pre-commit hooks are broken](https://jyn.dev/pre-commit-hooks-are-fundamentally-broken/) - use pre-push hooks instead
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46398906)
-
-<a name="Clock synchronization is a nightmare"></a>[Clock synchronization is a nightmare](https://arpitbhayani.me/blogs/clock-sync-nightmare/) - Time seems simple. But we engineers lose sleep over something as basic as keeping clocks in sync. Here’s why…
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46368177)
-
-<a name="How we lost communication to entertainment"></a>[How we lost communication to entertainment](https://ploum.net/2025-12-15-communication-entertainment.html) - How We Lost Communication to Entertainment par Ploum - Lionel Dricot.
-
-> [Found @ YCombinator Hacker News](https://news.ycombinator.com/item?id=46404848)
 
 
 ---
