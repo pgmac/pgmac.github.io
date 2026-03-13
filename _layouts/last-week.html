@@ -22,7 +22,7 @@ layout: default
 
   <p>
     Explore other related articles:<br/>
-{% for tags in page.tags %}
+{% assign unique_tags = page.tags | uniq %}{% for tags in unique_tags %}
       <a href="/tag/{{ tags | slugify }}">{{ tags }}</a> /
 {% endfor %}
   </p>
