@@ -51,9 +51,11 @@ jobs:
         uses: slackapi/slack-github-action@v3.0.1
         continue-on-error: true
         with:
-          channel-id: "C01UGQ98P9U"
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             {
+              "channel": "C01UGQ98P9U",
               "attachments": [
                 {
                   "mrkdwn_in": ["text", "pretext"],
@@ -90,8 +92,6 @@ jobs:
                 }
               ]
             }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -146,10 +146,12 @@ jobs:
         uses: slackapi/slack-github-action@v3.0.1
         continue-on-error: true
         with:
-          update-ts: ${{ steps.slack.outputs.ts }}
-          channel-id: "C01UGQ98P9U"
+          method: chat.update
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             {
+              "channel": "C01UGQ98P9U",
+              "ts": "${{ steps.slack.outputs.ts }}",
               "attachments": [
                 {
                   "mrkdwn_in": ["text", "pretext"],
@@ -196,8 +198,6 @@ jobs:
                 }
               ]
             }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
   # Deployment job
   deploy:
