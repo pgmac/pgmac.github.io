@@ -1,0 +1,41 @@
+@use "sass:color";
+
+// Our variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$big-font-size:    $base-font-size * 3;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$text-color-white: #fff;
+$background-color: #fff;
+$brand-color:      #EF6C00;
+
+$grey-color:       #37474F;
+$grey-color-light: #fefefe;
+$grey-color-dark:  color.adjust($grey-color, $lightness: -25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+$card-padding: 20px !default;
+$card-bg-color: $background-color !default;
+$card-link-color: $brand-color !default;
+$card-link-color-light: color.adjust($card-link-color, $lightness: 20%) !default;
+$element-top-margin: calc($spacing-unit/3) !default;
+$element-bottom-margin: calc(($spacing-unit*2)/3) !default;
+
+$anim-speed: 0.3s;
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}

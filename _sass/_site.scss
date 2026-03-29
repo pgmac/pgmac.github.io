@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /*------------------------------------------------------------
   Site Style
 ------------------------------------------------------------*/
@@ -31,8 +33,8 @@
         display: inline-block;
         margin-bottom: -140px;        
         overflow: hidden;
-        transition: $anim-speed; 
-        @extend .z-depth-1;
+        transition: $anim-speed;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         
         
         img{
@@ -47,8 +49,8 @@
     }
     
     .header-badge:hover{        
-        transition: $anim-speed;   
-        @extend .z-depth-5;
+        transition: $anim-speed;
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
         
         img{         
             opacity: 0.7;
