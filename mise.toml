@@ -1,0 +1,18 @@
+[tools]
+ruby = "3.4.9"
+
+[tasks.install]
+description = "Install gem dependencies"
+run = "bundle install"
+
+[tasks.serve]
+description = "Run local development server"
+run = "bundle exec jekyll serve"
+
+[tasks.build]
+description = "Build the site"
+run = "bundle exec jekyll build"
+
+[tasks.clean]
+description = "Clean the build output"
+run = "bundle exec jekyll clean"
