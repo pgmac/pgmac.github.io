@@ -4,7 +4,8 @@ layout: post
 {% assign category_lower = page.title | downcase %}
 {% if site.data.category_intros contains category_lower %}
   {% capture intro_include %}category-intro-{{ category_lower }}.md{% endcapture %}
-  {% include {{ intro_include }} %}
+  {% capture intro_content %}{% include {{ intro_include }} %}{% endcapture %}
+  {{ intro_content | markdownify }}
 {% endif %}
 
 {% if page.paginator %}
@@ -14,10 +15,10 @@ layout: post
 
   {% if paginator.previous_page != nil or paginator.next_page != nil %}
     <!-- Show page number if we have multiple pages -->
-    <h2>&ldquo;{{ page.title }}&rdquo; Category page {{ paginator.page }} / {{ paginator.total_pages }}</h2>
+    <h2>&ldquo;{{ site.data.category_titles[page.title] | default: page.title }}&rdquo; Category page {{ paginator.page }} / {{ paginator.total_pages }}</h2>
   {% else %}
     <!-- No page number if we only have a single page -->
-    <h2>&ldquo;{{ page.title }}&rdquo; Category</h2>
+    <h2>&ldquo;{{ site.data.category_titles[page.title] | default: page.title }}&rdquo; Category</h2>
   {% endif %}
 
   <section>
