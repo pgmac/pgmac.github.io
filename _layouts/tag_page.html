@@ -5,6 +5,10 @@ layout: post
 
 <p class="rss-subscribe">subscribe <a href="/tag/{{ page.tag }}.xml">via RSS</a></p>
 
+{% if page.tag == 'sre' %}
+{% include category-intro-sre.md %}
+{% endif %}
+
 <ul>
 {% for post in page.posts %}
   <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} | Tags: {{ post | tags }})</li>

@@ -1,9 +1,3 @@
----
-layout: page
-title: Site Reliability Engineering
-permalink: /sre/
----
-
 Site Reliability Engineering is the discipline I've spent a significant chunk of my career in, and it's one that refuses to sit still. This section is my attempt to document where it came from, what it has been, where it is now, and where I think it's heading.
 
 ---
@@ -59,14 +53,6 @@ A few threads I'm watching closely.
 **The "how" of incidents will keep mattering more than the "why".** The shift from root-cause-hunting to systemic learning that Allspaw wrote about in 2014 is still not universal. The industry will continue moving in that direction, and organisations that treat incidents as learning opportunities — rather than blame assignments — will build more resilient systems and more sustainable teams.
 
 **Platform engineering and SRE will converge further.** The internal developer platform as a reliability primitive is already happening. SREs increasingly own the paved roads that other engineers drive on, and the reliability of the platform is inseparable from the reliability of the products built on it.
-
----
-
-## Posts in This Section
-
-{% for post in site.categories.sre %}
-- [{{ post.title }}]({{ post.url }}) — <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-{% endfor %}
 
 ---
 
