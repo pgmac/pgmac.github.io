@@ -60,6 +60,7 @@ jobs:
           channel-id: "C01UGQ98P9U"
           payload: |
             {
+              "text": ${{ toJSON(join(github.event.commits.*.message, '\n') || ':clock6: Scheduled') }},
               "attachments": [
                 {
                   "mrkdwn_in": ["text", "pretext"],
@@ -84,6 +85,7 @@ jobs:
                   ]
                 },
                 {
+                  "fallback": "<${{ github.event.pull_request.html_url || github.event.head_commit.url || github.server_url }}|View commit>",
                   "blocks": [
                     {
                       "type": "section",
@@ -169,6 +171,7 @@ jobs:
           channel-id: "C01UGQ98P9U"
           payload: |
             {
+              "text": ${{ toJSON(join(github.event.commits.*.message, '\n') || ':clock6: Scheduled') }},
               "attachments": [
                 {
                   "mrkdwn_in": ["text", "pretext"],
@@ -203,6 +206,7 @@ jobs:
                   ]
                 },
                 {
+                  "fallback": "<${{ github.event.pull_request.html_url || github.event.head_commit.url || github.server_url }}|View commit>",
                   "blocks": [
                     {
                       "type": "section",

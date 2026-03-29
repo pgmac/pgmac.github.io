@@ -5,7 +5,9 @@
       "Bash(git log:*)",
       "Bash(ruff check:*)",
       "Bash(pylint:*)",
-      "mcp__acp__Edit"
+      "mcp__acp__Edit",
+      "mcp__plugin_context-mode_context-mode__ctx_fetch_and_index",
+      "mcp__plugin_context-mode_context-mode__ctx_search"
     ],
     "deny": [],
     "ask": []
