@@ -37,6 +37,8 @@ tag_feed_dir: tag
 category_path: /
 
 # Build settings
+sass:
+  quiet_deps: true
 theme: minima
 markdown: kramdown
 plugins_dir: _scripts
