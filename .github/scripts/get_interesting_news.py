@@ -349,18 +349,29 @@ class Link:
             excerpt += f"\n\n> {sanitized_note}"
         return excerpt
 
+    @staticmethod
+    def _slugify(text: str) -> str:
+        return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
     def to_markdown(self) -> str:
         """Convert link to markdown format"""
         anchor = f'<a name="{self.title}"></a>'
         excerpt = self.format_excerpt()
+        tags_html = ""
+        if self.tags:
+            pills = " ".join(
+                f'<a href="/tag/{self._slugify(tag)}" class="tag-pill">{tag}</a>'
+                for tag in self.tags
+            )
+            tags_html = f'\n<div class="tag-pills">{pills}</div>\n'
 
         if self.youtube_id:
             return (
                 f"{anchor}**[{self.title}]({self.url})**\n\n"
                 f'{{% include youtube.html id="{self.youtube_id}" %}}\n\n'
-                f"{excerpt}\n\n"
+                f"{excerpt}{tags_html}\n\n"
             )
-        return f"{anchor}[{self.title}]({self.url}) - {excerpt}\n\n"
+        return f"{anchor}[{self.title}]({self.url}) - {excerpt}{tags_html}\n\n"
 
 
 class BlogPostGenerator:
@@ -413,7 +424,7 @@ class BlogPostGenerator:
                 print("skipping")
 
         # Sort links by created_at
-        links.sort(key=lambda l: l.created_at)
+        links.sort(key=lambda link: link.created_at)
         return links
 
     def fetch_youtube_videos(self) -> List[Link]:
