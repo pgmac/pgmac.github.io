@@ -1,6 +1,6 @@
 ---
 layout: last-week
-title: Some things I found interesting from 2026-05-10 to 2026-05-17
+title: Some things I found interesting between 2026-05-10 and 2026-05-17
 category: Last-Week
 tags: ['certificates', 'incident', 'security', 'ai', 'detection', 'image', 'llm', 'video', 'history', 'internet', 'comic', 'RSS', 'ai', 'anthropic', 'claude code', 'llm', 'testing', 'comic', 'RSS', 'ai', 'anthropic', 'cyber', 'llm', 'security', 'vulnerability', 'ai', 'anthropic', 'aws', 'claude code', 'hackernews', 'llm', 'compromise', 'cyber', 'hackernews', 'post-mortem', 'security', 'supply chain', 'vulnerability', 'hackernews', 'music', 'games', 'hackernews', 'linux', 'windows', 'ai', 'hackernews', 'llm', 'self-hosting', 'cyber', 'funny', 'hackernews', 'incident management', 'security', 'ai', 'hackernews', 'llm', 'self-hosting', 'hackernews', 'idempotent', 'cyber', 'freebsd', 'hackernews', 'security', 'vulnerability', 'comic', 'RSS', 'earth', 'photography', 'space', 'comic', 'RSS', 'engineering', 'process', 'comic', 'RSS', 'comic', 'RSS', 'ai', 'hackernews', 'books', 'hackernews', 'ai', 'hackernews', 'llm', 'software', 'cyber', 'hackernews', 'security', 'vulnerability', 'hackernews', 'privacy', 'vehicles', 'ai', 'anthropic', 'claude code', 'hackernews', 'llm', 'games', 'hackernews', 'history', 'games', 'generator', 'hackernews', 'cyber', 'hackernews', 'security', 'hackernews', 'knowledge', 'management', 'comic', 'RSS']
 author: pgmac

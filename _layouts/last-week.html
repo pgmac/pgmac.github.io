@@ -20,12 +20,12 @@ layout: default
 
   {% include last-week-navigation.html %}
 
-  <p>
-    Explore other related articles:<br/>
+  <p>Explore other related articles:</p>
+  <div class="tag-pills">
 {% assign unique_tags = page.tags | uniq %}{% for tags in unique_tags %}
-      <a href="/tag/{{ tags | slugify }}">{{ tags }}</a> /
+      <a href="/tag/{{ tags | slugify }}" class="tag-pill">{{ tags }}</a>
 {% endfor %}
-  </p>
+  </div>
 
   {% if author %}
   <hr/>
