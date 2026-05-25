@@ -170,3 +170,25 @@
     margin: 30px auto;
     width: 980px;
 }
+
+.tag-pills {
+    margin: 0.4rem 0 0.8rem 0;
+}
+
+.tag-pill {
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #666;
+    border-radius: 999px;
+    padding: 0.15rem 0.75rem;
+    font-size: 0.8em;
+    text-decoration: none;
+    margin: 0.15rem 0.1rem;
+    line-height: 1.5;
+
+    &:hover {
+        background-color: #d0d0d0;
+        color: #444;
+        text-decoration: none;
+    }
+}

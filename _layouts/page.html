@@ -1,15 +1,15 @@
 ---
 layout: default
 ---
-<article class="post">
+<article class="post card">
+  <div class="card-content">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% include breadcrumbs.html %}
+    </header>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    {% include breadcrumbs.html %}
-  </header>
-
-  <div class="post-content">
-    {{ content }}
+    <div class="post-content">
+      {{ content }}
+    </div>
   </div>
-
 </article>
