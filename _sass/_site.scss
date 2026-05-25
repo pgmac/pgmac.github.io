@@ -192,3 +192,83 @@
         text-decoration: none;
     }
 }
+
+// Category index landing page: each post listed as a card
+.post-content section article {
+    background-color: #fafafa;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 0.75em 1em;
+    margin: 0.75em 0;
+
+    h3 {
+        margin: 0 0 0.25em 0;
+        font-size: 2rem;
+    }
+
+    p {
+        margin: 0;
+        color: #555;
+        font-size: 1em;
+    }
+}
+
+// Last-week post: style each link entry as a subtle card.
+// DOM order per entry: p:has(> a[name]) → (blockquote?) → (div.tag-pills?)
+.post-content {
+    // Card body
+    p:has(> a[name]) {
+        background-color: #fafafa;
+        border: 1px solid #e4e4e4;
+        border-radius: 6px;
+        padding: 0.75em 1em;
+        margin: 0.75em 0 0 0;
+
+        // Open bottom when something follows that continues the card
+        &:has(+ blockquote),
+        &:has(+ .tag-pills) {
+            border-bottom: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    // Source attribution — card middle section
+    p:has(> a[name]) + blockquote {
+        background-color: #fafafa;
+        border: 1px solid #e4e4e4;
+        border-top: 1px solid #eee;
+        border-left: none;
+        padding: 0.35em 1em;
+        margin: 0;
+        font-size: 0.85em;
+        color: #888;
+
+        p { margin: 0; }
+
+        // Close the card when no tag-pills follow
+        &:not(:has(+ .tag-pills)) {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            margin-bottom: 0.75em;
+        }
+        // Stay open when tag-pills follow
+        &:has(+ .tag-pills) {
+            border-bottom: none;
+        }
+    }
+
+    // Tag pills — card footer, right-aligned
+    p:has(> a[name]) + .tag-pills,
+    p:has(> a[name]) + blockquote + .tag-pills {
+        background-color: #fafafa;
+        border: 1px solid #e4e4e4;
+        border-top: 1px solid #eee;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        padding: 0.35em 1em;
+        margin: 0 0 0.75em 0;
+        text-align: right;
+    }
+}

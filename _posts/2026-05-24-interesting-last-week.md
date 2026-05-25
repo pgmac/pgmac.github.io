@@ -1,6 +1,6 @@
 ---
 layout: last-week
-title: Some things I found interesting from 2026-05-17 to 2026-05-24
+title: Some things I found interesting between 2026-05-17 and 2026-05-24
 category: Last-Week
 tags: ['comic', 'RSS', 'ai', 'cloudflare', 'cyber', 'llm', 'security', 'comic', 'RSS', 'cyber', 'incident', 'security', 'comic', 'RSS', 'comic', 'RSS', 'cyber', 'github', 'incident', 'security', 'comic', 'RSS', 'compromise', 'cyber', 'incident', 'npm', 'security', 'supply chain', 'comic', 'RSS', 'ai', 'anthropic', 'cyber', 'llm', 'mythos', 'security', 'comic', 'RSS', 'compromise', 'cyber', 'github', 'incident', 'security', 'supply chain', 'comic', 'RSS']
 author: pgmac

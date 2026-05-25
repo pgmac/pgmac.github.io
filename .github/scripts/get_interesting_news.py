@@ -77,7 +77,7 @@ class DateRange:
 
     def format_title(self) -> str:
         """Format the date range for the post title"""
-        return f"{self.start_date.strftime('%Y-%m-%d')} to {self.end_date.strftime('%Y-%m-%d')}"
+        return f"{self.start_date.strftime('%Y-%m-%d')} and {self.end_date.strftime('%Y-%m-%d')}"
 
     def format_description(self) -> str:
         """Format the date range for the post description"""
@@ -472,7 +472,7 @@ class BlogPostGenerator:
             articles += link.to_markdown()
 
         title_line = (
-            f"Some things I found interesting from {self.date_range.format_title()}"
+            f"Some things I found interesting between {self.date_range.format_title()}"
         )
         front_matter = (
             f"---\n"
