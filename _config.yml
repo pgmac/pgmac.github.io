@@ -41,7 +41,7 @@ sass:
   quiet_deps: true
 theme: minima
 markdown: kramdown
-plugins_dir: _scripts
+plugins_dir: _plugins
 gems:
   - jekyll-paginate
 plugins:
