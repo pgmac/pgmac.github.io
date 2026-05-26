@@ -4,7 +4,7 @@ title: Some things I found interesting from 2026-01-25 to 2026-02-01
 category: Last-Week
 tags:
   [
-    "YouTube",
+    "youtube",
     "ai",
     "anthropic",
     "claude code",
@@ -26,7 +26,7 @@ tags:
     "sre",
     "youtube",
     "hackernews",
-    "YouTube",
+    "youtube",
     "code",
     "diagrams",
     "hackernews",
@@ -54,7 +54,7 @@ tags:
     "hackernews",
     "llm",
     "personal",
-    "YouTube",
+    "youtube",
     "education",
     "programming",
     "hackernews",

@@ -439,7 +439,7 @@ class BlogPostGenerator:
             # Convert YouTube video dict to Link object
             link = Link(video, api=None, fetch_details=False, source="youtube")
             # Add YouTube tag
-            link.tags = ["YouTube"]
+            link.tags = ["youtube"]
             links.append(link)
 
         return links
