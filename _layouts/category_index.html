@@ -29,7 +29,12 @@ layout: post
     {% for post in paginator.posts limit:paginator.per_page %}
       <article>
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt }}</p>
+        {% assign parts = post.content | split: "<h2 " %}
+        {% if parts.size > 1 %}
+          {{ parts[0] }}
+        {% else %}
+          {{ post.content | truncatewords: 60 }}
+        {% endif %}
       </article>
     {% endfor %}
   </section>
@@ -49,7 +54,12 @@ layout: post
     {% for post in page.posts %}
       <article>
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt }}</p>
+        {% assign parts = post.content | split: "<h2 " %}
+        {% if parts.size > 1 %}
+          {{ parts[0] }}
+        {% else %}
+          {{ post.content | truncatewords: 60 }}
+        {% endif %}
       </article>
     {% endfor %}
   </section>
