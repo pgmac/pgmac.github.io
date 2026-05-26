@@ -18,12 +18,25 @@ layout: default
 
   <p>&nbsp;</p>
 
-  <p>
-Explore other related articles:<br/>
-{% for tags in page.tags %}
-      <a href="/tag/{{ tags | slugify }}">{{ tags }}</a> /
-{% endfor %}
-  </p>
+  {% assign explore_tags = page.tags | uniq %}
+  {% if explore_tags.size > 0 %}
+  <p>Explore other related articles:</p>
+  <div class="tag-pills">
+    {% for tag in explore_tags %}
+      <a href="/tag/{{ tag | slugify }}" class="tag-pill">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.tag %}
+  <p>All tags:</p>
+  <div class="tag-pills">
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+      <a href="/tag/{{ tag[0] | slugify }}" class="tag-pill">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
 
   {% if author %}
   <hr/>
