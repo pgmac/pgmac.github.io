@@ -1,5 +1,5 @@
 [tools]
-ruby = "3.4.9"
+ruby = "3.4.10"
 
 [tasks.install]
 description = "Install gem dependencies"
